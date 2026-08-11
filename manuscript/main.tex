@@ -1,19 +1,13 @@
 \pdfminorversion=7
 \pdfsuppresswarningpagegroup=1
-\documentclass[10pt]{article}
+\documentclass[namedate,webpdf,modern,mediumone]{oup-authoring-template}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern,microtype}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{booktabs,array,graphicx,float}
+\usepackage{booktabs,float}
 \graphicspath{{figures/}}
+\newcommand{\societylogo}{}
 \usepackage[tablesonly,nomarkers,nolists]{endfloat}
-\usepackage[font=small]{caption}
 \usepackage[section]{placeins}
-\usepackage[margin=1in]{geometry}
-\usepackage[authoryear,round]{natbib}
-\usepackage{hyperref,xurl}
+\usepackage{xurl}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
   pdftitle={Scale-dependent contraction of spatial wet-bulb temperature contrasts in eastern China},
   pdfauthor={Jian Hou, Tan Meng, and Maozai Tian}}
@@ -23,35 +17,26 @@
 \setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
 \setlength{\floatsep}{8pt plus 2pt minus 2pt}
 \setlength{\intextsep}{10pt plus 2pt minus 2pt}
-\captionsetup{skip=4pt}
 \renewcommand{\efloatseparator}{\vspace{5pt}}
 
 \newcommand{\Var}{\mathrm{Var}}
+\theoremstyle{thmstyleone}
 \newtheorem{proposition}{Proposition}
 
 \begin{document}
 
-\title{\textbf{Scale-dependent contraction of spatial wet-bulb temperature contrasts in eastern China}}
-\author{\parbox{0.88\textwidth}{\centering
-  Jian Hou$^{1}$, Tan Meng$^{2}$, and Maozai Tian$^{2}$\\[0.5ex]
-  \small $^{1}$College of Systems Engineering, National University of Defense
-  Technology, Changsha 410073, China;
-  $^{2}$Center for Applied Statistics, School of Statistics, Renmin
-  University of China, Beijing 100872, China\\[0.5ex]
-  ORCID: Jian Hou,
-  \href{https://orcid.org/0000-0002-9248-6874}{0000-0002-9248-6874};
-  Tan Meng,
-  \href{https://orcid.org/0009-0001-1812-1834}{0009-0001-1812-1834}\\[0.8ex]
-  Correspondence: Maozai Tian, Center for Applied Statistics, School of
-  Statistics, Renmin University of China, 59 Zhongguancun Street, Haidian
-  District, Beijing 100872, China;
-  \href{mailto:mztian@ruc.edu.cn}{mztian@ruc.edu.cn}}}
-\date{}
-\maketitle
-\pagestyle{myheadings}
-\markright{Spatial WBT contrast contraction}
+\journaltitle{Journal of the Royal Statistical Society Series C: Applied Statistics}
+\copyrightyear{}
+\pubyear{}
+\title[Spatial wet-bulb contrast contraction]{Scale-dependent contraction of spatial wet-bulb temperature contrasts in eastern China}
+\author[1]{Jian Hou\ORCID{0000-0002-9248-6874}}
+\author[2]{Tan Meng\ORCID{0009-0001-1812-1834}}
+\author[2,$\ast$]{Maozai Tian\ORCID{0000-0002-0515-4477}}
+\address[1]{\orgdiv{College of Systems Engineering}, \orgname{National University of Defense Technology}, \orgaddress{Changsha 410073, \country{China}}}
+\address[2]{\orgdiv{Center for Applied Statistics, School of Statistics}, \orgname{Renmin University of China}, \orgaddress{\street{59 Zhongguancun Street}, Beijing 100872, \country{China}}}
+\corresp[$\ast$]{Corresponding author. \href{mailto:mztian@ruc.edu.cn}{mztian@ruc.edu.cn}}
 
-\begin{abstract}
+\abstract{
 We compare spatial wet-bulb temperature contrast between upper-quartile and
 middle-half days of the monthly regional mean at 121 reanalysis sites in
 eastern China. We fixed the multiscale contrast specification and
@@ -71,10 +56,12 @@ same protocol to 1950--1990 gave $-11.04\%$, with 40 of 41 summer contrasts
 negative and the same strengthening with bandwidth. High regional mean
 wet-bulb temperature was therefore associated with weaker broad geographic
 contrast, an aspect that a regional mean cannot describe.
-\end{abstract}
+}
 
-\noindent\textit{Keywords:} ERA5-Land; graph Laplacian; humid heat;
-randomisation inference; semivariance; spatial statistics
+\keywords{ERA5-Land, graph Laplacian, humid heat, randomisation inference,
+semivariance, spatial statistics}
+
+\maketitle
 
 \section{Introduction}
 
@@ -652,9 +639,9 @@ acts most strongly on the local graph
   gradient suppression; circles, squares and triangles denote weak, medium
   and strong changes. For each method, the pale segment spans power across the
   nine alternatives and the diamond marks the minimum.}
-  \par\small\textit{Alt text:} A range-and-dot plot compares seven methods.
+  \figalttext{A range-and-dot plot compares seven methods.
   Each method has nine coloured and shaped points, a pale segment spanning
-  their range and a diamond at the minimum; the ranges overlap substantially.
+  their range and a diamond at the minimum; the ranges overlap substantially.}
   \label{fig:simulation}
 \end{figure}
 
@@ -757,9 +744,9 @@ The two calculations separate spatial weighting from event relabelling.
   reference site under the 126- and 2,013-km graphs, showing how bandwidth
   changes the geographic support at fixed coordinates. Basemap: Natural Earth
   1:50m, accessed through the R \texttt{maps} package.}
-  \par\small\textit{Alt text:} Four eastern-China maps compare the primary and
+  \figalttext{Four eastern-China maps compare the primary and
   nested site lattices, then show weights concentrated near one reference site
-  under the 126-km graph and spread across the domain under the 2,013-km graph.
+  under the 126-km graph and spread across the domain under the 2,013-km graph.}
   \label{fig:study-area}
 \end{figure}
 
@@ -897,11 +884,11 @@ summers.
   (D) Small circles show summer-specific contrasts at all five bandwidths;
   large circles and bars show means and 95\% descriptive intervals. Labels
   give the numbers of negative summers.}
-  \par\small\textit{Alt text:} Three smoothed eastern-China maps, each
+  \figalttext{Three smoothed eastern-China maps, each
   overlaid with the 121 analysis sites, show increasingly coherent negative
   node allocations at 126, 503 and 2,013 km. A lower panel shows the 33 annual
   contrasts at all five bandwidths, with mean contrasts and negative-summer
-  counts increasing in magnitude with bandwidth.
+  counts increasing in magnitude with bandwidth.}
   \label{fig:multiscale-evidence}
 \end{figure}
 
@@ -943,13 +930,13 @@ caveat.
   graph scales. The 121 allocations sum to $-7.28\%$, identical to the
   primary finite-record estimand. The interpolated surfaces visualise the 121
   observed-node values; estimation and inference use the observed nodes.}
-  \par\small\textit{Alt text:} Four smoothed eastern-China maps derived from
+  \figalttext{Four smoothed eastern-China maps derived from
   121 analysis sites, shown as dots. The anomaly surfaces show a weaker
   north--south contrast on high days; the
   high-minus-middle surface changes from positive in the north to negative in
   the south, and most observed-node allocations are negative, with the
   strongest negative values concentrated in the central and southern parts
-  of the domain.
+  of the domain.}
   \label{fig:spatial-decomposition}
 \end{figure}
 
@@ -990,9 +977,9 @@ own broad-scale energy changes little.
   teal triangles and orange squares denote total change, anomaly-energy change
   and the climatology--anomaly cross component; bars are 95\% descriptive
   intervals. The fixed monthly-climatology energy cancels within each record.}
-  \par\small\textit{Alt text:} Across five bandwidths, dark circles become
+  \figalttext{Across five bandwidths, dark circles become
   increasingly negative. Teal triangles remain near zero at broad scales,
-  while orange squares closely follow the negative total.
+  while orange squares closely follow the negative total.}
   \label{fig:energy-decomposition}
 \end{figure}
 
@@ -1118,9 +1105,9 @@ field-definition alternatives.
   and transformation analyses; green, orange and purple rows denote graph
   construction, spatial resolution and field definition. Points and bars are
   estimates and 95\% descriptive intervals.}
-  \par\small\textit{Alt text:} A forest plot shows mostly overlapping negative
+  \figalttext{A forest plot shows mostly overlapping negative
   estimates across transformation, graph and resolution choices. Two
-  purple-shaded anomaly-field rows lie closest to zero.
+  purple-shaded anomaly-field rows lie closest to zero.}
   \label{fig:application-robustness}
 \end{figure}
 
@@ -1153,11 +1140,11 @@ clear evidence of a local-scale contrast
   bandwidths, using ERA5-Land peak times and labels and identical station
   subsets. Dashed diagonals denote equality; pale segments in panel B connect
   station estimates to equality.}
-  \par\small\textit{Alt text:} Two panels compare NOAA stations with
+  \figalttext{Two panels compare NOAA stations with
   ERA5-Land. Exact-hour WBT points in the left panel cluster around the
   equality line. In the right panel, station and ERA5-Land high--middle
   contrasts are negative at all five bandwidths and become more negative as
-  the bandwidth increases; station estimates are slightly closer to zero.
+  the bandwidth increases; station estimates are slightly closer to zero.}
   \label{fig:noaa-validation}
 \end{figure}
 

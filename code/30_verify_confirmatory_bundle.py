@@ -198,7 +198,7 @@ def main() -> None:
     require(section_titles == expected_sections,
             "Main-text section order does not match the six-section design")
     abstract_match = re.search(
-        r"\\begin\{abstract\}(.*?)\\end\{abstract\}",
+        r"\\abstract\{(.*?)\n\}\s*\n\s*\\keywords\{",
         manuscript,
         flags=re.DOTALL,
     )
@@ -222,8 +222,12 @@ def main() -> None:
     ]
     require(not abstract_abbreviations,
             f"Abstract contains abbreviations: {abstract_abbreviations}")
-    require("\\usepackage[authoryear,round]{natbib}" in manuscript,
-            "Author-year citation configuration is missing")
+    require(
+        "\\documentclass[namedate,webpdf,modern,mediumone]"
+        "{oup-authoring-template}" in manuscript and
+        "\\onecolumn" not in manuscript,
+        "Official OUP modern medium single-column author-year template is missing",
+    )
     require("\\graphicspath{{figures/}}" in manuscript and
             "../output_" not in manuscript,
             "Manuscript figure paths are not submission-portable")
@@ -298,8 +302,8 @@ def main() -> None:
     main_figure_count = main_text.count("\\begin{figure}")
     require(main_figure_count == 7,
             "Main text must contain exactly seven integrated figures")
-    require(main_text.count("\\textit{Alt text:}") == main_figure_count,
-            "Every main-text figure must have alt text")
+    require(main_text.count("\\figalttext{") == main_figure_count,
+            "Every main-text figure must use the OUP alt-text command")
     expected_main_figures = [
         "figure01_simulation_diagnostics.pdf",
         "figure02_study_area.pdf",
@@ -319,9 +323,10 @@ def main() -> None:
             main_text, flags=re.DOTALL):
         require(not re.search(r"\([a-d]\)", figure_block),
                 "Figure panels must use uppercase labels for JRSS C")
-    require("Correspondence: Maozai Tian" in manuscript and
+    require("Maozai Tian\\ORCID{0000-0002-0515-4477}" in manuscript and
+            "Corresponding author." in manuscript and
             "mztian@ruc.edu.cn" in manuscript,
-            "Maozai Tian correspondence details are missing")
+            "Maozai Tian correspondence details or ORCID are missing")
     require("0000-0002-9248-6874" in manuscript and
             "0009-0001-1812-1834" in manuscript,
             "Jian Hou or Tan Meng ORCID is missing from the title page")

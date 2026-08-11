@@ -1,16 +1,10 @@
 \pdfminorversion=7
-\documentclass[12pt]{article}
+\documentclass[namedate,webpdf,modern,mediumone]{oup-authoring-template}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern,microtype}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{booktabs,array,tabularx,graphicx,float,longtable,pdflscape}
+\usepackage{booktabs,tabularx,float,longtable,pdflscape}
 \graphicspath{{figures/}}
-\usepackage[font=small]{caption}
-\usepackage[margin=1in]{geometry}
-\usepackage[authoryear,round]{natbib}
-\usepackage{hyperref,xurl}
+\newcommand{\societylogo}{}
+\usepackage{xurl}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
   pdftitle={Supplementary theory and analyses for scale-dependent spatial contraction},
   pdfauthor={Jian Hou, Tan Meng, and Maozai Tian}}
@@ -18,10 +12,10 @@
 \setlength{\parskip}{5pt plus 1pt}
 \setlength{\emergencystretch}{2em}
 \setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
-\captionsetup{skip=4pt}
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Z}[1]{>{\raggedright\arraybackslash}p{#1}}
+\theoremstyle{thmstyleone}
 \newtheorem{proposition}{Proposition}
 \newtheorem{theorem}{Theorem}
 \renewcommand{\thetheorem}{S\arabic{theorem}}
@@ -32,10 +26,18 @@
 
 \begin{document}
 
-\title{\textbf{Supplementary theory and analyses for ``Scale-dependent
-contraction of spatial wet-bulb temperature contrasts in eastern China''}}
-\author{Jian Hou, Tan Meng, and Maozai Tian}
-\date{}
+\journaltitle{Journal of the Royal Statistical Society Series C: Applied Statistics}
+\copyrightyear{}
+\pubyear{}
+\title[Supplementary theory and analyses]{Supplementary theory and analyses for ``Scale-dependent
+contraction of spatial wet-bulb temperature contrasts in eastern China''}
+\author[1]{Jian Hou\ORCID{0000-0002-9248-6874}}
+\author[2]{Tan Meng\ORCID{0009-0001-1812-1834}}
+\author[2,$\ast$]{Maozai Tian\ORCID{0000-0002-0515-4477}}
+\address[1]{\orgdiv{College of Systems Engineering}, \orgname{National University of Defense Technology}, \orgaddress{Changsha 410073, \country{China}}}
+\address[2]{\orgdiv{Center for Applied Statistics, School of Statistics}, \orgname{Renmin University of China}, \orgaddress{\street{59 Zhongguancun Street}, Beijing 100872, \country{China}}}
+\corresp[$\ast$]{Corresponding author. \href{mailto:mztian@ruc.edu.cn}{mztian@ruc.edu.cn}}
+\abstract{}
 \maketitle
 
 This supplement provides the proof of Proposition~1, a process-level
@@ -61,7 +63,7 @@ original event definition.
 
 \footnotesize
 \setlength{\tabcolsep}{3pt}
-\begin{longtable}{P{0.22\textwidth}P{0.20\textwidth}P{0.22\textwidth}P{0.26\textwidth}}
+\begin{longtable}{Z{0.22\textwidth}Z{0.20\textwidth}Z{0.22\textwidth}Z{0.26\textwidth}}
 \caption{Analytical status and purpose of the applied analyses.}
 \label{tab:status}\\
 \toprule
@@ -747,9 +749,9 @@ band is estimated.
 \caption{Bandwidth-resolution profile on the 121-site support. The blue line
 and shaded band show the 31-point profile and its pointwise 95\% intervals;
 orange open circles mark the five prespecified bandwidths.}
-\par\small\textit{Alt text:} A line descends smoothly as bandwidth increases
+\figalttext{A line descends smoothly as bandwidth increases
 from 126 to 2,013 km. All 31 estimated effects are negative, and the five
-prespecified bandwidths lie on the same monotone profile.
+prespecified bandwidths lie on the same monotone profile.}
 \label{fig:dense-bandwidth}
 \end{figure}
 
@@ -799,10 +801,10 @@ Orange circles with a solid line denote the primary 121-site support; purple
 triangles with a dashed line, the latitude-refined 236-site support; teal
 squares with a dot-dash line, the longitude-refined 239-site support; and dark
 diamonds with a long-dash line, the dense 465-site reference.}
-\par\small\textit{Alt text:} Four lines compare each spatial support with the
+\figalttext{Four lines compare each spatial support with the
 465-site reference across five bandwidths. All differences are between zero
 and one percentage point, and the broad-to-local ordering of the underlying
-effects is unchanged.
+effects is unchanged.}
 \label{fig:spatial-convergence}
 \end{figure}
 
@@ -1158,7 +1160,7 @@ cell retains the common six-record construction and within-record labels.}
 \label{tab:joint-dgp-specification}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\textwidth}{P{0.22\textwidth}YY}
+\begin{tabularx}{\textwidth}{Z{0.22\textwidth}YY}
 \toprule
 Design & Null & Contraction alternative \\
 \midrule
