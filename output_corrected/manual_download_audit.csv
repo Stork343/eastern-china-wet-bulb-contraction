@@ -1,0 +1,9 @@
+file,rows,latitude,longitude,variables,finite_values
+reanalysis-era5-land-timeseries-sfc-2m-temperature3zaexd2l.csv,671208,8.35914670815896e-13,0,d2m;t2m,0
+reanalysis-era5-land-timeseries-sfc-pressure-precipitationlyr5j0sc.csv,671208,8.35914670815896e-13,0,sp;tp,0
+reanalysis-era5-land-timeseries-sfc-radiation-heattr22loce.csv,671208,8.35914670815896e-13,0,ssrd;strd,0
+reanalysis-era5-land-timeseries-sfc-skin-temperatureopdb126d.csv,671208,8.35914670815896e-13,0,skt,0
+reanalysis-era5-land-timeseries-sfc-snowemo0iqqb.csv,671208,8.35914670815896e-13,0,snowc;sde,0
+reanalysis-era5-land-timeseries-sfc-soil-temperatureip6vu_aw.csv,671208,8.35914670815896e-13,0,stl1;stl2;stl3;stl4,0
+reanalysis-era5-land-timeseries-sfc-soil-water1y97jbq6.csv,671208,8.35914670815896e-13,0,swvl1;swvl2;swvl3;swvl4,0
+reanalysis-era5-land-timeseries-sfc-windb6cuh8rq.csv,671208,8.35914670815896e-13,0,u10;v10,0

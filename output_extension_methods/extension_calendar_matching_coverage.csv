@@ -1,0 +1,3 @@
+window_days,records,high_days_total,high_days_matched,records_with_no_match,mean_record_coverage,mean_eligible_middle_days,pooled_high_day_coverage
+3,99,792,670,0,0.8459595959595959,2.542207792207792,0.8459595959595959
+5,99,792,750,0,0.946969696969697,4.111531986531987,0.946969696969697

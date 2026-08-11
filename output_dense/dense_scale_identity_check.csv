@@ -1,0 +1,6 @@
+metric,configuration,analysis_role,scale_column,mapped_effect,expected_effect,absolute_error
+graph_h_0.125,dense_465_fixed_labels,confirmatory,contribution_h_0_125,-0.0339500518568716,-0.0339500518568671,4.48946435582798e-15
+graph_h_0.250,dense_465_fixed_labels,confirmatory,contribution_h_0_250,-0.0454309811532388,-0.0454309811532339,4.88498130835069e-15
+graph_h_0.500,dense_465_fixed_labels,confirmatory,contribution_h_0_500,-0.0689753830390291,-0.0689753830390306,1.45716771982052e-15
+graph_h_1.000,dense_465_fixed_labels,confirmatory,contribution_h_1_000,-0.11340379621258,-0.113403796212582,2.06779038336435e-15
+graph_h_2.000,dense_465_fixed_labels,confirmatory,contribution_h_2_000,-0.139585219629048,-0.139585219629047,1.4432899320127e-15

@@ -1,0 +1,2 @@
+model,slope_per_degree_c,shift_p_value,shift_B
+Spatial variance ~ within-record centered mean WBT + record FE,-2.90655734112706,7e-04,9999

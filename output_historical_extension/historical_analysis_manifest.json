@@ -1,0 +1,275 @@
+{
+  "created_utc": "2026-08-10T02:29:06.471479+00:00",
+  "analysis_role": "post-analysis historical extension",
+  "protocol_file": "EXTENSION_ANALYSIS_PROTOCOL.md",
+  "protocol_sha256": "da36fc813ffac2dc5e6bab0b316888e598d1e3d02dc00ff70f25fccf77e94251",
+  "site_manifest_sha256": "273d0175cc05fc8f284b4fc80c97a9aa92440e4a5145d2589d7c5407df6dae97",
+  "years": [
+    1950,
+    1990
+  ],
+  "summers": 41,
+  "month_year_records": 123,
+  "daily_fields": 3772,
+  "sites": 121,
+  "bandwidths_km": [
+    125.799765,
+    251.59953,
+    503.19906,
+    1006.39812,
+    2012.796241
+  ],
+  "quartile_method": "Hyndman-Fan type 7 (linear interpolation)",
+  "climatology_reference": {
+    "period": "1950-1990",
+    "definition": "site-specific mean field by calendar month, estimated only from the 41 historical summers",
+    "modern_1991_2025_values_used": false
+  },
+  "randomisation": {
+    "design": "joint product cyclic shift of five dispersion columns within record",
+    "draws": 99999,
+    "seed": 20260810,
+    "specified_before_historical_value_retrieval": true
+  },
+  "forcing_period_check": [
+    "1950-1978",
+    "1979-1990"
+  ],
+  "forcing_caveat": "ECMWF documents that 1950-1978 ERA5-Land was forced by the preliminary ERA5 back extension, with sub-optimal representation of some tropical cyclones; smaller effects are expected over land.",
+  "official_documentation": [
+    "https://confluence.ecmwf.int/pages/viewpage.action?pageId=501029136",
+    "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-timeseries"
+  ],
+  "timeseries_product_note": "The CDS product guide labels this optimized time-series source experimental and potentially subject to format/source changes.",
+  "graph_weight_sums": [
+    118.06192974622516,
+    558.9835889066768,
+    1841.3555443751036,
+    4204.70372935319,
+    6161.126275320509
+  ],
+  "inputs": [
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1950_jja_daily_fields.csv.gz",
+      "sha256": "36184c78033de4b701cb099a10e4336f32e647f29a044e04124361b83f8d582e"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1951_jja_daily_fields.csv.gz",
+      "sha256": "8da407ba8ba56b4270fabd5c69491ff4f63512be150d7a9d3b25a53c45c3bfc8"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1952_jja_daily_fields.csv.gz",
+      "sha256": "21f69238a57a9b16c11af94419ce005482ed8b71eff227aa78f12956a5055bdf"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1953_jja_daily_fields.csv.gz",
+      "sha256": "a0eb9dfaf72c949440a5a32fafdf1b5c12be1377fa37dd80efb354aabaaef065"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1954_jja_daily_fields.csv.gz",
+      "sha256": "8854ae4455017e99b3989681b1b03b5beb990d21b6cf06fee640c19090946eac"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1955_jja_daily_fields.csv.gz",
+      "sha256": "ec2796eb76c17e5011fa0d0b46ec060cb9de18267460834c6be641e8f0d9232c"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1956_jja_daily_fields.csv.gz",
+      "sha256": "7b41684c08338c969caf27638de7949aa335dbbf97d5fb84c4e2ac01636838d2"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1957_jja_daily_fields.csv.gz",
+      "sha256": "6fffa343e51540a918fddd3ebac257e63d92f06c8301c0be780984389c72181d"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1958_jja_daily_fields.csv.gz",
+      "sha256": "3a5bf2c653b81eff09265beb3ade4792cf38ecf660d1696275480b4c1781f477"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1959_jja_daily_fields.csv.gz",
+      "sha256": "70a8831876e9d30afc0fffe96b144f2fae038c13d76d184de85456999ce29a2d"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1960_jja_daily_fields.csv.gz",
+      "sha256": "7186fa03bb2c1fc23eba5898aca7141475cb11517011761cccaa4124aaefeae1"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1961_jja_daily_fields.csv.gz",
+      "sha256": "904b085eb23a71be775e4bac36e0a39407f1629f168a51f64b6e68755cd09f6f"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1962_jja_daily_fields.csv.gz",
+      "sha256": "8d40d7126a29a23b54aa2f2f5916fc4954a332713af2f2d63f0e1f4871c49433"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1963_jja_daily_fields.csv.gz",
+      "sha256": "ea83620e11128f6fdef4d57d893a10e591ba0f00279533eae179891d7eeb982b"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1964_jja_daily_fields.csv.gz",
+      "sha256": "306054a4eec7e99ebe0b0c97f4688230f4e072beaa4d25e552e1dcaba49721bf"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1965_jja_daily_fields.csv.gz",
+      "sha256": "bb2eb2a603bb8f915a0f4291ba616e70836eb34867beeadeef60177c6726107e"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1966_jja_daily_fields.csv.gz",
+      "sha256": "593225782a272c9dfd4aa10e05b9c9aed4ae6fe5908f342b523249abaa3e513e"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1967_jja_daily_fields.csv.gz",
+      "sha256": "d7e958fa3f5dc0b5a9e2b487f3b20eda016044626fb823c6b9c2814defae7bd6"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1968_jja_daily_fields.csv.gz",
+      "sha256": "bb5a6fb2213455947faa19eb06a31d96a746c4f4c292df0a00fbdeb714cf8904"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1969_jja_daily_fields.csv.gz",
+      "sha256": "c4ac93f24c6c75115f3644006836920910503bbc1990c9be32e0acb16fbef515"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1970_jja_daily_fields.csv.gz",
+      "sha256": "f096c41e53eee5dca0b27922c936ecb912d56d33fedd988addca392ec93ebf48"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1971_jja_daily_fields.csv.gz",
+      "sha256": "0360e237cbf66ecd94f9a49c7592f2b63c768dd88e305c5ea9a653ae158dd63c"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1972_jja_daily_fields.csv.gz",
+      "sha256": "adab16aa2351cf1abdb8fd1a0d9f56945fdb4cc26bd622daf08119d087e7a8c2"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1973_jja_daily_fields.csv.gz",
+      "sha256": "b3525b7edbd819e2075fec14aa18ea7b24e3ef3131bdecb1c1e514403e3f9c6a"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1974_jja_daily_fields.csv.gz",
+      "sha256": "23aaeada22a1de882abdc4b456e5cacb6cb627633aebd906ee30f4cebbb9e31d"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1975_jja_daily_fields.csv.gz",
+      "sha256": "26b0ee2db2860cfa4fac5e077e53a44bd22f08ac5356f2913b9243a7201f36a3"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1976_jja_daily_fields.csv.gz",
+      "sha256": "3bf08b7d2095b8d23078f022da06a37c490a1b44faaf44efd4b171c442c49b1f"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1977_jja_daily_fields.csv.gz",
+      "sha256": "437579f8d56cdd1db0cc4dbfdf7beffc5f90a5464f3b6ed9f111a1b06879e705"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1978_jja_daily_fields.csv.gz",
+      "sha256": "54fe61f010a73a115f65d3785be0ca11ca07dbee195928ee8718d581aebb2600"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1979_jja_daily_fields.csv.gz",
+      "sha256": "d106ad05ef1d2ec5036379d9d967d59b43886379e955780c18fb8a3904f97060"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1980_jja_daily_fields.csv.gz",
+      "sha256": "6c40cbc6f541017906a517ce0113b28ac448a0d847723177cf7b3fd0b53b676e"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1981_jja_daily_fields.csv.gz",
+      "sha256": "29685bed4398d862b1ae11e73c55e6152f97a2f35e4ff96b3b3b8f3a5c751440"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1982_jja_daily_fields.csv.gz",
+      "sha256": "c6279d2665f8561057fd48e465f19437e41c94ee3efb06529f37e074687cfca5"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1983_jja_daily_fields.csv.gz",
+      "sha256": "9c68b61c178c610102ef6539f2e98658e735749f39a87c8277cca302a46a37bf"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1984_jja_daily_fields.csv.gz",
+      "sha256": "3a1f6c2086303edd7b5c8f4aa2f9ad7f2c51a3b8da13cb39b97785aa0ff8e46f"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1985_jja_daily_fields.csv.gz",
+      "sha256": "1047b5b097e58ccb7224a8f0c88769f9a58e5242299736dffcaa3012315c8785"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1986_jja_daily_fields.csv.gz",
+      "sha256": "fa5b1eece99d6b9c1b4f5b620b1fb788e22549211e9891ba491d104602a72761"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1987_jja_daily_fields.csv.gz",
+      "sha256": "5b182bcfdbbb9b7beebc4ed84ab8bb3ebddf1e20fabd1fb37effc707b6960913"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1988_jja_daily_fields.csv.gz",
+      "sha256": "caa1f12d9632315be640c72201b338ae0f51e865c4c33a7cd384fe7970598255"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1989_jja_daily_fields.csv.gz",
+      "sha256": "cc9abd616eae16285b8c006ee360a96194a370cd4ea4b6e38e875988aa09207a"
+    },
+    {
+      "file": "data/era5_historical_extension/daily_fields/era5_land_1990_jja_daily_fields.csv.gz",
+      "sha256": "94e1a2322d1640fd7d08a6f578cd5f838b2c8ff82593b678dc7e57dac2ca211c"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "output_historical_extension/historical_basis_decomposition.csv",
+      "sha256": "ff35b23ad2b06a7b91376130ba9dc5aab82af48dc4ec290c9ec63e25025993bb"
+    },
+    {
+      "file": "output_historical_extension/historical_basis_decomposition_yearly.csv",
+      "sha256": "baa841b99f1e08efb4e1872990e899990deabcead520ff3338983b8356b3ec60"
+    },
+    {
+      "file": "output_historical_extension/historical_data_audit.csv",
+      "sha256": "176826d56c860ec428d6ac7e5ff6fc477d40234a33e2132dbe8063aad84409c1"
+    },
+    {
+      "file": "output_historical_extension/historical_energy_decomposition.csv",
+      "sha256": "466f409595a27a1887ade9fac5042c0839cf4cc46e470d16c4503dca35efad6f"
+    },
+    {
+      "file": "output_historical_extension/historical_energy_decomposition_yearly.csv",
+      "sha256": "d224963e87977251abb7d84b9ebd7a36bc355ee61aef037d4f22623754a50be9"
+    },
+    {
+      "file": "output_historical_extension/historical_global_cyclic_null.csv.gz",
+      "sha256": "77d4a116f660b7fda71ac0394e5a3f27379109a74c75678cd57b679b6edc39d4"
+    },
+    {
+      "file": "output_historical_extension/historical_global_cyclic_randomisation.csv",
+      "sha256": "e8641acfc57141f3dfd8f6138de8e402efe8334a44674d61780a38b86c7e4569"
+    },
+    {
+      "file": "output_historical_extension/historical_global_cyclic_randomisation_scales.csv",
+      "sha256": "0c62b809bd20beeaf324db11fa3df2647cb3479620569f28824b4fa170ebdbc7"
+    },
+    {
+      "file": "output_historical_extension/historical_overall_results.csv",
+      "sha256": "510a590dde875e9ff3293207152eaf0d40ae74cf9f6d224fa418168baa5ecd5c"
+    },
+    {
+      "file": "output_historical_extension/historical_period_results.csv",
+      "sha256": "304d58a420d934f9c6978cc4faa71ecea6ea337034b70e9193a711525e7fb83d"
+    },
+    {
+      "file": "output_historical_extension/historical_record_scale_effects.csv",
+      "sha256": "48e631baa01252e7434c6e9c35b871b08667bc561f0d81197d16bcd87ab85904"
+    },
+    {
+      "file": "output_historical_extension/historical_scale_results.csv",
+      "sha256": "3b308096779e9fd8b4d7360632587e1f49b6b9fffbbf822adb625365332fae0d"
+    },
+    {
+      "file": "output_historical_extension/historical_year_profile_effects.csv",
+      "sha256": "de6ab0fbd06300c40dc6cef64b075c13473471c10fec147ddbe798bb94a002d5"
+    },
+    {
+      "file": "output_historical_extension/historical_year_scale_effects.csv",
+      "sha256": "9750a18be4bcb0f733450f1d68baeb391f7a1f93d6f526f015b05dc98d238b8b"
+    }
+  ]
+}

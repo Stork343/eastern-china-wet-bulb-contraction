@@ -1,0 +1,24 @@
+{
+  "history_url": "https://www.ncei.noaa.gov/pub/data/noaa/isd-history.csv",
+  "yearly_url_template": "https://www.ncei.noaa.gov/data/global-hourly/access/{year}/{station}.csv",
+  "selection": "deterministic maximin within the study domain",
+  "years": [
+    2015,
+    2022
+  ],
+  "station_count_requested": 30,
+  "summaries": [
+    {
+      "year": 2015,
+      "stations_retrieved": 29,
+      "observations": 32889,
+      "complete_temperature_dewpoint_pressure": 18900
+    },
+    {
+      "year": 2022,
+      "stations_retrieved": 29,
+      "observations": 31298,
+      "complete_temperature_dewpoint_pressure": 18110
+    }
+  ]
+}

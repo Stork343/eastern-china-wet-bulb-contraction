@@ -1,0 +1,51 @@
+{
+  "analysis_support": "primary 121-node analysis grid",
+  "analysis_role": "primary analysis (33 evaluation summers)",
+  "display_interpolation": {
+    "method": "low-rank thin-plate regression spline",
+    "basis": "tp",
+    "k": 30,
+    "smoothing_parameter": "REML",
+    "term_selection": true,
+    "grid_resolution_degrees": 0.1,
+    "support_mask": "maps::world land, within the 121-node convex hull, and no farther than 140 km from a node",
+    "display_only": true,
+    "predictions_enter_estimation_or_inference": false
+  },
+  "exact_raw_node_identities": {
+    "profile_percent": -7.2834,
+    "profile_absolute_error": 5.5511e-16,
+    "selected_scale_percent": {
+      "126_km": -2.856,
+      "503_km": -5.9067,
+      "2013_km": -13.2684
+    },
+    "selected_scale_max_absolute_error": 2.3662e-15
+  },
+  "annual_distribution": {
+    "summers": 33,
+    "graph_scales": 5,
+    "panel_source": "in-memory figure3 from 38_jrssc_main_figures.R",
+    "interpolation_used": false
+  },
+  "numeric_value_sources": [
+    "output_confirmatory/spatial_decomposition_role_maps.csv",
+    "output_confirmatory/spatial_decomposition_identity_check.csv",
+    "output_confirmatory/spatial_decomposition_scale_identity_check.csv",
+    "output_confirmatory/confirmatory_scale_results.csv",
+    "output_confirmatory/confirmatory_year_scale_effects.csv",
+    "output_confirmatory/confirmatory_graph_metadata.csv"
+  ],
+  "coordinate_validation_source": "data/grid/eastern_china_121_sites.csv",
+  "prohibited_dense_inputs_used": false,
+  "output_files": [
+    "output_jrssc/fig_primary_spatial_decomposition.pdf",
+    "output_jrssc/fig_primary_scale_attribution.pdf",
+    "output_jrssc/fig3_multiscale_evidence.pdf",
+    "manuscript/figures/figure03_multiscale_evidence.pdf",
+    "manuscript/figures/figure04_primary_spatial_decomposition.pdf",
+    "manuscript/figures/png/figure04_primary_spatial_decomposition.png",
+    "manuscript/figures/png/figure03_multiscale_evidence.png"
+  ],
+  "surface_audit_csv": "output_jrssc/primary_smooth_map_surface_audit.csv"
+}

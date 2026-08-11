@@ -1,0 +1,30 @@
+{
+  "script": "41_extended_analyses.py",
+  "primary_sites": 121,
+  "days": 3220,
+  "held_out_summers": 33,
+  "held_out_records": 99,
+  "fixed_bandwidths_km": [
+    125.7997650312984,
+    251.5995300625968,
+    503.1990601251936,
+    1006.3981202503873,
+    2012.7962405007745
+  ],
+  "randomisation_draws": 99999,
+  "randomisation_seed": 20260809,
+  "outputs": [
+    "extended_global_cyclic_randomisation.csv",
+    "extended_global_cyclic_randomisation_scales.csv",
+    "extended_global_cyclic_null.csv.gz",
+    "extended_scale_physical_summary.csv",
+    "extended_effect_measure_summary.csv",
+    "extended_energy_decomposition.csv",
+    "extended_energy_decomposition_yearly.csv",
+    "extended_basis_decomposition.csv",
+    "extended_basis_decomposition_yearly.csv",
+    "extended_dense_bandwidth_profile.csv",
+    "../output_dense/extended_spatial_convergence.csv",
+    "../output_dense/extended_spatial_convergence_summary.csv"
+  ]
+}

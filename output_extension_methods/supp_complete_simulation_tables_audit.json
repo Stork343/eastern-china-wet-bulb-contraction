@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-08-09T10:56:07.756736+00:00",
+  "script": "code/46_prepare_supplement_simulation_tables.py",
+  "year_cells": 108,
+  "joint_cells": 8,
+  "inputs": [
+    {
+      "file": "output_corrected/year_inference_simulation_summary.csv",
+      "sha256": "b24bade76f18257ebd15aae70483fb2ffe786efe5e760d4adc38f6476a76d1f0"
+    },
+    {
+      "file": "output_corrected/joint_dgp_simulation_summary.csv",
+      "sha256": "e2af59c8e7b37af6ee2a59fb5812217e822b8e6ba27c26265e548d04e990a392"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "output_extension_methods/supp_complete_simulation_tables.tex",
+      "sha256": "a12f5401ab433c3cd8d7f55c693eab2cc91bfb22ded634c02242d357c93505a7"
+    },
+    {
+      "file": "manuscript/generated/supp_complete_simulation_tables.tex",
+      "sha256": "a12f5401ab433c3cd8d7f55c693eab2cc91bfb22ded634c02242d357c93505a7"
+    }
+  ]
+}

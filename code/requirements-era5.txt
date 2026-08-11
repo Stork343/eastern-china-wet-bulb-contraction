@@ -1,0 +1,9 @@
+xarray>=2025.1
+zarr>=2.18,<3
+dask[array]>=2025.1
+fsspec>=2024.10
+aiohttp>=3.10
+requests>=2.32
+cdsapi>=0.7.7
+h5netcdf>=1.4
+pypdf>=5.0

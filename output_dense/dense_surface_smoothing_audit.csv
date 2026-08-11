@@ -1,0 +1,5 @@
+configuration,analysis_role,variable,smooth_edf,node_effect
+dense_465_fixed_labels,confirmatory,moderate_anomaly,63.0784281357076,-8.02690863781536
+dense_465_fixed_labels,confirmatory,extreme_anomaly,63.9492803412566,-8.02690863781536
+dense_465_fixed_labels,confirmatory,anomaly_difference,74.1603221772007,-8.02690863781536
+dense_465_fixed_labels,confirmatory,profile_contribution_pp,53.7097327399069,-8.02690863781536

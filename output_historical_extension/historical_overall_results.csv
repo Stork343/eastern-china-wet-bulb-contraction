@@ -1,0 +1,2 @@
+years,estimate,standard_error,t_statistic,t_p_value_lower,ci_lower,ci_upper,negative_years,negative_fraction,analysis_role,period,months_per_summer,bandwidths,loo_min,loo_max
+41,-0.11043057985719903,0.008903949896935801,-12.402426017154761,1.3738160563565327e-15,-0.12842613387041607,-0.09243502584398201,40,0.975609756097561,post-analysis historical extension,1950-1990,3,5,-0.11328183434148512,-0.10624008025915348

@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-08-09T10:16:43.051476+00:00",
+  "analysis_role": "post-analysis non-development station extension",
+  "protocol_file": "EXTENSION_ANALYSIS_PROTOCOL.md",
+  "protocol_sha256": "da36fc813ffac2dc5e6bab0b316888e598d1e3d02dc00ff70f25fccf77e94251",
+  "history_url": "https://www.ncei.noaa.gov/pub/data/noaa/isd-history.csv",
+  "history_file": "data/noaa_isd_extension/isd-history_20260809.csv",
+  "history_sha256": "1994747ab4af1b97e63adb434b4d0d022f2daee76f0c144ea9ab46be2d906604",
+  "history_snapshot_global_max_end": 20250828,
+  "history_snapshot_in_scope_max_end": 20250824,
+  "frozen_requested_end": 20250831,
+  "original_candidate_count": 0,
+  "operational_candidate_count": 208,
+  "operationalization": "The official history snapshot ended before 2025-08-31; within the fixed study rectangle its latest END was 2025-08-24, so the frozen END>=2025-08-31 rule yielded zero candidates. The administrative end filter was truncated to the in-scope snapshot maximum; years, geography, maximin count and outcome-blind selection were unchanged.",
+  "years": [
+    1992,
+    1996,
+    2000,
+    2004,
+    2008,
+    2012,
+    2016,
+    2020,
+    2023,
+    2025
+  ],
+  "selected_stations": 30,
+  "minimum_complete_exact_hours": 400,
+  "selection_uses_effects": false,
+  "errors": [],
+  "outputs": [
+    {
+      "file": "data/noaa_isd_extension/noaa_extension_station_manifest.csv",
+      "sha256": "550040761363ee46a4b2d9bc6bb00c263a0d0f0c876a8de25dcdda1a3bcf1fab"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_extension_station_year_qualification.csv",
+      "sha256": "246792f28607b1c79a0e7f824abea24b60d4baa0195e414375de50c3d2c4d09c"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_1992_jja_exact_hours.csv.gz",
+      "sha256": "baa66fa31057d4964ee4ebfa4c0042a658ba36af632baecfc1dadde24b56a3da"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_1996_jja_exact_hours.csv.gz",
+      "sha256": "a661df8b81b52b0dbc2b8621c28143f595ee136ab96596e7e755c13813ae6731"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2000_jja_exact_hours.csv.gz",
+      "sha256": "ad913c76e5e46924a12c1e1b1747c41333ba1095fb21252e4c137d96a62ef624"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2004_jja_exact_hours.csv.gz",
+      "sha256": "580db9621cd6eb6bc888e7e9b5a09c8150b3330ea1f516ae8ae2737c60a91008"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2008_jja_exact_hours.csv.gz",
+      "sha256": "54afea78545197be3dc521b272ab1feea973c59d36c578470220aa7660317038"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2012_jja_exact_hours.csv.gz",
+      "sha256": "31656baa9f6172855ce88043236666730e2f8987a9b902dec0ce9a97d5c30ef7"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2016_jja_exact_hours.csv.gz",
+      "sha256": "7fabaac5b698f5d9b0038e37481af64be9cb83f298e53bc758c45bb81bb3228c"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2020_jja_exact_hours.csv.gz",
+      "sha256": "a5e4948b0ba9ead44b6735fea745b492aea45068a9fc0164819724246e9104c9"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2023_jja_exact_hours.csv.gz",
+      "sha256": "5fdb88787232633154bbb265118d333779558641536ab2558dee7e9cedcbdb4c"
+    },
+    {
+      "file": "data/noaa_isd_extension/noaa_isd_extension_2025_jja_exact_hours.csv.gz",
+      "sha256": "dd92de2f7de8fb9292fde8153b23e830bd08b580585ef16c7e51e8ecf9de7113"
+    }
+  ]
+}

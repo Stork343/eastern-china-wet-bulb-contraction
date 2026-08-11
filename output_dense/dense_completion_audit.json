@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-08-11T04:03:38.794583+00:00",
+  "candidate_sites": 650,
+  "retained_dense_sites": 465,
+  "reused_primary_sites": 121,
+  "new_archives": 344,
+  "new_archive_bytes": 2905431224,
+  "yearly_dense_panels": 35,
+  "daily_dense_files": 35,
+  "reproduction_max_error": 8.881784197001249e-16,
+  "spatial_identity_max_error": 1.5404344466674e-15,
+  "fixed_label_profile_effect": -0.0802690863781522,
+  "recomputed_label_profile_effect": -0.072508646197631,
+  "fixed_label_consistency": true,
+  "recomputed_label_consistency": true
+}

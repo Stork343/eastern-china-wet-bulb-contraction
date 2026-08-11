@@ -1,0 +1,271 @@
+{
+  "protocol": "EXTENSION_ANALYSIS_PROTOCOL.md",
+  "script": "code/44_extension_empirical_methods.py",
+  "analysis_role": "post-analysis structural sensitivity",
+  "random_seed": null,
+  "day_definition": "UTC regional-mean peak",
+  "site_count": 121,
+  "summer_count_total": 35,
+  "summer_count_held_out": 33,
+  "month_year_records_total": 105,
+  "fixed_bandwidths_km": [
+    125.799765031298,
+    251.599530062597,
+    503.199060125194,
+    1006.39812025039,
+    2012.79624050077
+  ],
+  "primary_reproduction": {
+    "computed": -0.07283448318140778,
+    "expected": -0.0728344831814084,
+    "absolute_error": 6.106226635438361e-16
+  },
+  "calendar_windows_days": [
+    3,
+    5
+  ],
+  "input_files": [
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1991_jja_daily_fields.csv.gz",
+      "bytes": 2055664,
+      "sha256": "81ee878d6094b5348f5d26b486a4c6664deb817ab165fe71e09028cac951865d"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1992_jja_daily_fields.csv.gz",
+      "bytes": 2060054,
+      "sha256": "dc4310b324a6d96f94f62f09d8cf2e063e750163f0f2f5b8e9f82c3a6bf83ebe"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1993_jja_daily_fields.csv.gz",
+      "bytes": 2057176,
+      "sha256": "167405d86e0ed9a436bbe624f9ea9ff6bc33d6169455602b3378536e758df766"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1994_jja_daily_fields.csv.gz",
+      "bytes": 2053698,
+      "sha256": "c6ef68ac0c9f518e4bb4b9342270b557130e1c5bffb3ddae0636bea3ec59ce8f"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1995_jja_daily_fields.csv.gz",
+      "bytes": 2055843,
+      "sha256": "14805c056edd4987baf84527c6a3302b2bea65aa9945ab82328d72cf239ee5d7"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1996_jja_daily_fields.csv.gz",
+      "bytes": 2057647,
+      "sha256": "adeb15b90524510a458e6d4a4b0a72bb40507af4b8cd63558e126f79d70e1cea"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1997_jja_daily_fields.csv.gz",
+      "bytes": 2059307,
+      "sha256": "209dfe3005d17ce7443bc8ccede787addbe7ab29b9cd1d7580172a6a0a743a87"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1998_jja_daily_fields.csv.gz",
+      "bytes": 2054227,
+      "sha256": "771d1ff836d9004dabd4dffc262d1d42c800cc4de25e26f267faedaf87587e5c"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_1999_jja_daily_fields.csv.gz",
+      "bytes": 2056691,
+      "sha256": "5869ff76115645ba757959ea1b4b7dbba5795cafdd4d276f96053ff29a6f05f4"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2000_jja_daily_fields.csv.gz",
+      "bytes": 2058255,
+      "sha256": "2cab64d69b1bfe0338191406307d920e51a9f3e200796c386be6272ccab0deeb"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2001_jja_daily_fields.csv.gz",
+      "bytes": 2058762,
+      "sha256": "c12db6fa30f53f689574c839ce64dfa442eee57d74d09b349e6259877257692e"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2002_jja_daily_fields.csv.gz",
+      "bytes": 2057253,
+      "sha256": "ccfe27bb8e119d67332b49aab82c5b4158e164257d0f7b8b1cb54f40630ea1b2"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2003_jja_daily_fields.csv.gz",
+      "bytes": 2058505,
+      "sha256": "37bc1302ec4566b6bc2be53b059049bcaa546c158886c19b6285c53a4baf5b03"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2004_jja_daily_fields.csv.gz",
+      "bytes": 2058883,
+      "sha256": "369cddfe232764802577f71d621b2213db71497e34a10451049c792fbb8d168f"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2005_jja_daily_fields.csv.gz",
+      "bytes": 2057560,
+      "sha256": "47893d9a371e21315e7caab9215dde300b445d084a1c7732a7e2959dba29758a"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2006_jja_daily_fields.csv.gz",
+      "bytes": 2056464,
+      "sha256": "d81c549343b5df1cff3b1fde7581880ff4e69cc8629987f1b69bd88492c865dc"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2007_jja_daily_fields.csv.gz",
+      "bytes": 2057450,
+      "sha256": "7bf56db9680d348ae0e0dfae2007be8448701337588477a2798ed92b1c71677c"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2008_jja_daily_fields.csv.gz",
+      "bytes": 2055936,
+      "sha256": "48c4833dbf5ff73af2e428bf69fca6c7fe1a3ad6d9c5a9a1f2178df1db9dbfc4"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2009_jja_daily_fields.csv.gz",
+      "bytes": 2060696,
+      "sha256": "77e6090cb77f1f05c38ba56161fdd3386cb9e3bdb4899fb2724a21e2bf303073"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2010_jja_daily_fields.csv.gz",
+      "bytes": 2058181,
+      "sha256": "6a917d68ace2ccd9b075dff79c2ec16e777b4f2be31e81479f74f8dc2a30b439"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2011_jja_daily_fields.csv.gz",
+      "bytes": 2058032,
+      "sha256": "ade9dcf93cee7fb51247b355e43b43b3bc4511b3c60d46631f8e68e1b41dfe2c"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2012_jja_daily_fields.csv.gz",
+      "bytes": 2057687,
+      "sha256": "1cd9c90e3e0b4415c7d5bf77cbef1ddfcd5d54729698ada351aa3d14dc3011e4"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2013_jja_daily_fields.csv.gz",
+      "bytes": 2056042,
+      "sha256": "212de80303a646205183fc323548e7ea3d3510f3b88b87f881c17e52d7ce669d"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2014_jja_daily_fields.csv.gz",
+      "bytes": 2059647,
+      "sha256": "fc669a8a27d02d5ba2b18d3ec84a125d302233800b6ba2cbd13e7a96fc931766"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2015_jja_daily_fields.csv.gz",
+      "bytes": 2057988,
+      "sha256": "7c4dbfa782f3954a2f70bff1193b6fadb9d5069ed0a2032fd668f64c9f663dfa"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2016_jja_daily_fields.csv.gz",
+      "bytes": 2058008,
+      "sha256": "ed2d16b56e46e17e08903c2c296b79ed178cb6e5f0442d56d51f6433331813c4"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2017_jja_daily_fields.csv.gz",
+      "bytes": 2058259,
+      "sha256": "b01b2ce45ce4045e83445fc24fb52716d7b8ea6c590dc1a9093827c4ad3bf6d4"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2018_jja_daily_fields.csv.gz",
+      "bytes": 2053979,
+      "sha256": "fd3d8a1ad8770c0953a2dfa267a68affdb717274699ee31707344aaa47c7867e"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2019_jja_daily_fields.csv.gz",
+      "bytes": 2059418,
+      "sha256": "5a07cfa33544f8385faf14983d81a6a8bbc989f1950cd049a04b1cd57af88524"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2020_jja_daily_fields.csv.gz",
+      "bytes": 2053690,
+      "sha256": "e6dcb4d012d5e4b6526b039623efc5d8a678387d70e2b7e6a254f266d7e3e6fa"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2021_jja_daily_fields.csv.gz",
+      "bytes": 2056262,
+      "sha256": "f904fabc220872b6382a02fcfc01d56a9f9054e777ec174ac153e17b485eba93"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2022_jja_daily_fields.csv.gz",
+      "bytes": 2056194,
+      "sha256": "dcb14c92d4a68badcbae64843d8863a766bab6522aba49b6f86bdece984f85c0"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2023_jja_daily_fields.csv.gz",
+      "bytes": 2059333,
+      "sha256": "c21098b86b2bf55f429db4214cf5920af6d5fddf8a64fe43fc8b9b8728e74003"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2024_jja_daily_fields.csv.gz",
+      "bytes": 2056623,
+      "sha256": "ae7baa6e2cb620da0cc43e772b108f057f7391f6385e39000ef53066781500ee"
+    },
+    {
+      "path": "data/era5_confirmatory/daily_fields/era5_land_2025_jja_daily_fields.csv.gz",
+      "bytes": 2055125,
+      "sha256": "a56a804bbd1f389150f9103dfe2d9b7fc448bc15ea9de92a5276778ec289c294"
+    }
+  ],
+  "output_files": [
+    {
+      "path": "output_extension_methods/extension_continuous_month_slopes.csv",
+      "bytes": 33667,
+      "sha256": "cb500ff2b81fc2352a451a5db79d63f0cd488e1d45f0ec9ace516c9e0e925df9"
+    },
+    {
+      "path": "output_extension_methods/extension_continuous_year_scale_slopes.csv",
+      "bytes": 9535,
+      "sha256": "76e7fced8ca233feeb83140c3caeffa1cf73929651884d9bff30a05878065daa"
+    },
+    {
+      "path": "output_extension_methods/extension_continuous_scale_summary.csv",
+      "bytes": 615,
+      "sha256": "18d07ce9bf30dd10ed17c4f3fe553a19c6315eeecbb3203548a300971a806dfb"
+    },
+    {
+      "path": "output_extension_methods/extension_continuous_year_profile_slopes.csv",
+      "bytes": 960,
+      "sha256": "d6b21726dfcbf33e1409667f291c2d7188887db5d201ba723dcc8b95801cb797"
+    },
+    {
+      "path": "output_extension_methods/extension_continuous_profile_summary.csv",
+      "bytes": 157,
+      "sha256": "2afb52dbf6bc11924da522f923c5d429e676f6e36214a5d86c3a9ed7b67051f9"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_records.csv",
+      "bytes": 88221,
+      "sha256": "6429a827e48affb7ac96e58b31aeacf17188d7380d97f635f58b6fd22e696314"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_year_scale.csv",
+      "bytes": 19639,
+      "sha256": "3340778924eea9dedcafb5d4de48feb3a947ec787c01ab485cc4640189654291"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_scale_summary.csv",
+      "bytes": 1187,
+      "sha256": "5930a8689b1866e36185af335a923c3fa43ede8cfa11e7d4620834297034ff01"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_year_profile.csv",
+      "bytes": 2018,
+      "sha256": "87ac5b2874d16ec015c41889f27603612352b7faeac6b4aebd2666f669047160"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_profile_summary.csv",
+      "bytes": 264,
+      "sha256": "d023ffbe34e1ad1bba0dc08c690908b4569048a52e8c0300fa6a586d411976c1"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_coverage.csv",
+      "bytes": 288,
+      "sha256": "bfda1bf7d2eb120793b2093f6b8913325802de6e9a89be3cfd1fbde41a2a0003"
+    },
+    {
+      "path": "output_extension_methods/extension_continuous_intensity_table.tex",
+      "bytes": 511,
+      "sha256": "87dda468b7be6f8aa07084e80cba8bcace6dcb0f803af920fe297bfe94168659"
+    },
+    {
+      "path": "output_extension_methods/extension_calendar_matching_table.tex",
+      "bytes": 1088,
+      "sha256": "045486947e619e738e439a6171f277b01dab312b7c59b5266d1618b9bac90072"
+    }
+  ]
+}

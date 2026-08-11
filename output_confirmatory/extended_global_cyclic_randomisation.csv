@@ -1,0 +1,2 @@
+statistic,held_out_summers,month_year_records,bandwidths,observed,alternative,draws,seed,random_values_at_or_below_observed,p_value,minimum_attainable_p,monte_carlo_se,null_mean,null_sd,null_q001,null_q01,null_q05,null_q50
+five_scale_finite_record_mean,33,99,5,-0.07283448318140787,lower_tail,99999,20260809,0,1e-05,1e-05,9.999949999874999e-06,0.008241473152559048,0.01565062914575226,-0.03878842788470831,-0.027439541643210316,-0.017224624382855904,0.008139250264811954

@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-08-09T10:11:16.523767+00:00",
+  "analysis_role": "post-analysis geographic-topographic basis sensitivity",
+  "dataset": "reanalysis-era5-land",
+  "request": {
+    "variable": "geopotential",
+    "date": "2020-01-01 00:00",
+    "area": [
+      42,
+      105,
+      20,
+      125
+    ],
+    "data_format": "netcdf"
+  },
+  "raw_file": "data/era5_invariant/era5_land_geopotential_20200101.nc",
+  "raw_sha256": "2e98553c780b26c7ccd6b959513773ad6793e314e5a70626729d9cf14c4a5ffb",
+  "elevation_conversion": "geopotential / 9.80665 m s^-2",
+  "elevation_range_m": [
+    -0.8781517205656559,
+    1940.285125446331
+  ],
+  "protocol_sha256": "da36fc813ffac2dc5e6bab0b316888e598d1e3d02dc00ff70f25fccf77e94251",
+  "basis_spaces": [
+    "latitude",
+    "latitude_longitude",
+    "latitude_longitude_elevation"
+  ],
+  "maximum_day_identity_error": 8.881784197001252e-14,
+  "maximum_summary_identity_error": 2.7755575615628914e-16,
+  "maximum_primary_reproduction_error": 1.778467650925819e-11,
+  "outputs": [
+    {
+      "file": "data/era5_invariant/era5_land_121_site_elevation.csv",
+      "sha256": "e51c8583682a631856453506ff6b25763c5d6766e44015bb2dfd79f958a2b2fc"
+    },
+    {
+      "file": "output_elevation_basis/elevation_basis_record_components.csv",
+      "sha256": "9a6dbbdfdc341607cb685f5aee712c6bc245607bd8a331831ed443b2b4b9b5b1"
+    },
+    {
+      "file": "output_elevation_basis/elevation_basis_year_components.csv",
+      "sha256": "e10ef2aaa8e32d6b678fc7bd45556d4e24193d8ce31da1e694d84a555427bc64"
+    },
+    {
+      "file": "output_elevation_basis/elevation_basis_summary.csv",
+      "sha256": "54d57127c55f7f09d0d42fb41d15ae68ff90196ed6d1356ed875eff1bcad1d2b"
+    },
+    {
+      "file": "output_elevation_basis/elevation_basis_table.tex",
+      "sha256": "3a8f2881d25ffbfbf611c47474f796943eb6e7683a15905d92ea719b640d924a"
+    }
+  ]
+}

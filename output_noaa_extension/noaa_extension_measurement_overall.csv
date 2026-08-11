@@ -1,0 +1,2 @@
+matched_hours,stations,bias_c,mae_c,rmse_c,pooled_correlation,within_station_centered_correlation,equal_station_mean_correlation
+175172,28,-0.26255047703942763,0.9383194513938841,1.2702729446908845,0.9585313598698608,0.9159999325273008,0.8802135984944816

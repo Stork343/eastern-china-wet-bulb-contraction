@@ -1,0 +1,253 @@
+{
+  "script": "code/54_cross_record_dependence_stress.py",
+  "analysis_role": "targeted size stress test; not an extension of the product-invariance proposition",
+  "seed": 20260812,
+  "replications_per_lambda": 2000,
+  "product_shift_draws_per_replication": 999,
+  "nominal_alpha": 0.05,
+  "shared_loadings_lambda": [
+    0.0,
+    0.3,
+    0.6,
+    0.8
+  ],
+  "paired_base_fields_labels_and_offsets_across_lambda": true,
+  "site_count": 121,
+  "record_structure": {
+    "summers": 2,
+    "records_per_summer": 3,
+    "months": [
+      6,
+      7,
+      8,
+      6,
+      7,
+      8
+    ],
+    "record_lengths": [
+      30,
+      31,
+      31,
+      30,
+      31,
+      31
+    ]
+  },
+  "statistic": "equal-record, equal-five-bandwidth mean of record-specific high/middle graph-dispersion ratios minus one",
+  "test": {
+    "tail": "lower",
+    "p_value": "(1 + number shifted statistics <= observed)/(999 + 1)",
+    "product_action": "one independently sampled uniform cyclic offset per monthly record; each five-scale daily profile shifted intact"
+  },
+  "dgp": {
+    "field": "y_ymt = X_ymt*1 + z_ymt",
+    "anomaly": "z_ymt = lambda*U_y(t/n_m)*g + sqrt(1-lambda^2)*epsilon_ymt",
+    "shared_process": {
+      "definition": "three-harmonic isotropic Gaussian Fourier process on normalized circular phase; sine/cosine coefficients shared by the three records within each summer",
+      "harmonics": [
+        1,
+        2,
+        3
+      ],
+      "variance_weights": [
+        0.6060606060606061,
+        0.27272727272727276,
+        0.12121212121212123
+      ],
+      "pointwise_variance": 1.0
+    },
+    "spatial_pattern_g": "centred 0.8*x+y coordinate gradient, rescaled to spatial mean square one",
+    "month_specific_noise": {
+      "spatial_basis": "12 leading eigenmodes of the centred 0.95*exp(-d/450 km)+0.05*I covariance, rescaled to mean site variance one",
+      "temporal_filter_offsets": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "temporal_filter_weights": [
+        0.159111456835146,
+        0.397778642087865,
+        0.79555728417573,
+        0.397778642087865,
+        0.159111456835146
+      ],
+      "independence": "independent across month-year records"
+    },
+    "regional_mean_X": {
+      "temporal_filter_offsets": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "temporal_filter_weights": [
+        0.18405254345807756,
+        0.44172610429938614,
+        0.7362101738323102,
+        0.44172610429938614,
+        0.18405254345807756
+      ],
+      "independence": "separate SeedSequence child stream; independent of U and epsilon",
+      "labels": "within-record NumPy method='linear' quartiles, equivalent to Hyndman-Fan/R type 7; high >= q75, middle q25 <= X < q75"
+    }
+  },
+  "graphs": {
+    "h_factors": [
+      0.125,
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "bandwidths_km": [
+      125.79976503129976,
+      251.5995300625995,
+      503.199060125199,
+      1006.398120250398,
+      2012.796240500796
+    ],
+    "weights": "exp(-distance_km^2/(2*h^2)), diagonal zero",
+    "dispersion": "z' L_h z/(2*sum_{i<j} w_ij)"
+  },
+  "numerical_checks": {
+    "marginal_shared_process_one_step_rotation_max_abs_error": 1.9984014443252818e-15,
+    "marginal_error_by_record_length": {
+      "30": 1.9984014443252818e-15,
+      "31": 1.9984014443252818e-15
+    },
+    "unscaled_30_by_31_cross_covariance_relative_change_after_one_30_day_shift": 0.27504896748908636,
+    "unscaled_30_by_31_graph_dispersion_cross_covariance_relative_change_after_one_30_day_shift": 0.3623010263913585,
+    "joint_product_invariance_departure_by_lambda": {
+      "0.0": {
+        "shared_variance_fraction_spatial_average": 0.0,
+        "max_abs_cross_covariance_change_after_one_independent_shift": 0.0,
+        "frobenius_cross_covariance_change": 0.0
+      },
+      "0.3": {
+        "shared_variance_fraction_spatial_average": 0.09,
+        "max_abs_cross_covariance_change_after_one_independent_shift": 0.023243761141094648,
+        "frobenius_cross_covariance_change": 0.36061456145405973
+      },
+      "0.6": {
+        "shared_variance_fraction_spatial_average": 0.36,
+        "max_abs_cross_covariance_change_after_one_independent_shift": 0.09297504456437859,
+        "frobenius_cross_covariance_change": 1.442458245816239
+      },
+      "0.8": {
+        "shared_variance_fraction_spatial_average": 0.6400000000000001,
+        "max_abs_cross_covariance_change_after_one_independent_shift": 0.16528896811445087,
+        "frobenius_cross_covariance_change": 2.564370214784425
+      }
+    },
+    "laplacian_constant_annihilation_max_abs": 6.744604874597826e-14,
+    "gradient_spatial_mean": 1.3542885821047363e-15,
+    "gradient_spatial_mean_square": 1.0,
+    "noise_basis_spatial_mean_max_abs": 9.485066543026905e-17,
+    "noise_process_spatial_average_variance": 0.9999999999999999,
+    "type7_group_sizes_by_record_length": {
+      "30": [
+        [
+          8,
+          14
+        ]
+      ],
+      "31": [
+        [
+          8,
+          15
+        ]
+      ]
+    },
+    "spawned_rng_states": {
+      "field_entropy": 20260812,
+      "field_spawn_key": [
+        0
+      ],
+      "label_entropy": 20260812,
+      "label_spawn_key": [
+        1
+      ],
+      "shift_entropy": 20260812,
+      "shift_spawn_key": [
+        2
+      ]
+    }
+  },
+  "summary": [
+    {
+      "shared_loading_lambda": 0.0,
+      "shared_variance_fraction_spatial_average": 0.0,
+      "replications": 2000,
+      "product_shifts_per_replication": 999,
+      "nominal_alpha": 0.05,
+      "rejections": 103,
+      "empirical_rejection_rate": 0.0515,
+      "monte_carlo_se": 0.004942051699446294,
+      "mean_p_value": 0.5017845,
+      "mean_observed_statistic": 0.01937441906493161,
+      "same_summer_july_august_daily_profile_correlation": 0.002892536428736821
+    },
+    {
+      "shared_loading_lambda": 0.3,
+      "shared_variance_fraction_spatial_average": 0.09,
+      "replications": 2000,
+      "product_shifts_per_replication": 999,
+      "nominal_alpha": 0.05,
+      "rejections": 102,
+      "empirical_rejection_rate": 0.051,
+      "monte_carlo_se": 0.004919298730510275,
+      "mean_p_value": 0.5021075,
+      "mean_observed_statistic": 0.019906094241561655,
+      "same_summer_july_august_daily_profile_correlation": 0.030227338038090284
+    },
+    {
+      "shared_loading_lambda": 0.6,
+      "shared_variance_fraction_spatial_average": 0.36,
+      "replications": 2000,
+      "product_shifts_per_replication": 999,
+      "nominal_alpha": 0.05,
+      "rejections": 99,
+      "empirical_rejection_rate": 0.0495,
+      "monte_carlo_se": 0.004850244839180801,
+      "mean_p_value": 0.5049185000000002,
+      "mean_observed_statistic": 0.025507537552407686,
+      "same_summer_july_august_daily_profile_correlation": 0.3887741908414313
+    },
+    {
+      "shared_loading_lambda": 0.8,
+      "shared_variance_fraction_spatial_average": 0.6400000000000001,
+      "replications": 2000,
+      "product_shifts_per_replication": 999,
+      "nominal_alpha": 0.05,
+      "rejections": 98,
+      "empirical_rejection_rate": 0.049,
+      "monte_carlo_se": 0.0048269555622566076,
+      "mean_p_value": 0.5035345,
+      "mean_observed_statistic": 0.04105989822869917,
+      "same_summer_july_august_daily_profile_correlation": 0.7686676819630025
+    }
+  ],
+  "software": {
+    "python": "3.12.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "platform": "macOS-15.4.1-arm64-arm-64bit"
+  },
+  "inputs": [
+    {
+      "path": "data/era5_consistent/era5_201506_consistent.csv",
+      "bytes": 15858542,
+      "sha256": "01ad2f96f2921073bbec490d4c787d44bec10203ac6b3462ccc7575d95b6d556"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "output_extension_methods/extension_cross_record_stress_summary.csv",
+      "bytes": 705,
+      "sha256": "7688f4b027ece235d5ca9fec990ce62a7c47e768083107c01983d36f39287f8b"
+    }
+  ]
+}

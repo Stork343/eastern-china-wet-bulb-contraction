@@ -1,0 +1,51 @@
+{
+  "protocol": "EXTENSION_ANALYSIS_PROTOCOL.md",
+  "script": "code/45_ratio_stress_test.R",
+  "analysis_role": "post-analysis ratio stress test",
+  "seed": 20260811,
+  "replications_per_cell": 2000,
+  "product_shift_draws": 999,
+  "scenarios": ["null", "alternative_minus_7pct"],
+  "effect_measures": ["raw_ratio", "log_ratio", "bounded_symmetric"],
+  "paired_scenarios": true,
+  "shared_product_shifts_across_scenarios_scales_measures": true,
+  "site_count": 121,
+  "record_lengths": [30, 31, 30, 30, 31, 30],
+  "fixed_bandwidths_km": [125.7997650313, 251.5995300626, 503.199060125199, 1006.3981202504, 2012.7962405008],
+  "dgp": {
+    "spatial_covariance": "0.95*exp(-distance_km/450)+0.05*I",
+    "circular_temporal_correlation": 0.45,
+    "regional_mean_ar1": 0.65,
+    "common_day_scale": "sqrt(3/chi_square_3)",
+    "alternative_high_day_graph_energy_multiplier": 0.93
+  },
+  "inputs": [
+    {
+      "path": "data/era5_consistent/era5_201506_consistent.csv",
+      "bytes": 15858542,
+      "sha256": "01ad2f96f2921073bbec490d4c787d44bec10203ac6b3462ccc7575d95b6d556"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "output_extension_methods/extension_ratio_stress_results.csv.gz",
+      "bytes": 187192,
+      "sha256": "1e1641bd3fc301106784255d6bc8510cde5278b79759fd004940d012dcd5b1d9"
+    },
+    {
+      "path": "output_extension_methods/extension_ratio_stress_summary.csv",
+      "bytes": 892,
+      "sha256": "0695cb02715669cccecff2b858d5ff3b5cc1b3ee9d740aec2413d5597b2a2982"
+    },
+    {
+      "path": "output_extension_methods/extension_ratio_stress_comparison.csv",
+      "bytes": 908,
+      "sha256": "51e2191d1b8f7dbb86facf96d340c5d1724578005b0102e6c52ea2a2751c6ea0"
+    },
+    {
+      "path": "output_extension_methods/extension_ratio_stress_table.tex",
+      "bytes": 510,
+      "sha256": "df8bd70c5ddc16940b90780b7d19079e48b3870401d1d0474dfcadcec5edf2b0"
+    }
+  ]
+}

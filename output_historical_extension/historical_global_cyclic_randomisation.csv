@@ -1,0 +1,2 @@
+analysis_role,statistic,summers,month_year_records,bandwidths,observed,alternative,draws,seed,random_values_at_or_below_observed,p_value,minimum_attainable_p,monte_carlo_se,null_mean,null_sd,null_q001,null_q01,null_q05,null_q50
+post-analysis historical extension,equal-record_equal-bandwidth_mean_relative_effect,41,123,5,-0.11043057985719902,lower_tail,99999,20260810,0,1e-05,1e-05,9.999949999874999e-06,0.008533984216749467,0.01435980885809214,-0.034520801105281294,-0.024400668786357143,-0.014908800404505068,0.008386793165738317

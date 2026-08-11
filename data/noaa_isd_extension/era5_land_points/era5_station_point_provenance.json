@@ -1,0 +1,299 @@
+{
+  "created_utc": "2026-08-09T10:36:04.403241+00:00",
+  "analysis_role": "non-development station measurement extension",
+  "dataset": "reanalysis-era5-land-timeseries",
+  "date_range_requested": "1992-05-31/2025-09-01",
+  "years_retained": [
+    1992,
+    1996,
+    2000,
+    2004,
+    2008,
+    2012,
+    2016,
+    2020,
+    2023,
+    2025
+  ],
+  "variables": [
+    "2m_dewpoint_temperature",
+    "2m_temperature",
+    "surface_pressure"
+  ],
+  "protocol_sha256": "da36fc813ffac2dc5e6bab0b316888e598d1e3d02dc00ff70f25fccf77e94251",
+  "station_manifest_sha256": "550040761363ee46a4b2d9bc6bb00c263a0d0f0c876a8de25dcdda1a3bcf1fab",
+  "selected_stations": 30,
+  "available_station_series": 28,
+  "stations": [
+    {
+      "station": "48823099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_48823099999.zip",
+      "archive_sha256": "7daa733e756d5469d360a3baf0ef31055faf3ef672f2842875f3df0408cdd040",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_48823099999_evaluation_jja.nc",
+      "trimmed_sha256": "a4abfdeefcbb4a534acffa7fe02527dbd52d0fa6047e52bb07519ec18efdb824",
+      "reason": null
+    },
+    {
+      "station": "53231099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_53231099999.zip",
+      "archive_sha256": "0702ddec1c6ab78fb3b773968223c9624b46a15b2fd75b0315dbbf0302b142a5",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_53231099999_evaluation_jja.nc",
+      "trimmed_sha256": "0d07fdda1558afd176d50450a793c34c92cd24f4af0c34ad0cc58fa2df4f7433",
+      "reason": null
+    },
+    {
+      "station": "53463099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_53463099999.zip",
+      "archive_sha256": "a7041b7e3acd027a426e70f490297905b6d65dc072e0980ae23612f2c30267e3",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_53463099999_evaluation_jja.nc",
+      "trimmed_sha256": "84c39186001ce6901165e52e21a86f40434130f10694f7147f61bd69691dd036",
+      "reason": null
+    },
+    {
+      "station": "53646099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_53646099999.zip",
+      "archive_sha256": "79f69252dc17278d5070789466c61e402c2177e7b9c0474cfa3208e4ae51acfe",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_53646099999_evaluation_jja.nc",
+      "trimmed_sha256": "c16a96b6136bff3f2f9df3bef0d3be87a7edafe17891baebc6028d9583fe38da",
+      "reason": null
+    },
+    {
+      "station": "53698099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_53698099999.zip",
+      "archive_sha256": "a7b8512ca2ac8c5d506251094b85a0bb5608a94ee80bbc9464d5e9c543cef9bd",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_53698099999_evaluation_jja.nc",
+      "trimmed_sha256": "6fc657bd9e0fb9e09c032797837ca464782ba0f3fb09789316c16cc51504b1ca",
+      "reason": null
+    },
+    {
+      "station": "53705099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_53705099999.zip",
+      "archive_sha256": "922ef269bd5d390dac22bef6186e55bff1a7bfd0b5932ca55dba7728833dc771",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_53705099999_evaluation_jja.nc",
+      "trimmed_sha256": "43ce036c7a28caa888bf1319a0d6e254b58fa2bbcaf2d7c6a56e39cfb283a895",
+      "reason": null
+    },
+    {
+      "station": "54311099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_54311099999.zip",
+      "archive_sha256": "0d419485564e0ec3789fd3da34447cb4b45b2db6f88bdcfa2c47cbaef96099a0",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_54311099999_evaluation_jja.nc",
+      "trimmed_sha256": "7558073ed5441701b44509d177181af155f2f51674f00685b4d8d1855dd1d899",
+      "reason": null
+    },
+    {
+      "station": "54342099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_54342099999.zip",
+      "archive_sha256": "fc457b724798ec3e9f0f0c61eb4bd1bd81b78523e95c969876546f0245c45d52",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_54342099999_evaluation_jja.nc",
+      "trimmed_sha256": "dda45e0b3f153b0e14a28cf9f52dc03242adf90d885b1c4a20ef5e180c677385",
+      "reason": null
+    },
+    {
+      "station": "54539099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_54539099999.zip",
+      "archive_sha256": "f38d5c7f17a8381319a0fecad1834e5dc3cf04a2b779f8e26fad10e84d900ab1",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_54539099999_evaluation_jja.nc",
+      "trimmed_sha256": "d9666345ba9edd089ce3fcd98b49dce22846a36da3b2c4d6122ff56ab99e8389",
+      "reason": null
+    },
+    {
+      "station": "54857099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_54857099999.zip",
+      "archive_sha256": "e455245eaec7b656d753a056d5e3961fe48637fc8525edeba6e5df60c9b200ae",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_54857099999_evaluation_jja.nc",
+      "trimmed_sha256": "7efea14eccd759e6a9d163b060b14b77cf5d942e5eb1c7a0ec9db00c50ac9f8a",
+      "reason": null
+    },
+    {
+      "station": "57046099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57046099999.zip",
+      "archive_sha256": "450f04b25e082ac9a762aa807e3354b89a70d598d9c5036f72fe93b50826a0b4",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57046099999_evaluation_jja.nc",
+      "trimmed_sha256": "9f9e8800974c74a184b77748ee0de81968e6350135dd368807f221760a96d961",
+      "reason": null
+    },
+    {
+      "station": "57083099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57083099999.zip",
+      "archive_sha256": "23223bbdd13a17ba53dce8c2f564429e0234b4580759e28c215021cb5d2de3f6",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57083099999_evaluation_jja.nc",
+      "trimmed_sha256": "0df731af8e2fdc83f429326d2d36108127ce5f1d9369d6bfce0a8bef5471cb78",
+      "reason": null
+    },
+    {
+      "station": "57259099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57259099999.zip",
+      "archive_sha256": "952eb924996e527668b4830a06c4e90f1b926d3341aafa7b3a203c288f7b0976",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57259099999_evaluation_jja.nc",
+      "trimmed_sha256": "0020e72ec67fce0b5bf9c11d531fdf2d2b7a1417616db3267665fa6651d47189",
+      "reason": null
+    },
+    {
+      "station": "57306099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57306099999.zip",
+      "archive_sha256": "d0634c86bd6a96fe18a8e3e796ac76aeb5d4fd807e115057e36ee31364d459d8",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57306099999_evaluation_jja.nc",
+      "trimmed_sha256": "81a0ccdec42c1aa427b45f1cc776c596478d7c1688d439fa6fe19504d1599d66",
+      "reason": null
+    },
+    {
+      "station": "57399099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57399099999.zip",
+      "archive_sha256": "c6be58d127fe010365955e2afbc304254bb2ae4a06647c3264dba2baa1364648",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57399099999_evaluation_jja.nc",
+      "trimmed_sha256": "8f4c07e585eaf518525068358f1635eff1565e5e9ed4f400289abef73891de1e",
+      "reason": null
+    },
+    {
+      "station": "57554099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57554099999.zip",
+      "archive_sha256": "77f87b20fd808ded6ff8bbbccb603f089cbd5c7582fe4cc2f0ae22990a245deb",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57554099999_evaluation_jja.nc",
+      "trimmed_sha256": "21c4cc4fccd54f1b084580228c5fd0e7ebbfb8e6a2fb5b14ad56e0b4c3962126",
+      "reason": null
+    },
+    {
+      "station": "57707099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57707099999.zip",
+      "archive_sha256": "b8122aa4b49ead05aa43c6a9925ea97d3c5eb693305be140aa17e0bd0a5d3384",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57707099999_evaluation_jja.nc",
+      "trimmed_sha256": "81cb4680ee8a51fc242a2d9757b509305bd6a5fb976bbefaa9c2aa394e52a7f9",
+      "reason": null
+    },
+    {
+      "station": "57793099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57793099999.zip",
+      "archive_sha256": "77920d40958b4da3eb7c0d96e4af90a96b9a55db710776ba948815ce238bc847",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57793099999_evaluation_jja.nc",
+      "trimmed_sha256": "9abda52af85751ea96d3a7836db29f23130262a5a3b3a5303782b628369c5cc2",
+      "reason": null
+    },
+    {
+      "station": "57866099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57866099999.zip",
+      "archive_sha256": "59b410251fa8ddeff52603c0182105e523016d186a18b99e51db2a8418cdacb9",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57866099999_evaluation_jja.nc",
+      "trimmed_sha256": "a105f7127283d816602c9e163d784eeb076d6d3b6fc19ec7b2de9da6bf96ca3f",
+      "reason": null
+    },
+    {
+      "station": "57922099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_57922099999.zip",
+      "archive_sha256": "66390a0691a831a85b5d1096ec018356329fc39eabddd3b7ccce4bbd1fd79e97",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_57922099999_evaluation_jja.nc",
+      "trimmed_sha256": "e1a4bfd47245eec7e00b30f8067ebaaed1892c4700b6289020253d2e0e49a4e9",
+      "reason": null
+    },
+    {
+      "station": "58027099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_58027099999.zip",
+      "archive_sha256": "6b88650ccf31cac79252b72405c71ebb3280c02884f5cbe0f196b87d6ac39ae6",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_58027099999_evaluation_jja.nc",
+      "trimmed_sha256": "7cce1de732169cf35c3e8fd3db795d8c7b8abb9fdb738dff9eaa85cc8074a268",
+      "reason": null
+    },
+    {
+      "station": "58150099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_58150099999.zip",
+      "archive_sha256": "f4ad4bfaf312725f263e75fe0d447a56e18fbecfa75e9294df9058e883e5ce99",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_58150099999_evaluation_jja.nc",
+      "trimmed_sha256": "5e074e27c87ab583d3f2140cea5c6aea9152a740dca9fcc22ea65e3ec5c5c029",
+      "reason": null
+    },
+    {
+      "station": "58338099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_58338099999.zip",
+      "archive_sha256": "c93f4b789f46928d0ce3f8c2e6488a1db73ff9209999595acbcaed226d87a473",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_58338099999_evaluation_jja.nc",
+      "trimmed_sha256": "077f84cd30d5f3eab55126e7b47f9b5f80c87909593302783c0b28f2b1d3b277",
+      "reason": null
+    },
+    {
+      "station": "58472099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_58472099999.zip",
+      "archive_sha256": "d3ca7447b7bee42bdb9ee57082f37d3744a99e39dac5c8fd086285b20f6570de",
+      "status": "unavailable_nearest_land_mask_cell",
+      "trimmed": null,
+      "trimmed_sha256": null,
+      "reason": "nearest grid cell (30.7, 122.5) has no finite ERA5-Land values"
+    },
+    {
+      "station": "58834099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_58834099999.zip",
+      "archive_sha256": "feae4075271576a32b8441cc3cc03dd2fba233c27aefa13cb397731663fa3834",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_58834099999_evaluation_jja.nc",
+      "trimmed_sha256": "7d9b70a97cb028c4b5473a84e3af5432c41830e52c050d14b9269748b0303b3d",
+      "reason": null
+    },
+    {
+      "station": "59007099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_59007099999.zip",
+      "archive_sha256": "3875975eb3bc9f093a7851594ab5dd2b4e11f243b10131b5318a590f576096fa",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_59007099999_evaluation_jja.nc",
+      "trimmed_sha256": "a5a78ea0b3ece617fa1ce26499d69f7cfabd52a566d67b75f4c37345c548334d",
+      "reason": null
+    },
+    {
+      "station": "59287099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_59287099999.zip",
+      "archive_sha256": "65900f40d051badccc9d27d0dc48868c380b836fe60d2c367e39a18904faf536",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_59287099999_evaluation_jja.nc",
+      "trimmed_sha256": "da178e3be5b086560ae18e66603529d75d9237ebe4a8285521da38cda182acc8",
+      "reason": null
+    },
+    {
+      "station": "59316099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_59316099999.zip",
+      "archive_sha256": "b750cbb55e9588d30bf4181414ac85445408b5a5d28c0a697ccc66b5f1d8c855",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_59316099999_evaluation_jja.nc",
+      "trimmed_sha256": "b57796590dd27e8566a69e07aea399f89ff07f30592e49898f44781ba5993f34",
+      "reason": null
+    },
+    {
+      "station": "59562099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_59562099999.zip",
+      "archive_sha256": "7706a0be2a15d7690054d1d96f366801e2660a921745e83ece7e061e904302df",
+      "status": "unavailable_nearest_land_mask_cell",
+      "trimmed": null,
+      "trimmed_sha256": null,
+      "reason": "nearest grid cell (22.7, 121.2) has no finite ERA5-Land values"
+    },
+    {
+      "station": "59658099999",
+      "archive": "data/noaa_isd_extension/era5_land_points/raw_archives/station_59658099999.zip",
+      "archive_sha256": "f051d24a137feea7ec578d53b55b6976593869bb6eb38e438f67fd00aa2c0c89",
+      "status": "available",
+      "trimmed": "data/noaa_isd_extension/era5_land_points/trimmed_points/station_59658099999_evaluation_jja.nc",
+      "trimmed_sha256": "35be574a07ac695bee0243f8d34f4292b12260716f7ad269b264b5f2e66fff1e",
+      "reason": null
+    }
+  ]
+}

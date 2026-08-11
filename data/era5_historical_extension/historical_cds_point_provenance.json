@@ -1,0 +1,1072 @@
+{
+  "created_utc": "2026-08-09T06:19:57.080017+00:00",
+  "analysis_role": "post-analysis historical extension",
+  "dataset": "reanalysis-era5-land-timeseries",
+  "date_range_requested": "1950-05-31/1990-09-01",
+  "years_retained": [
+    1950,
+    1951,
+    1952,
+    1953,
+    1954,
+    1955,
+    1956,
+    1957,
+    1958,
+    1959,
+    1960,
+    1961,
+    1962,
+    1963,
+    1964,
+    1965,
+    1966,
+    1967,
+    1968,
+    1969,
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
+    1975,
+    1976,
+    1977,
+    1978,
+    1979,
+    1980,
+    1981,
+    1982,
+    1983,
+    1984,
+    1985,
+    1986,
+    1987,
+    1988,
+    1989,
+    1990
+  ],
+  "variables": [
+    "2m_dewpoint_temperature",
+    "2m_temperature",
+    "surface_pressure"
+  ],
+  "protocol_file": "EXTENSION_ANALYSIS_PROTOCOL.md",
+  "protocol_sha256": "da36fc813ffac2dc5e6bab0b316888e598d1e3d02dc00ff70f25fccf77e94251",
+  "site_manifest": "data/grid/eastern_china_121_sites.csv",
+  "site_manifest_sha256": "273d0175cc05fc8f284b4fc80c97a9aa92440e4a5145d2589d7c5407df6dae97",
+  "raw_archives_retained": true,
+  "archives": [
+    {
+      "site_id": 1,
+      "requested_lon": 105.0,
+      "requested_lat": 20.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_001.zip",
+      "bytes": 9918593,
+      "sha256": "83ed06044516d77bbb1496730f972e36a938ab4a8c928cd07bded04c0edc5d25"
+    },
+    {
+      "site_id": 2,
+      "requested_lon": 105.0,
+      "requested_lat": 22.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_002.zip",
+      "bytes": 9918593,
+      "sha256": "c48ca99b5efe9c191d08074b71579b2d2ef70f00b5c718dc05ad687da0c392ff"
+    },
+    {
+      "site_id": 3,
+      "requested_lon": 105.0,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_003.zip",
+      "bytes": 9918593,
+      "sha256": "cd45870e8c9bed85c0ce07d32de0d0d18af7d333496f50b4e3f8f6e72631f529"
+    },
+    {
+      "site_id": 4,
+      "requested_lon": 105.0,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_004.zip",
+      "bytes": 9918593,
+      "sha256": "f5db39c1a75efc8a5cc9e5bcaa2a3a6c77da76549cb2e450168c1d27a1a35009"
+    },
+    {
+      "site_id": 5,
+      "requested_lon": 105.0,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_005.zip",
+      "bytes": 9918593,
+      "sha256": "304853132465e53c6887999ead501ad4dc80f685538231ab2e1c253873218525"
+    },
+    {
+      "site_id": 6,
+      "requested_lon": 105.0,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_006.zip",
+      "bytes": 9918593,
+      "sha256": "93e8efec7416702e3201c908895f09e497f8170b84de6252c0a4d84cb3a48605"
+    },
+    {
+      "site_id": 7,
+      "requested_lon": 105.0,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_007.zip",
+      "bytes": 9918593,
+      "sha256": "043cfcd7c5028bb67828bb0a0adb01c8d1c75f8bee2beaf0c4dfb89f94af5b3b"
+    },
+    {
+      "site_id": 8,
+      "requested_lon": 105.0,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_008.zip",
+      "bytes": 9918593,
+      "sha256": "f632316a531533c200bc950827416e22880fbecd253723b7184a4181bcdbd1d3"
+    },
+    {
+      "site_id": 9,
+      "requested_lon": 105.0,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_009.zip",
+      "bytes": 9918593,
+      "sha256": "b9c4d875400b3ffc19da417401c607664a30ab192d82374f0579d1e47d996ed7"
+    },
+    {
+      "site_id": 10,
+      "requested_lon": 105.0,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_010.zip",
+      "bytes": 9918593,
+      "sha256": "2a71c5d87f562d62c95bfcbfe7cbde41a26eb4b0869caa0ddcaa356147a19c1f"
+    },
+    {
+      "site_id": 11,
+      "requested_lon": 105.0,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_011.zip",
+      "bytes": 9918593,
+      "sha256": "5971298406180302f0c75d9f45d0927e6b654f892e2f28a5278902cc2ea6e38a"
+    },
+    {
+      "site_id": 12,
+      "requested_lon": 105.0,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_012.zip",
+      "bytes": 9918593,
+      "sha256": "b3171f549663b06e53ad95a608512c2358c1b74ee8a3afda8e6fc8c7651878d9"
+    },
+    {
+      "site_id": 13,
+      "requested_lon": 105.0,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_013.zip",
+      "bytes": 9918593,
+      "sha256": "553ff91bc1d34baecb4db5f357df73dbc6fcbf538b172bbd818875a3e71d3127"
+    },
+    {
+      "site_id": 14,
+      "requested_lon": 106.6,
+      "requested_lat": 20.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_014.zip",
+      "bytes": 9918593,
+      "sha256": "3c9373b143b8d328d7b4bc702a7cb190a9c58e4b04de301ee8632a97feadadef"
+    },
+    {
+      "site_id": 15,
+      "requested_lon": 106.6,
+      "requested_lat": 22.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_015.zip",
+      "bytes": 9918593,
+      "sha256": "c02de35963c12db77bfa9f77496bc14c6e969574606d9581c42ccaa2b81d7d76"
+    },
+    {
+      "site_id": 16,
+      "requested_lon": 106.6,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_016.zip",
+      "bytes": 9918593,
+      "sha256": "2351051ae4db7d2295f1001a0cf152e84b8661998c4a91c575f682504546d9a5"
+    },
+    {
+      "site_id": 17,
+      "requested_lon": 106.6,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_017.zip",
+      "bytes": 9918593,
+      "sha256": "ab9767388df722e381a9760406b6e5774528ae89c8c29be51f5e9cc16869d21c"
+    },
+    {
+      "site_id": 18,
+      "requested_lon": 106.6,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_018.zip",
+      "bytes": 9918593,
+      "sha256": "6916afebece506cd7e8cc4e7ad4ab38127ddd23358e24eb197408a5ed1a30508"
+    },
+    {
+      "site_id": 19,
+      "requested_lon": 106.6,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_019.zip",
+      "bytes": 9918593,
+      "sha256": "85a78b4548ce2e54a3e7674ee82c394f5c16e0da511a821270d92e6a82f7bce8"
+    },
+    {
+      "site_id": 20,
+      "requested_lon": 106.6,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_020.zip",
+      "bytes": 9918593,
+      "sha256": "7fbb52087b7af65c4f99dd10cc28c614487a54076fe990884bf2753f4879cb68"
+    },
+    {
+      "site_id": 21,
+      "requested_lon": 106.6,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_021.zip",
+      "bytes": 9918593,
+      "sha256": "aeadad43eeece68ae2370cba98e3afe7332992e7d01553615e977458e84b1656"
+    },
+    {
+      "site_id": 22,
+      "requested_lon": 106.6,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_022.zip",
+      "bytes": 9918593,
+      "sha256": "fb9a3e49bc8167fc2d06ad50483e68e89024588f88268d521fecf1b8368b1973"
+    },
+    {
+      "site_id": 23,
+      "requested_lon": 106.6,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_023.zip",
+      "bytes": 9918593,
+      "sha256": "e37dff4524ac9f4ea33d6e5aed4b035a2da6544efc172e68c97b494bc48e7796"
+    },
+    {
+      "site_id": 24,
+      "requested_lon": 106.6,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_024.zip",
+      "bytes": 9918593,
+      "sha256": "6212310362285a4e3d8c8bcc34c15623a64e462d392014684099270029ee6da6"
+    },
+    {
+      "site_id": 25,
+      "requested_lon": 106.6,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_025.zip",
+      "bytes": 9918593,
+      "sha256": "a8dafd8f1dcf5514e84c72aaec3aecaea2f84a30ea0551312e682370b0cd8bc4"
+    },
+    {
+      "site_id": 26,
+      "requested_lon": 106.6,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_026.zip",
+      "bytes": 9918593,
+      "sha256": "97471143f97e42672887d1c235df366fab20231e857a33053c4ce0de7182eaea"
+    },
+    {
+      "site_id": 27,
+      "requested_lon": 108.2,
+      "requested_lat": 22.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_027.zip",
+      "bytes": 9918593,
+      "sha256": "bedb9618788c5e268f9ac5401eed4865a6f823eddb52931c29ec3e22d5946902"
+    },
+    {
+      "site_id": 28,
+      "requested_lon": 108.2,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_028.zip",
+      "bytes": 9918593,
+      "sha256": "254282edda2fc9cd14e7a44a159c89c9abf87bb4d9bae25de207fcce6e9892fd"
+    },
+    {
+      "site_id": 29,
+      "requested_lon": 108.2,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_029.zip",
+      "bytes": 9918593,
+      "sha256": "255038031843173f5bd862c32a513ff2ea3e90423fab6dfd79958f452731c800"
+    },
+    {
+      "site_id": 30,
+      "requested_lon": 108.2,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_030.zip",
+      "bytes": 9918593,
+      "sha256": "cf5ee264b839ac2ff67f95094ddddcfd0f3af13c827e54438702af996df40f4b"
+    },
+    {
+      "site_id": 31,
+      "requested_lon": 108.2,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_031.zip",
+      "bytes": 9918593,
+      "sha256": "1021718f1d589ce2c1d4170ff21ace983ec0187d025fa1e34a32025bee6fa3ac"
+    },
+    {
+      "site_id": 32,
+      "requested_lon": 108.2,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_032.zip",
+      "bytes": 9918593,
+      "sha256": "5d1952be3f8d0d5e219dbe6b53b77a9a6a7469277ab1477e8a9302f89a8bdd6e"
+    },
+    {
+      "site_id": 33,
+      "requested_lon": 108.2,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_033.zip",
+      "bytes": 9918593,
+      "sha256": "2618d92537d36850523ef91973b7bf0ab0a234c16a3454ee2e9391af9e758732"
+    },
+    {
+      "site_id": 34,
+      "requested_lon": 108.2,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_034.zip",
+      "bytes": 9918593,
+      "sha256": "95a9c78767c827d12d197faf26cf943530070a2f471ea1ff1d480b49d39488dc"
+    },
+    {
+      "site_id": 35,
+      "requested_lon": 108.2,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_035.zip",
+      "bytes": 9918593,
+      "sha256": "e5306e9e09a05a29fab2bfaee664893a323cb79262ebc35dee0c1fec23e30cdb"
+    },
+    {
+      "site_id": 36,
+      "requested_lon": 108.2,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_036.zip",
+      "bytes": 9918593,
+      "sha256": "17fc33e3c79f7c90de34598dbc3d94b4a88b3cf31e01ce22edc4cf4504da443f"
+    },
+    {
+      "site_id": 37,
+      "requested_lon": 108.2,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_037.zip",
+      "bytes": 9918593,
+      "sha256": "9a29544310c6772eaee2ecc8ec0d0b4fc1e670fdabf810be3ba004e51e5e6eb9"
+    },
+    {
+      "site_id": 38,
+      "requested_lon": 108.2,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_038.zip",
+      "bytes": 9918593,
+      "sha256": "98e8de5068b347887feedbeef6ae0500627cb64c7c262544dda4a569b3c983f5"
+    },
+    {
+      "site_id": 39,
+      "requested_lon": 109.8,
+      "requested_lat": 22.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_039.zip",
+      "bytes": 9918593,
+      "sha256": "9e2d683e6e6f458b722069630f5519126df253c0733c2363c142f4b5f77a3c87"
+    },
+    {
+      "site_id": 40,
+      "requested_lon": 109.8,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_040.zip",
+      "bytes": 9918593,
+      "sha256": "6cd54287b2ec7ddbee0d44b7c544e089ef7f45dbae8a37c32fe39f5e1b83f365"
+    },
+    {
+      "site_id": 41,
+      "requested_lon": 109.8,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_041.zip",
+      "bytes": 9918593,
+      "sha256": "0cf49333b70669760e326fc11151220af805bb89f6c14d06e0d834b102868812"
+    },
+    {
+      "site_id": 42,
+      "requested_lon": 109.8,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_042.zip",
+      "bytes": 9918593,
+      "sha256": "13a6025c9761c24a5d21a42489b0928fb9d7cd7a91845e88b539f55ae46b012a"
+    },
+    {
+      "site_id": 43,
+      "requested_lon": 109.8,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_043.zip",
+      "bytes": 9918593,
+      "sha256": "aeb3dc8632135a7250f028a2fbac9ebdea1c8b072cde80377c534d94c693148a"
+    },
+    {
+      "site_id": 44,
+      "requested_lon": 109.8,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_044.zip",
+      "bytes": 9918593,
+      "sha256": "2cf3b964cf678d376722460a1559bc6b4513e1ae6769f19d1852090fcdf10978"
+    },
+    {
+      "site_id": 45,
+      "requested_lon": 109.8,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_045.zip",
+      "bytes": 9918593,
+      "sha256": "cd050317cae1151b384793647b841d6a6d9ae3ba3b1d35290a7c1a4c9cda53a2"
+    },
+    {
+      "site_id": 46,
+      "requested_lon": 109.8,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_046.zip",
+      "bytes": 9918593,
+      "sha256": "314dc72ab70366c91f0a107e3fdc438147e9ec6bd91985ec8a85dd69dcc2171c"
+    },
+    {
+      "site_id": 47,
+      "requested_lon": 109.8,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_047.zip",
+      "bytes": 9918593,
+      "sha256": "e29c64dbd3fec432559372a254eb99e4bf5c2befe2a4fc059777a89d0f2be19b"
+    },
+    {
+      "site_id": 48,
+      "requested_lon": 109.8,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_048.zip",
+      "bytes": 9918593,
+      "sha256": "86877484c17bc6d837277b655d843e665b117cc89afe8d779b5f823c45c5d375"
+    },
+    {
+      "site_id": 49,
+      "requested_lon": 109.8,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_049.zip",
+      "bytes": 9918593,
+      "sha256": "6de3b061afd007c2695f9b5dd6e49dc531ad36f49f831ac2ea2aa5c500a9c360"
+    },
+    {
+      "site_id": 50,
+      "requested_lon": 109.8,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_050.zip",
+      "bytes": 9918593,
+      "sha256": "2b4d4642fe9607685eaa1528b876db8cd4ef825fa81c927cf87bae9311c7723a"
+    },
+    {
+      "site_id": 51,
+      "requested_lon": 111.4,
+      "requested_lat": 22.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_051.zip",
+      "bytes": 9918593,
+      "sha256": "9ea77f1db1e4cae42ba51e13d2cd338a4f1aa26b2a30c3610ac4bbffca6fd94c"
+    },
+    {
+      "site_id": 52,
+      "requested_lon": 111.4,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_052.zip",
+      "bytes": 9918593,
+      "sha256": "558dc163977e2cbfc579d7ac64d3517ce1c09530e5a6f023a99e276b4982d629"
+    },
+    {
+      "site_id": 53,
+      "requested_lon": 111.4,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_053.zip",
+      "bytes": 9918593,
+      "sha256": "362ba6e510209d628930652b84570fed0e834331fedb59f18118632e9ad70846"
+    },
+    {
+      "site_id": 54,
+      "requested_lon": 111.4,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_054.zip",
+      "bytes": 9918593,
+      "sha256": "a0b1e0871cd019f955d08ae5ba942c05ea603736636bf058c63df669bf239249"
+    },
+    {
+      "site_id": 55,
+      "requested_lon": 111.4,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_055.zip",
+      "bytes": 9918593,
+      "sha256": "5c84f2dbf47d5af3464822316194cda0e1ca6671724c4947fc2bf77d6e02df87"
+    },
+    {
+      "site_id": 56,
+      "requested_lon": 111.4,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_056.zip",
+      "bytes": 9918593,
+      "sha256": "e575051c4d4a369d9f5100843bd73f53eb956df5fee2366561f5035225672cd3"
+    },
+    {
+      "site_id": 57,
+      "requested_lon": 111.4,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_057.zip",
+      "bytes": 9918593,
+      "sha256": "8df94d14c0d678738e3b77b679352adf988dbe56efd317698169510ef148191c"
+    },
+    {
+      "site_id": 58,
+      "requested_lon": 111.4,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_058.zip",
+      "bytes": 9918593,
+      "sha256": "dbd686692c505afe02cf078766efc1e9b37da7c45a27ed4f62057a27862a0e1f"
+    },
+    {
+      "site_id": 59,
+      "requested_lon": 111.4,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_059.zip",
+      "bytes": 9918593,
+      "sha256": "7b635d1fac720050c28fad87e8a86d8c9375bb1c9ebd7e7dfc2b035bf17686e7"
+    },
+    {
+      "site_id": 60,
+      "requested_lon": 111.4,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_060.zip",
+      "bytes": 9918593,
+      "sha256": "70d9d8a88bcef3488dfa5390c80623eca2c72b056a8160786361a492ac796b46"
+    },
+    {
+      "site_id": 61,
+      "requested_lon": 111.4,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_061.zip",
+      "bytes": 9918593,
+      "sha256": "f16fb150df444eb2f3ed12334289b631e35175a15760cb7e49b0efd2ec38bb71"
+    },
+    {
+      "site_id": 62,
+      "requested_lon": 111.4,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_062.zip",
+      "bytes": 9918593,
+      "sha256": "1e64c060ff6847654822c2ff0b7261f6c9af3da805ae5d516f13f5d985899208"
+    },
+    {
+      "site_id": 63,
+      "requested_lon": 113.0,
+      "requested_lat": 22.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_063.zip",
+      "bytes": 9918593,
+      "sha256": "7a9be40ff2e02dbd2db959b39fb5800a440bd916bd7502d6f9e1f39db850d5f8"
+    },
+    {
+      "site_id": 64,
+      "requested_lon": 113.0,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_064.zip",
+      "bytes": 9918593,
+      "sha256": "5dc94f8bf0b9530f74d3f9d94d43e81677c7d915dc57a5abd5fbf32e52493f36"
+    },
+    {
+      "site_id": 65,
+      "requested_lon": 113.0,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_065.zip",
+      "bytes": 9918593,
+      "sha256": "726a1ce025ae36bb3d03fc108458fc6d1d95f4b54c119552f3be50ae4394bcd1"
+    },
+    {
+      "site_id": 66,
+      "requested_lon": 113.0,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_066.zip",
+      "bytes": 9918593,
+      "sha256": "c377a424b0e3ee337eb1b81e167d58ac10a676517336dd4f2e3ff3d3a1fc5831"
+    },
+    {
+      "site_id": 67,
+      "requested_lon": 113.0,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_067.zip",
+      "bytes": 9918593,
+      "sha256": "29a88ac55f8ad39c29cf84a56316567b28ab182fbbf5c0aa5c881d7bc264a79c"
+    },
+    {
+      "site_id": 68,
+      "requested_lon": 113.0,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_068.zip",
+      "bytes": 9918593,
+      "sha256": "10c852a4011d065e9079b176c2d1647d949a55346f0d163dd2d43a8452c3b354"
+    },
+    {
+      "site_id": 69,
+      "requested_lon": 113.0,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_069.zip",
+      "bytes": 9918593,
+      "sha256": "9338325fedc87ce0a4e242a71d9fde9e8d258051ecd8b9f5b5ffa92085480d62"
+    },
+    {
+      "site_id": 70,
+      "requested_lon": 113.0,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_070.zip",
+      "bytes": 9918593,
+      "sha256": "fa434a2e47adf3070eff6176284a641aa9a723b465032a361b4d080449be3a3e"
+    },
+    {
+      "site_id": 71,
+      "requested_lon": 113.0,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_071.zip",
+      "bytes": 9918593,
+      "sha256": "d714d2c1a08acdc0579fa180447e952c8803fab1f78f2ba563602005cac67c75"
+    },
+    {
+      "site_id": 72,
+      "requested_lon": 113.0,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_072.zip",
+      "bytes": 9918593,
+      "sha256": "56128e96aab85996e8b33c977d2b7efc877cb094d76a60a0b940eac97041922c"
+    },
+    {
+      "site_id": 73,
+      "requested_lon": 113.0,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_073.zip",
+      "bytes": 9918593,
+      "sha256": "af1834046a2f0ffdbee21d9719f721feeed556a5e638240b37e1142c14c1843c"
+    },
+    {
+      "site_id": 74,
+      "requested_lon": 113.0,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_074.zip",
+      "bytes": 9918593,
+      "sha256": "a0ec32c1bb383b632547a6074c3abb8a12cef9a4a8743262f8346562048a17f9"
+    },
+    {
+      "site_id": 75,
+      "requested_lon": 114.6,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_075.zip",
+      "bytes": 9918593,
+      "sha256": "4e0757b55ffb0e2450422b73e164ce84f42efe2b1c746deda7f902b843d9841d"
+    },
+    {
+      "site_id": 76,
+      "requested_lon": 114.6,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_076.zip",
+      "bytes": 9918593,
+      "sha256": "3bc8505a1ae18e7ed9b466c77950a4cfc1d39cffaf3586acc12c4da3d9724cac"
+    },
+    {
+      "site_id": 77,
+      "requested_lon": 114.6,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_077.zip",
+      "bytes": 9918593,
+      "sha256": "bb8cb940433a225735d6cb80079289cc30daede903d5d9049408adc06b8abf4c"
+    },
+    {
+      "site_id": 78,
+      "requested_lon": 114.6,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_078.zip",
+      "bytes": 9918593,
+      "sha256": "8f1ce717bd7495179bf727b2f21388cfc55bde65f840856266f2bee43bf17425"
+    },
+    {
+      "site_id": 79,
+      "requested_lon": 114.6,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_079.zip",
+      "bytes": 9918593,
+      "sha256": "a790f2287715e51bc010d03b54a1afdb9a1ed9e7f37449a808d194b01d1994ed"
+    },
+    {
+      "site_id": 80,
+      "requested_lon": 114.6,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_080.zip",
+      "bytes": 9918593,
+      "sha256": "71bc147e6d214ab810fece08d0796d7812cca7eaaecf388d687a3bb66fda2b69"
+    },
+    {
+      "site_id": 81,
+      "requested_lon": 114.6,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_081.zip",
+      "bytes": 9918593,
+      "sha256": "0ae29578305420f02c473dca59576ca9bda345578c390e27645119929b3d8d58"
+    },
+    {
+      "site_id": 82,
+      "requested_lon": 114.6,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_082.zip",
+      "bytes": 9918593,
+      "sha256": "c82e9023b61c2f6569294098f1d3270b7d24f1654ca722557b93884949949931"
+    },
+    {
+      "site_id": 83,
+      "requested_lon": 114.6,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_083.zip",
+      "bytes": 9918593,
+      "sha256": "d2eb79d0c76daab30c98cc0021301f86ba05ab2526c7613fb2bbc49ac56ea533"
+    },
+    {
+      "site_id": 84,
+      "requested_lon": 114.6,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_084.zip",
+      "bytes": 9918593,
+      "sha256": "cd9bf4abe0fdcf5fae1371befc5f09fa88647b8e5f53dd7e40fe738168ab5bb6"
+    },
+    {
+      "site_id": 85,
+      "requested_lon": 114.6,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_085.zip",
+      "bytes": 9918593,
+      "sha256": "ea1978fdec83029b92b7b0dcf712f2fb9cf98272feb7fffd99605f7b1bc22f7e"
+    },
+    {
+      "site_id": 86,
+      "requested_lon": 116.2,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_086.zip",
+      "bytes": 9918593,
+      "sha256": "29fda28c7573f482112b4bfb88b8b11d9db9174d28676f836e4cda4c86ac2de8"
+    },
+    {
+      "site_id": 87,
+      "requested_lon": 116.2,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_087.zip",
+      "bytes": 9918593,
+      "sha256": "eb8da4bc3e4115c81fce278af5f578af4d63f70848e40a8bcefc119c1a43c855"
+    },
+    {
+      "site_id": 88,
+      "requested_lon": 116.2,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_088.zip",
+      "bytes": 9918593,
+      "sha256": "22ab0f6edf10bcdd4867d5a3e60e49c76d25b889bf0efb5cf3d4128fa9bdf43e"
+    },
+    {
+      "site_id": 89,
+      "requested_lon": 116.2,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_089.zip",
+      "bytes": 9918593,
+      "sha256": "a228830fc67ffdc56e0ee9642862c575456bd22f7396a8453546d848df8555aa"
+    },
+    {
+      "site_id": 90,
+      "requested_lon": 116.2,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_090.zip",
+      "bytes": 9918593,
+      "sha256": "617728bcdb8681915c320a71a412bc5408e4b9cdb02e974931ec8c16429234ee"
+    },
+    {
+      "site_id": 91,
+      "requested_lon": 116.2,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_091.zip",
+      "bytes": 9918593,
+      "sha256": "3080c97fed1003d38a9e2c351bcaa24fd38f7178a953b65825ab3cc267688f46"
+    },
+    {
+      "site_id": 92,
+      "requested_lon": 116.2,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_092.zip",
+      "bytes": 9918593,
+      "sha256": "fbab47c8bfd94b7e87c984b271a06a5447e0eae5bf491cfd0d356509e5f5c44a"
+    },
+    {
+      "site_id": 93,
+      "requested_lon": 116.2,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_093.zip",
+      "bytes": 9918593,
+      "sha256": "a196767575bba3589efb46dc481a9c9419fcf006b8fa471acefbd216e4ba9017"
+    },
+    {
+      "site_id": 94,
+      "requested_lon": 116.2,
+      "requested_lat": 38.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_094.zip",
+      "bytes": 9918593,
+      "sha256": "2b9cfe71bf9aeb943c01799e7d462f81f5b3472c8709b3bd751e8c79298a39a9"
+    },
+    {
+      "site_id": 95,
+      "requested_lon": 116.2,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_095.zip",
+      "bytes": 9918593,
+      "sha256": "203e5011e979757ed31f71d4c693e0591016a354875270ac6e7ff5ff797ea3d2"
+    },
+    {
+      "site_id": 96,
+      "requested_lon": 116.2,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_096.zip",
+      "bytes": 9918593,
+      "sha256": "72a0681be07bf550c670bc5163e0bc5f05dd1450b60ec90ca46cc0a371b9386b"
+    },
+    {
+      "site_id": 97,
+      "requested_lon": 117.8,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_097.zip",
+      "bytes": 9918593,
+      "sha256": "1f2f5d4c578506139f61880062ce7bbde4e9f64da2b64b007ca06db6ee604b87"
+    },
+    {
+      "site_id": 98,
+      "requested_lon": 117.8,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_098.zip",
+      "bytes": 9918593,
+      "sha256": "1b81869b8948f35d9fab2cb39a13c4b24417cce44f89259bfd7ab8c3e6dd679e"
+    },
+    {
+      "site_id": 99,
+      "requested_lon": 117.8,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_099.zip",
+      "bytes": 9918593,
+      "sha256": "c3a774ff88ede3bd200d23aa752429a460e8e1dc995e02cda3a4640bc0d54a0e"
+    },
+    {
+      "site_id": 100,
+      "requested_lon": 117.8,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_100.zip",
+      "bytes": 9918593,
+      "sha256": "b4add914d425ed33d6ca00bfd5f14929b5fbadd2871633d27cb1fe406f3b5876"
+    },
+    {
+      "site_id": 101,
+      "requested_lon": 117.8,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_101.zip",
+      "bytes": 9918593,
+      "sha256": "cd9feb79b83ea7097dd9eac8842ce4ea132746aaa3bedb27bb465cb7b21f5f2a"
+    },
+    {
+      "site_id": 102,
+      "requested_lon": 117.8,
+      "requested_lat": 34.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_102.zip",
+      "bytes": 9918593,
+      "sha256": "356fb6d32090451cec28ba6f4f125c26f2defe351c5ff5233446d79bf699ee6e"
+    },
+    {
+      "site_id": 103,
+      "requested_lon": 117.8,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_103.zip",
+      "bytes": 9918593,
+      "sha256": "020d6857d5f21e80cdaf6cc7518421e6346bbb71aff9fcb558f43e4ca2da99fd"
+    },
+    {
+      "site_id": 104,
+      "requested_lon": 117.8,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_104.zip",
+      "bytes": 9918593,
+      "sha256": "1177e64a45d4edc1ce014916d47176946d74e885074f74d814df3f0ee396280a"
+    },
+    {
+      "site_id": 105,
+      "requested_lon": 117.8,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_105.zip",
+      "bytes": 9918593,
+      "sha256": "a14927ff9badc0eabe3685d24dd4545c87078d98318371cb9ce1c8844d61848f"
+    },
+    {
+      "site_id": 106,
+      "requested_lon": 119.4,
+      "requested_lat": 25.8,
+      "file": "data/era5_historical_extension/cds_point_archives/site_106.zip",
+      "bytes": 9918593,
+      "sha256": "302d0bd927d312aec550e0a056012c129599c8b2cae7fd3d43f112e984b15ec3"
+    },
+    {
+      "site_id": 107,
+      "requested_lon": 119.4,
+      "requested_lat": 27.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_107.zip",
+      "bytes": 9918593,
+      "sha256": "3098bf7027eb5a03551bd63dcf1642dc5280886f6f7e8d1dd8637fe6775030fc"
+    },
+    {
+      "site_id": 108,
+      "requested_lon": 119.4,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_108.zip",
+      "bytes": 9918593,
+      "sha256": "c191903368e619b95687b59a58f9d2f938d8b3748ad5293b54034801ffe0e84d"
+    },
+    {
+      "site_id": 109,
+      "requested_lon": 119.4,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_109.zip",
+      "bytes": 9918593,
+      "sha256": "85781b4642c1d4adc26967346bde29457c36a644d01fccf815ab6d14c478fb13"
+    },
+    {
+      "site_id": 110,
+      "requested_lon": 119.4,
+      "requested_lat": 33.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_110.zip",
+      "bytes": 9918593,
+      "sha256": "b380327a02ad1cecb64ee9a281c4f6f2e97b51b92d8bc7e114f8fa2662583760"
+    },
+    {
+      "site_id": 111,
+      "requested_lon": 119.4,
+      "requested_lat": 36.6,
+      "file": "data/era5_historical_extension/cds_point_archives/site_111.zip",
+      "bytes": 9918593,
+      "sha256": "1e59b7ba9c296b09f584f758387636b1adc150b518e6c9418cc6ab6e17af31a0"
+    },
+    {
+      "site_id": 112,
+      "requested_lon": 119.4,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_112.zip",
+      "bytes": 9918593,
+      "sha256": "3407fbfa4d7680214e326f758c76a951a1fa0deb9c7d0529297183f191a08720"
+    },
+    {
+      "site_id": 113,
+      "requested_lon": 119.4,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_113.zip",
+      "bytes": 9918593,
+      "sha256": "abde44518d38594fab2dbd6fa47f14629875dc8efdc394ef0435d5944901c503"
+    },
+    {
+      "site_id": 114,
+      "requested_lon": 121.0,
+      "requested_lat": 24.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_114.zip",
+      "bytes": 9918593,
+      "sha256": "f9f1a5e0007697d093d97e6aa3335bc73c39e249a93f74d2754d3aa3a3520f78"
+    },
+    {
+      "site_id": 115,
+      "requested_lon": 121.0,
+      "requested_lat": 29.4,
+      "file": "data/era5_historical_extension/cds_point_archives/site_115.zip",
+      "bytes": 9918593,
+      "sha256": "901aed9677591ecbf574cf9cc4d0a6f769cdc72e3024b17f13e3d0bef64823d7"
+    },
+    {
+      "site_id": 116,
+      "requested_lon": 121.0,
+      "requested_lat": 31.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_116.zip",
+      "bytes": 9918593,
+      "sha256": "f4b7ed10f94944a57ede20adcca52c11f4ad39d561ef7ac33ad89693f27bc643"
+    },
+    {
+      "site_id": 117,
+      "requested_lon": 121.0,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_117.zip",
+      "bytes": 9918593,
+      "sha256": "6a560597cb58d1ad9a18ad329520aba1e8babebcf2de8cbf0226875693b2e522"
+    },
+    {
+      "site_id": 118,
+      "requested_lon": 122.6,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_118.zip",
+      "bytes": 9918593,
+      "sha256": "55d0785c04f04499e3fbf1153d1992a130d33c4e140d04051df221483a4929da"
+    },
+    {
+      "site_id": 119,
+      "requested_lon": 122.6,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_119.zip",
+      "bytes": 9918593,
+      "sha256": "d22f316f231fa929c32493b43688de4e83ce69962d9cf23339bb0873553c580b"
+    },
+    {
+      "site_id": 120,
+      "requested_lon": 124.2,
+      "requested_lat": 40.2,
+      "file": "data/era5_historical_extension/cds_point_archives/site_120.zip",
+      "bytes": 9918593,
+      "sha256": "dd4e195057b11649c77bb208df0c70fa67986f395c75183023173d7fcd0fc1e3"
+    },
+    {
+      "site_id": 121,
+      "requested_lon": 124.2,
+      "requested_lat": 42.0,
+      "file": "data/era5_historical_extension/cds_point_archives/site_121.zip",
+      "bytes": 9918593,
+      "sha256": "55597dff2d765ba33452f6df4cc84f6ebab922b1f4db962ac949479bfbe25a02"
+    }
+  ],
+  "outputs": [
+    "data/era5_historical_extension/hourly_points/era5_land_1950_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1951_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1952_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1953_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1954_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1955_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1956_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1957_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1958_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1959_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1960_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1961_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1962_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1963_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1964_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1965_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1966_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1967_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1968_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1969_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1970_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1971_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1972_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1973_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1974_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1975_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1976_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1977_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1978_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1979_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1980_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1981_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1982_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1983_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1984_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1985_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1986_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1987_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1988_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1989_jja_121sites.nc",
+    "data/era5_historical_extension/hourly_points/era5_land_1990_jja_121sites.nc"
+  ]
+}

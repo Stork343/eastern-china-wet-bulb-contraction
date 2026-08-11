@@ -1,0 +1,7 @@
+diagnostic,estimate,n,ci_lower,ci_upper,clusters
+pair_hour_semivariance_correlation,0.9505258994372128,420216,,,
+distance_bin_residual_semivariance_correlation,0.9390020923486908,420216,0.9342535018272803,0.9433362127598447,184.0
+station_pair_equal_weight_semivariance_correlation,0.9874686055920738,351,,,
+station_pair_equal_weight_residual_semivariance_correlation,0.9812207090197481,351,,,
+mean_within_station_pair_difference_correlation,0.8287348523592878,351,0.5297306119671971,0.9361153882574795,
+mean_within_station_pair_semivariance_correlation,0.7978491533714216,351,0.330635962823268,0.9325324465924948,
