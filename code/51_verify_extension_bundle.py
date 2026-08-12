@@ -432,11 +432,12 @@ def verify_complete_simulation_tables() -> None:
     require(sha256(output_tex) == sha256(portable_tex),
             "Portable and analysis copies of the complete simulation tables differ")
     text = portable_tex.read_text(encoding="utf-8")
-    require(text.count(r"\begin{longtable}") == 2 and
+    require(text.count(r"\begin{longtable}") == 3 and
             r"\label{tab:joint-dgp-complete}" in text and
             r"\label{tab:year-simulation-complete-a}" in text and
-            r"\label{tab:year-simulation-complete-b}" in text,
-            "Generated supplement does not contain all three complete tables")
+            r"\label{tab:year-simulation-complete-b}" in text and
+            r"\label{tab:year-simulation-complete-c}" in text,
+            "Generated supplement does not contain all four complete tables")
     print("[OK] complete 108-cell and eight-cell simulation tables")
 
 
@@ -775,7 +776,7 @@ def verify_manuscript_integration() -> None:
     ).read_text(encoding="utf-8")
 
     required_main = [
-        "Applying the unchanged construction to 1950--1990",
+        "The 1950--1990 extension gave",
         "The station comparison contains 175,172 exact-hour matches",
         "$-17.34\\%$",
         "both intervals include zero",
@@ -784,8 +785,8 @@ def verify_manuscript_integration() -> None:
         "latitude--longitude--elevation basis",
         "2,000 heavy-tailed data sets",
         "figure07_noaa_agreement.pdf",
-        "Supplementary Section~S11.3 examines sensitivity",
-        "exploratory finite-record randomisation",
+        "Supplementary Section~S11.3 examines a",
+        "report its $p$-value as exploratory",
     ]
     missing_main = [item for item in required_main if item not in main_text]
     require(not missing_main,
@@ -808,7 +809,7 @@ def verify_manuscript_integration() -> None:
         "\\subsection{Cross-record dependence stress test}",
         "\\label{tab:cross-record-stress}",
         "Primary finite-record estimate",
-        "Protocol-specified conditional randomisation assessment",
+        "Conditional randomisation under the product-invariance null",
         "Historical climatology--anomaly decomposition",
         "Thus $\\boldsymbol\\mu_m^{H}$ is the site-specific mean field",
         "leaving 208 candidates",

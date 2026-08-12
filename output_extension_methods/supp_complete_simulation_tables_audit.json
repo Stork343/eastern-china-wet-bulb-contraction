@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-08-09T10:56:07.756736+00:00",
+  "created_utc": "2026-08-11T16:13:35.017249+00:00",
   "script": "code/46_prepare_supplement_simulation_tables.py",
   "year_cells": 108,
   "joint_cells": 8,
@@ -16,11 +16,11 @@
   "outputs": [
     {
       "file": "output_extension_methods/supp_complete_simulation_tables.tex",
-      "sha256": "a12f5401ab433c3cd8d7f55c693eab2cc91bfb22ded634c02242d357c93505a7"
+      "sha256": "8f644c37d59ee39458b5e82d66867ffc9e85d82ac2ada7feb756fcc06c964cd1"
     },
     {
       "file": "manuscript/generated/supp_complete_simulation_tables.tex",
-      "sha256": "a12f5401ab433c3cd8d7f55c693eab2cc91bfb22ded634c02242d357c93505a7"
+      "sha256": "8f644c37d59ee39458b5e82d66867ffc9e85d82ac2ada7feb756fcc06c964cd1"
     }
   ]
 }

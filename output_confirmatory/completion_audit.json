@@ -1,5 +1,5 @@
 {
-  "verified_utc": "2026-08-11T04:03:29.451672+00:00",
+  "verified_utc": "2026-08-12T01:51:37.334640+00:00",
   "archives": 121,
   "archive_bytes": 2481857499,
   "trimmed_point_files": 121,
@@ -18,17 +18,17 @@
   "spatial_map_display_cells": 30919,
   "spatial_map_spline_k": 30,
   "spatial_map_predictions_enter_inference": false,
-  "manuscript_pages": 20,
-  "supplement_pages": 27,
+  "manuscript_pages": 18,
+  "supplement_pages": 21,
   "manuscript_sections": [
     "Introduction",
     "Multiscale graph regime contrasts",
-    "Finite-record inference and analysis protocol",
+    "Finite-record inference and study design",
     "Simulation study",
     "Humid-heat application",
     "Discussion"
   ],
-  "manuscript_abstract_words": 192,
+  "manuscript_abstract_words": 193,
   "main_text_figures": 7,
   "main_text_tables": 3,
   "global_product_shift_draws": 99999,
@@ -46,6 +46,6 @@
   "irregular_year_simulation_datasets": 60000,
   "year_simulation_replications": 1080000,
   "dense_scale_identity_error": 4.88498130835069e-15,
-  "manuscript_sha256": "99e96d056ae1ce4ec8bc30d13d76d71c365b870119cbb5b2059e94157372cf78",
-  "supplement_sha256": "77cbcb07e77f88a961a112ab8e9dd8c4e8a14a06d1214fe5dee6415bfe44f995"
+  "manuscript_sha256": "b1766fb65846c998399c634f1a405c635e365b0f9ffef0121cbe015968c9c2f9",
+  "supplement_sha256": "c557b8dc417b3ffffcc0433a874098c5d182bf3423bcee145ba1c107b0dd3fce"
 }

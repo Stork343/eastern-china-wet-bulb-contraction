@@ -37,25 +37,25 @@
 \corresp[$\ast$]{Corresponding author. \href{mailto:mztian@ruc.edu.cn}{mztian@ruc.edu.cn}}
 
 \abstract{
-We compare spatial wet-bulb temperature contrast between upper-quartile and
-middle-half days of the monthly regional mean at 121 reanalysis sites in
-eastern China. We fixed the multiscale contrast specification and
-field-selection rules using the
-2015 and 2022 summers, then applied them unchanged to the remaining 33 summers
-in 1991--2025. The mean contrast across five graph scales was $-7.28\%$; 28 of
-33 summer contrasts were negative. An exploratory 99,999-draw product
-cyclic-shift analysis gave $p=0.00001$ under the conditional product-invariance
-null.
-Contraction strengthened from $-2.86\%$ at 126 km to $-13.27\%$ at 2,013 km.
-An exact Laplacian decomposition showed that high-day anomalies opposed the
-monthly climatological pattern at broad scales, whereas transient-anomaly
-energy changed little. In ten summers excluded from method development,
-surface stations agreed in direction at broad scales ($-17.34\%$; nine of ten
-contrasts negative), whereas uncertainty at 126 km included zero. Applying the
-same protocol to 1950--1990 gave $-11.04\%$, with 40 of 41 summer contrasts
-negative and the same strengthening with bandwidth. High regional mean
-wet-bulb temperature was therefore associated with weaker broad geographic
-contrast, an aspect that a regional mean cannot describe.
+Regional summaries of wet-bulb temperature omit the spatial distribution of
+humid heat. This study examines whether geographic contrast changes when the
+regional mean is high. Spatial contrast across 121 eastern China sites is
+measured with Gaussian-weighted graph Laplacians and summarised over five
+log-spaced scales; product cyclic shifts provide finite-record assessment. The
+statistic and field-selection rules were developed using the 2015 and 2022
+summers and applied to 33 other summers in 1991--2025. High
+days had
+$7.28\%$ lower spatial contrast than middle days, and 28 of 33 summer estimates
+were negative. An exploratory 99,999-draw product cyclic-shift analysis gave
+$p=0.00001$ under the conditional product-invariance null. Contraction
+increased from $2.86\%$ at 126 km to $13.27\%$ at 2,013 km. An exact Laplacian
+decomposition attributed the broad-scale change chiefly to high-day anomalies
+opposing monthly climatological patterns; transient-anomaly energy changed
+little. The same scale pattern appeared in 1950--1990 ($11.04\%$ mean
+contraction; 40 of 41 negative summers). Station data from ten non-development
+summers yielded concordant broad-scale contraction ($17.34\%$; nine of ten
+negative). High regional humid heat is associated with a flatter
+broad-scale field, a feature the regional mean cannot identify.
 }
 
 \keywords{ERA5-Land, graph Laplacian, humid heat, randomisation inference,
@@ -69,16 +69,16 @@ Wet-bulb temperature (WBT) is a widely used measure of humid heat stress that
 combines air temperature and humidity \citep{sherwood2010,raymond2020}. Two
 days can have identical regional means yet sharply different spatial fields:
 one may contain strong north--south or local contrasts, while the other is
-comparatively coherent. We therefore focus on the spatial contrast of the WBT
-field itself.
+comparatively coherent. The analysis therefore focuses on spatial contrast in
+the WBT field itself.
 
 Recent work has documented increasingly concentrated humid-heat extremes in
 standard climate regions \citep{speizer2022}, sharp local wet-bulb extremes
 associated with wet soils \citep{chagnaud2025}, and reduced intra-urban
 heat-stress variability during some heat waves \citep{shreevastava2023}.
 Spatial-extremes models such as \citet{healy2025} estimate nonstationary
-temperature tails and the area exceeding critical thresholds. Our within-month
-comparison instead examines how pairwise WBT differences change with graph
+temperature tails and the area exceeding critical thresholds. The within-month
+comparison here examines how pairwise WBT differences change with graph
 scale. A regional mean discards spatial arrangement, while ordinary cross-site
 variance cannot distinguish neighbouring contrasts, mesoscale structure and a
 domain-wide gradient. Empirical variograms represent distance-dependent
@@ -86,9 +86,9 @@ variation, but comparing regimes requires a common summary across distance
 scales. Smooth weighting provides that summary and permits an exact spatial
 allocation of the regional contrast.
 
-We study whether high regional mean wet-bulb temperature in eastern China is
+We ask whether high regional mean wet-bulb temperature in eastern China is
 accompanied by a contraction of spatial differences. The question is
-associational, which makes inference delicate. A negative contrast is
+associational. A negative contrast is
 compatible with broad atmospheric forcing, but topography \citep{pepin2015},
 soil moisture \citep{seneviratne2010}, circulation \citep{horton2015}, and
 measurement support can produce or mask similar patterns. If event labels
@@ -96,36 +96,33 @@ depend on spatial dispersion as well as the regional mean, the outcome
 influences which days are selected, and a difference can be created by
 construction \citep{simmons2011}. If the most favourable distance is chosen
 after inspecting the data, scale-specific evidence is likewise overstated
-\citep{white2000}. We therefore define events from the regional mean
-wet-bulb temperature alone and fix the spatial scales before evaluating any
-dispersion outcome.
+\citep{white2000}. Event definitions therefore use regional mean wet-bulb
+temperature, and the spatial scales were selected during method development.
 
 We combine established graph Dirichlet energies into a scale-indexed regime
-contrast for a fixed observational record. Under second-order stationarity,
-each energy is a smoothly weighted semivariance
+contrast for observed spatial fields. Under second-order stationarity, each
+energy is a smoothly weighted semivariance
 \citep{cressie1993,shuman2013,dong2016}. The construction averages
 record-specific relative contrasts over five log-spaced graphs, preserves the
 daily multiscale profile in product cyclic shifts, and decomposes the regional
 effect exactly over nodes and low-dimensional spatial components. This
 combination reveals which geographic scales and structures account for a
 change in WBT contrast. Ordinary variance discards distance, binned
-semivariances impose hard boundaries, and Moran's $I$ and Geary's $C$ measure
-standardised dependence rather than the amplitude of spatial differences.
+semivariances impose hard boundaries, and Moran's $I$ and Geary's $C$
+standardise away the amplitude of spatial differences.
 
-We developed the primary estimand, event labels, bandwidths and field-selection
-rules using the 2015 and 2022 summers, then applied them unchanged to the other
-33 summers \citep{white2000}. The resulting mean describes that finite record.
-An exploratory product cyclic-shift calculation assesses the fixed multiscale
-statistic under an explicit conditional product-invariance null, while equal edge splitting and
-Laplacian-orthogonal projections distinguish attenuation of persistent
-geographic structure from smoothing of transient anomalies.
+The application uses 2015 and 2022 for method development and the other 33
+summers for evaluation. A product cyclic-shift calculation assesses the
+multiscale statistic under a conditional product-invariance null. Equal edge
+splitting and Laplacian-orthogonal projections distinguish attenuation of
+persistent geographic structure from changes in transient anomalies.
 
 \section{Multiscale graph regime contrasts}
 
 \subsection{Scale-indexed graph dispersion and regime contrast}
 
 Let $y_{it}$ denote WBT at location $i$ in the selected field for day $t$, and
-let $\bar y_t=n^{-1}\sum_i y_{it}$. The benchmark is the fixed-site mean
+let $\bar y_t=n^{-1}\sum_i y_{it}$. The benchmark is the site mean
 squared spatial deviation,
 \begin{equation}
   V_t=\frac{1}{n}\sum_{i=1}^{n}(y_{it}-\bar y_t)^2,
@@ -148,7 +145,7 @@ $S_h=\sum_{i<j}w_{ij,h}$. We define graph dispersion as
 Graph dispersion is therefore an edge-weighted average of pairwise squared
 differences. Dividing by $S_h$ makes the measure comparable across graphs with
 different total edge weights. Smaller values indicate greater graph-scale
-coherence. Graph dispersion measures spatial contrast rather than
+coherence. Graph dispersion measures spatial contrast, distinct from
 threshold-exceedance area. It has units $^\circ\mathrm C^2$;
 $D_h^{\mathrm{RMS}}=(2Q_h)^{1/2}$ is the weighted root mean squared pairwise
 WBT difference in $^\circ\mathrm C$.
@@ -171,7 +168,7 @@ weights, $Q_h=nV/(n-1)$. Ordinary spatial variance is therefore the
 complete-graph endpoint of the same family, up to its degrees-of-freedom
 factor.
 
-We fixed five bandwidths during method development:
+We use five bandwidths selected during method development:
 $h/m\in\{0.125,0.25,0.5,1,2\}$, where $m$ is the median pairwise distance.
 They correspond to 126, 252, 503, 1,006 and 2,013 km. Their weighted mean pair
 distances are 200, 319, 549, 826 and 992 km, and their effective edge counts
@@ -184,7 +181,7 @@ $N_{\mathrm{eff}}=(\sum_e w_e)^2/\sum_e w_e^2$.
 Classifying days separately within each month-year record $r=(y,m)$ prevents
 the seasonal cycle or an interannual mean shift from entering the event
 definition. Let $q_{25,r}$ and $q_{75,r}$ be the type-7 sample quartiles of
-$\bar y_t$ in record $r$. We label a day high if
+$\bar y_t$ in record $r$. A day is labelled high if
 $\bar y_t\ge q_{75,r}$ and middle if
 $q_{25,r}\le\bar y_t<q_{75,r}$. Lower-quartile days do not enter the contrast.
 There were no threshold ties; every month-year contains eight high days and
@@ -202,7 +199,7 @@ The scale-specific relative contrast and its summer average are
  \widehat\theta_y=\frac{1}{3H}\sum_{m=1}^{3}\sum_{h=1}^{H}R_{ymh}.
  \label{eq:relative}
 \end{equation}
-For a set $\mathcal Y$ of summers, the primary finite-record estimand is
+For a set $\mathcal Y$ of summers, the finite-record estimand is
 \begin{equation}
  \widehat\theta_{\mathcal Y}
  =\frac{1}{|\mathcal Y|}\sum_{y\in\mathcal Y}\widehat\theta_y.
@@ -210,21 +207,20 @@ For a set $\mathcal Y$ of summers, the primary finite-record estimand is
 \end{equation}
 A negative value means that high-regional-mean fields vary less across space.
 Because the bandwidths are equally spaced on the log scale, the arithmetic
-mean does not privilege any single bandwidth within the prespecified grid. It
-is a discrete five-scale summary, not an integral over all spatial scales. The
-log-ratio sensitivity replaces $R_{ymh}$ by
+mean gives equal weight to every bandwidth in the five-scale grid. The
+log-ratio analysis replaces $R_{ymh}$ by
 $\log(\overline Q^{E}_{ymh}/\overline Q^{M}_{ymh})$ at the same three stages
 of averaging and back-transforms the final mean for interpretation. A second
-exploratory sensitivity uses the bounded symmetric contrast
+analysis uses the bounded symmetric contrast
 $2(\overline Q^{E}_{ymh}-\overline Q^{M}_{ymh})/
 (\overline Q^{E}_{ymh}+\overline Q^{M}_{ymh})$. The three effect measures are
 applied to identical fields and labels in the denominator stress test.
 
 \subsection{Exact spatial and structural decomposition}
 
-Graph dispersion accumulates over edges. We allocate it to sites by splitting
-every undirected edge equally between its endpoints; the allocation is exact and
-symmetric, though not unique. For location $i$, define
+Graph dispersion accumulates over edges. We obtain an exact and symmetric site
+allocation by splitting every undirected edge equally between its endpoints,
+although other allocations are possible. For location $i$, define
 \begin{equation}
  q_{ih}(\mathbf y)=\frac{1}{4S_h}\sum_{j\ne i}
  w_{ij,h}(y_i-y_j)^2.
@@ -270,10 +266,10 @@ allocation is
  \label{eq:aggregated-allocation}
 \end{equation}
 The order and weights in Equation~\eqref{eq:aggregated-allocation} match the
-primary estimator: equal months within a summer, equal graph scales, and equal
+estimator: equal months within a summer, equal graph scales, and equal
 summers. The identity is checked numerically after every analysis. Changing
-the spatial support changes the incident edges and hence the allocation. We
-therefore calculate every main-text map from the primary 121-node graph. For
+the spatial support changes the incident edges and hence the allocation.
+Accordingly, every main-text map is calculated from the 121-node graph. For
 a scale-specific map, we retain one $h$ in
 Equation~\eqref{eq:aggregated-allocation} instead of averaging over $H$; the
 observed-node sum then recovers the corresponding scale-specific contrast.
@@ -283,9 +279,9 @@ observed-node values and evaluate it on a fine land-masked raster. Graph
 construction, estimation, uncertainty calculations and node-sum identities
 all use the observed nodes, which are overlaid on each map. A negative $c_i$
 allocates part of the regional contraction to edges incident to site $i$; the
-allocation is descriptive at the coordinate level. We also map the regime
-means of $y_{it}-\bar y_t$ and their difference to separate spatial-pattern
-change from a shift in the daily regional mean.
+allocation is descriptive at the coordinate level. The maps also show regime
+means of $y_{it}-\bar y_t$ and their difference. These spatially centred fields
+separate a change in spatial pattern from a shift in the daily regional mean.
 
 To quantify the dominant north--south structure, let $\boldsymbol\ell$ be
 centred latitude and $\mathbf z_t=\mathbf y_t-\bar y_t\mathbf 1$. Define
@@ -311,13 +307,14 @@ for a centred spatial basis matrix $\mathbf B$, the Laplacian projection has
 coefficients $\widehat{\boldsymbol\beta}_{th}=
 (\mathbf B^\top\mathbf L_h\mathbf B)^{-}\mathbf B^\top\mathbf L_h\mathbf z_t$,
 where $(\cdot)^{-}$ is a generalised inverse. Centred latitude is the
-primary structural summary. Nested sensitivities add longitude and then
+reference structural summary. Further projections add longitude and then
 elevation, obtained by dividing the official invariant ERA5-Land geopotential
 field by standard gravity. We compare the total structured and residual
 energies of these nested column spaces; no order-specific latitude, longitude
 or elevation contribution is assigned.
 
-We also separate the persistent monthly field from daily departures. Write
+A second decomposition separates the persistent monthly field from daily
+departures. Write
 $\mathbf y_t=\boldsymbol\mu_m+\mathbf a_t$, where $\boldsymbol\mu_m$ is the
 site-specific 35-summer mean field for month $m$. Then
 \begin{equation}
@@ -332,25 +329,23 @@ numerator. The other two terms quantify change in anomaly energy and change in
 climatology--anomaly alignment. Dividing both differences by the middle-day
 total dispersion yields two components that add exactly to $R_{ymh}$.
 
-\section{Finite-record inference and analysis protocol}
+\section{Finite-record inference and study design}
 
 \subsection{Product cyclic-shift randomisation}
 
-Days within a month are serially dependent, and a month holds only 30 or 31
-of them, so randomisation proceeds month by month rather than day by day. For
-a given month-year record, we rotate the complete daily outcome profile by a
-randomly chosen offset, while the mean-WBT series and its labels remain
-untouched. Rotating the whole profile rather than individual days keeps the
-dependence between bandwidths intact, and the statistic is recomputed after
-every shift. The one-sided Monte Carlo $p$-value is
+Days within a month are serially dependent, so each month-year record is
+randomised as a unit. Its complete daily outcome profile is rotated by a
+randomly chosen offset while the mean-WBT series and labels remain in place. This
+joint rotation preserves dependence between bandwidths, and the statistic is
+recomputed after every shift. The one-sided Monte Carlo $p$-value is
 \begin{equation}
   p=\frac{1+\sum_{b=1}^{B}
   I(T_b^{\mathrm{shift}}\le T_{\mathrm{obs}})}{B+1}.
   \label{eq:mc-p}
 \end{equation}
 
-The validity of this scheme rests on cyclic invariance, an explicit
-condition rather than an implication of generic stationarity. For record $r$,
+Validity requires cyclic invariance, a stronger property than generic
+stationarity. For record $r$,
 let $X_r=(\bar y_{rt})_{t=1}^{n_r}$ denote the mean series and let $D_r$
 collect the $H$ graph-dispersion values for each day, with
 $X=(X_1,\ldots,X_R)$ and $D=(D_1,\ldots,D_R)$. The operator $C_{n_r}$ rotates
@@ -391,17 +386,15 @@ no-tie condition stated above. The full proof is in Supplementary
 Section~S1, and the Monte Carlo version follows the argument of
 \citet{phipson2010}.
 
-An alternative family of time-shift tests avoids the wrap-around assumption
-by truncating the series and needs only strict stationarity
-\citep{harris2020,yuan2024}. In its conservative finite-sample form, such a
-test requires at least 19 shifts on each side to reach a 0.05 cutoff. Our
-monthly records have 30 or 31 days, which is too short to satisfy that
-requirement while leaving a usable aligned window. We therefore use the cyclic
-test and state its stronger invariance assumption explicitly.
+Truncated time-shift tests replace wrap-around invariance with strict
+stationarity \citep{harris2020,yuan2024}, but their conservative finite-sample
+form requires at least 19 shifts on each side for a 0.05 cutoff. Records of 30
+or 31 days leave no usable aligned window under that requirement, so we use
+cyclic shifts under Equation~\eqref{eq:cyclic-null}.
 
 The product condition is stronger than marginal cyclic invariance of each
 record because it permits the records to be rotated independently. A targeted
-stress simulation in Supplementary Section~S11.3 examines sensitivity to a
+stress simulation in Supplementary Section~S11.3 examines a
 shared cross-record temporal process whose positive loadings violate this joint
 product-invariance condition.
 
@@ -416,52 +409,44 @@ quantities measured on different scales.
 
 A second uncertainty summary is built from the six month-year
 contrasts: their unweighted mean, with a 95\% interval formed from a $t_5$
-critical value and the between-record standard error. We use this six-record
-interval only as a descriptive between-record summary.
+critical value and the between-record standard error. This interval is a
+descriptive summary of variation among the six records.
 
 \subsection{Development and evaluation design}
 
-We fixed the multiyear specification before acquiring or inspecting the
-remaining ERA5-Land summers. The design reserves 2015 and 2022 for method
-development and applies Equations~\eqref{eq:relative}--\eqref{eq:record-estimand}
-to the 33 evaluation summers without re-estimating labels, bandwidths or
-field-selection rules. The primary target
-$\widehat\theta_{\mathcal Y_H}$ describes those 33 summers and requires no
-stationarity across years.
+The summers of 2015 and 2022 served as the design sample; the other 33 summers
+form the evaluation record. Event labels, bandwidths and field selection from
+the design stage carry into Equations~\eqref{eq:relative}--
+\eqref{eq:record-estimand}. The target $\widehat\theta_{\mathcal Y_H}$
+describes the evaluation record, without a stationarity assumption across
+years.
 
 For the global cyclic-shift analysis, set
 $T_{\mathrm{obs}}=\widehat\theta_{\mathcal Y_H}$. Each Monte Carlo
 transformation rotates the five-column dispersion profile within each of the
 99 evaluation month-year records, then recomputes every record ratio and the
-equal-month, equal-scale and equal-summer mean. We use $B=99{,}999$.
+equal-month, equal-scale and equal-summer mean, with $B=99{,}999$.
 
-The statistic $T_{\mathrm{obs}}$ and its construction were fixed before the
-evaluation summers were inspected. We chose to compare that statistic with its
-product cyclic-shift distribution after observing the 33-summer estimate. The
-resulting $p$-value is therefore an exploratory finite-record assessment rather
-than a prospectively specified confirmatory test.
+We added the global product cyclic-shift distribution after estimating the
+33-summer contrast and therefore report its $p$-value as exploratory. The
+statistic is the evaluation-record estimand in
+Equation~\eqref{eq:record-estimand}.
 
 Effect size is reported through the record mean, summer-specific contrasts,
 negative-summer count and leave-one-summer-out range. Supplementary Table~S1
-records the timing and role of each analysis. The other exploratory analyses
-include alternative effect measures, spatial refinements, a dense bandwidth
-curve, nested spatial bases and the climatology--anomaly decomposition. They
-provide conditional or descriptive assessments of the observed record rather
-than inference on a long-run climate parameter. Separate pre-access protocols
-govern the historical and station extensions.
+summarises the analysis sequence and the role of each calculation.
 
 \subsection{Process-level reference}
 
-An exploratory process-level reference treats the summer sequence as a
-stationary weakly dependent process. Under standard strong-mixing, moment and long-run variance
-conditions, its mean admits a central-limit approximation; a growing-bandwidth
-HAC estimator needs a stronger uniform autocovariance condition
+For comparison, a process-level reference treats the summer sequence as a
+stationary weakly dependent process. Under standard strong-mixing, moment and
+long-run variance conditions, its mean admits a central-limit approximation; a
+growing-bandwidth HAC estimator needs a stronger uniform autocovariance condition
 \citep{ibragimov1971,newey1987,andrews1991}. The full statement, ratio
 negative-moment conditions and proof are in the Supplement. At 33 summers,
 simulation shows that Student and HAC intervals can have substantial
-undercoverage under serial dependence. We report them as independent-summer or
-process-model references, separate from the finite-record randomisation
-analysis.
+undercoverage under serial dependence. Both intervals are reported alongside
+the finite-record randomisation result.
 
 \section{Simulation study}
 
@@ -486,7 +471,7 @@ Amplitude reduction, correlation-range expansion and gradient suppression
 produce true profile contractions of 5.9\%--27.4\%, calculated from the known
 quadratic forms. The Monte Carlo standard error is 0.7 percentage points at
 5\% rejection and 1.6 points at 50\% power, so differences of one or two
-points do not support method rankings.
+points are difficult to distinguish.
 
 \begin{table}[H]
 \centering
@@ -529,18 +514,18 @@ $\times$ 10,000 replications. \\
 \end{tabular}
 \end{table}
 
-Seven prespecified procedures are compared in the day-level experiment: the
-proposed mean of five graph-dispersion contrasts, ordinary spatial variance,
+Seven procedures are compared in the day-level experiment: the
+mean of five graph-dispersion contrasts, ordinary spatial variance,
 a four-nearest-neighbour semivariance, a classical binned semivariance using
 pairs 400--600 km apart \citep{cressie1993}, an equal-weight profile of five
-semivariance contrasts formed from prespecified pair-distance quintiles, and
+semivariance contrasts formed from pair-distance quintiles, and
 global Moran's $I$ and Geary's $C$ \citep{moran1950,geary1954} with the 503-km
 Gaussian weights. The five dispersion quantities use lower-tail tests; because the direction of
 an autocorrelation change depends on the mechanism, Moran and Geary use the
 absolute high-minus-middle difference and a two-sided group test. The single
-distance bin is a local benchmark; the five-bin profile is the direct
-variogram-profile competitor. Specifically, the 7,260 pair distances are
-split at their prespecified quintiles into sets $\mathcal B_k$, and
+distance bin is a local benchmark; the five-bin profile is the closest
+variogram-profile analogue. Specifically, the 7,260 pair distances are
+split at their quintiles into sets $\mathcal B_k$, and
 \[
  \Gamma_k(\mathbf y)=\frac{1}{2|\mathcal B_k|}
  \sum_{(i,j)\in\mathcal B_k}(y_i-y_j)^2.
@@ -551,7 +536,7 @@ statistic. All metrics are evaluated on identical simulated fields with the
 same joint shifts. The graph profile avoids hard bin boundaries and
 admits the exact node allocation in Equation~\eqref{eq:aggregated-allocation};
 we compare calibration and power to assess whether these properties entail a
-loss relative to the six competitors.
+loss relative to the other six procedures.
 
 The repeated-summer experiment compares the Student interval, fixed lag-2
 calculation, Bartlett estimator with $L_R=\lfloor R^{1/3}\rfloor$, sign test
@@ -594,13 +579,12 @@ Gradient  & Weak   & $-10.34$ & 90.9  & 93.9  & 96.5  & 40.8  & 78.9  & 32.4 & 8
 Across eight cyclic-invariant designs, graph-profile rejection ranged from
 4.5\% to 6.8\%, while the six competitors spanned 4.0\%--6.4\%.
 The graph test had rejection rates of 4.5\%
-at temporal correlation 0.75 and 6.1\% under the $t_3$ field. The two non-circular boundary
-cases gave 4.6\% and 5.1\%; these results do not extend
-Proposition~\ref{thm:cyclic} beyond its invariance condition.
+at temporal correlation 0.75 and 6.1\% under the $t_3$ field. The two
+non-circular boundary cases gave 4.6\% and 5.1\%.
 
 Gaussian-alternative absolute bias was below 0.48 percentage points and root
 mean squared error was 2.6--3.8 points. Under the original $t_3$ null, graph
-randomisation size was 6.1\%. We then ran a paired denominator stress test with
+randomisation size was 6.1\%. A paired denominator stress test then used
 2,000 heavy-tailed data sets under each of the null and $-7\%$ alternatives
 and 999 common product shifts per data set. Null rejection was 4.70\%, 4.90\%
 and 4.75\% for the raw ratio, log ratio and bounded symmetric contrast. On
@@ -613,17 +597,16 @@ Randomisation calibration can therefore coexist with unstable effect
 estimation; in this design, resistant summaries reduce but do not eliminate
 the problem.
 
-No method dominates Table~\ref{tab:field-simulation}. Nearest-neighbour
-semivariance is strongest for range changes, but its power is only 40.8\%
+Performance varies across the mechanisms in Table~\ref{tab:field-simulation}.
+Nearest-neighbour semivariance is strongest for range changes, but its power is 40.8\%
 under weak gradient suppression, compared with 90.9\% for the graph profile
 and 96.5\% for variance. The five-bin variogram is similar to the graph profile
 for gradient suppression (93.9\% versus 90.9\% at the weakest setting), but is
 less sensitive to the weak amplitude and range changes (33.6\% and 19.0\%
 versus 50.0\% and 48.9\%). Moran's $I$ and Geary's $C$ have near-nominal power
 for pure amplitude changes because standardisation removes amplitude. The
-profile's minimum power across the nine tabulated alternatives is 48.9\%, higher than
-the minimum of each competitor in this experiment. Its advantage is coverage
-across unknown mechanisms, not pointwise dominance.
+profile's minimum power across the nine tabulated alternatives is 48.9\%,
+higher than the minimum of each other procedure in this experiment.
 
 The scale-specific profiles retain information lost by a scalar test. Strong
 amplitude reduction changes all three summaries by about 19\%; range expansion
@@ -645,9 +628,9 @@ acts most strongly on the local graph
   \label{fig:simulation}
 \end{figure}
 
-The baseline independence design was supplemented by eight simulation
-scenarios in which the label-generating mean and spatial field share structure
-(full specifications are in the Supplement). In the shared-latent null, the sign of the spatial
+Eight additional scenarios allow the label-generating mean and spatial field
+to share structure; full specifications are in the Supplement. In
+the shared-latent null, the sign of the spatial
 gradient has mean correlation 0.61 with regional WBT, but its squared energy
 is constant, so the true dispersion contrast is zero. The other nulls add a
 within-month trend, anisotropic spatial covariance or selection of a daily
@@ -655,8 +638,8 @@ peak from 24 simulated hourly regional means, with hour-invariant anomaly
 covariance. Corresponding alternatives attenuate the gradient, impose a
 seasonally declining gradient or reduce high-day anomaly amplitude. Graph
 null rejection is 4.0\%--7.0\%, compared with 4.3\%--7.3\% for the five-bin
-variogram. These results are close to the cyclic-invariance calibration but
-fall outside Proposition~\ref{thm:cyclic}. The graph profile is at least as
+variogram. Graph rejection under these four nulls is close to its
+cyclic-invariance calibration. The graph profile is at least as
 powerful in three of four alternatives, whereas the variogram is slightly
 stronger for the seasonal-gradient alternative. Smooth graph weighting and
 exact allocation therefore show no consistent power penalty across these
@@ -667,54 +650,44 @@ scenarios.
 At $R=33$, increasing Gaussian year correlation from 0 to 0.6 reduces Student
 coverage from 95.2\% to 66.1\%, fixed-lag coverage from 93.3\% to 78.7\%, and
 growing-HAC coverage from 91.2\% to 79.0\%. Corresponding Gaussian null
-rejection rises to 21.2\%, 14.4\% and 14.1\%. The error is driven by long-run
-variance estimation rather than centring. None of the three process-model
-intervals is reliable as primary evidence at this record length under the
-simulated dependence. Full results for 108 cells, including skewed and heavy-tailed
+rejection rises to 21.2\%, 14.4\% and 14.1\%. The error arises mainly from
+long-run variance estimation. Coverage from all three process-model intervals
+deteriorates at this record length under the simulated dependence. Full
+results for 108 cells, including skewed and heavy-tailed
 innovations, appear in the Supplement.
 
 An additional 10,000-replication experiment uses the exact 1991--2025 calendar
 and removes 2015 and 2022. The largest absolute mean bias over correlations
-0, 0.3 and 0.6 and effects 0 and $-7\%$ is 0.03 percentage points. Fixed
-deletion therefore has negligible first-order centring bias in this experiment,
+0, 0.3 and 0.6 and effects 0 and $-7\%$ is 0.03 percentage points. Excluding
+the two design summers therefore has negligible first-order centring bias,
 but short-record dependence remains: at correlation 0.6, null coverage is
 68.3\% for the independent-summer interval and 80.2\% for calendar lag 2.
 
 \section{Humid-heat application}
 
 We apply graph dispersion to synchronous wet-bulb temperature fields in
-eastern China. The estimand, labels, scales and decision rule were fixed using
-2015 and 2022; the record estimate uses the other 33 evaluation summers. The
-ERA5-Land analysis panel covers every summer in the specified 1991--2025
-primary window. We apply the same construction separately to 1950--1990.
+eastern China during 1991--2025 and extend the analysis to 1950--1990.
 
 \subsection{Data construction and analysis design}
 
 ERA5-Land supplies hourly land-surface fields on a $0.1^\circ$
 latitude--longitude grid \citep{munoz2021}. We use 2-m air temperature, 2-m
 dew-point temperature and surface pressure for June--August 1991--2025 over
-105--125$^\circ$E and 20--42$^\circ$N. Both limits were fixed during method
-development. The rectangle provides
+105--125$^\circ$E and 20--42$^\circ$N. The rectangle provides
 a regular support spanning the subtropical-to-temperate north--south gradient
 of eastern China while excluding most of the Tibetan Plateau west of
-105$^\circ$E. Its northern and southern limits bound that intended gradient,
-and the 1991 start reflects the original data acquisition rather than a
-climatic breakpoint. We analysed the 33 evaluation summers only after fixing
-the specification.
+105$^\circ$E. Its northern and southern limits bound that gradient. The
+analysis panel begins in 1991.
 
-Before accessing the earlier values, we recorded a separate extension
-protocol. It retains the 121 sites, Bolton WBT and
-quality-control rules, UTC regional-peak fields, within-record type-7 labels,
-five physical bandwidths and the equal-month, equal-scale and equal-summer
-estimator. The extension covers all 41 June--August seasons from 1950, the
-first year of the ERA5-Land record, through 1990. The protocol also specifies
-separate summaries for 1950--1978 and 1979--1990 because the earlier segment
-uses the preliminary ERA5 back extension
+The historical extension covers all 41 June--August seasons from 1950, the
+first year of the ERA5-Land record, through 1990. It uses the same sites,
+field construction and five-scale estimator. We report separate summaries for
+1950--1978 and 1979--1990 because the earlier segment uses the preliminary
+ERA5 back extension
 (\href{https://confluence.ecmwf.int/pages/viewpage.action?pageId=402639006}{ECMWF
-production documentation}). This split follows the production history rather
-than the observed effect.
-The same pre-access protocol specified a 99,999-draw joint product cyclic-shift
-diagnostic for the historical statistic.
+production documentation}). The extension plan and its 99,999-draw product
+cyclic-shift calculation were recorded before the historical values were
+retrieved.
 
 Every 16th longitude and 18th latitude cell from a fixed north-west origin
 gives a $13\times13$ candidate lattice; removing ocean cells leaves 121 sites
@@ -723,28 +696,29 @@ quality-controlled hour--site records and 92 complete UTC fields per summer.
 Because of NetCDF packing, 2,092 dew-point values exceeded air temperature
 slightly (0.022\% of records); these pairs were clipped at equality before WBT
 was calculated.
-The primary target is a fixed-site average. For the area-weighted
-sensitivity, $a_i=\cos(\mathrm{latitude}_i)$,
+The main target is a site average. For area weighting,
+$a_i=\cos(\mathrm{latitude}_i)$,
 \[
  \bar y_t^{(a)}=\frac{\sum_i a_i y_{it}}{\sum_i a_i},\qquad
  Q_{h,a}(\mathbf y)=
  \frac{\sum_{i<j}a_i a_j w_{ij,h}(y_i-y_j)^2}
       {2\sum_{i<j}a_i a_j w_{ij,h}}.
 \]
-We first replace $Q_h$ by $Q_{h,a}$ with the original labels fixed, then
-redefine the labels from $\bar y_t^{(a)}$ at the primary peak hours.
+The first area-weighted calculation replaces $Q_h$ by $Q_{h,a}$ using the
+original labels; the second redefines the labels from $\bar y_t^{(a)}$ at the
+regional peak hours.
 The two calculations separate spatial weighting from event relabelling.
 
 \begin{figure}[!t]
 \centering
   \includegraphics[width=0.90\textwidth, height=0.60\textheight, keepaspectratio]{figure02_study_area.pdf}
-  \caption{Spatial sampling and graph support. (A) Primary lattice with 121
+  \caption{Spatial sampling and graph support. (A) Analysis lattice with 121
   land sites from 169 candidates. (B) Nested lattice adding 344 land sites
-  while retaining every primary site. (C,D) Gaussian edge weights from one
+  while retaining every analysis site. (C,D) Gaussian edge weights from one
   reference site under the 126- and 2,013-km graphs, showing how bandwidth
   changes the geographic support at fixed coordinates. Basemap: Natural Earth
   1:50m, accessed through the R \texttt{maps} package.}
-  \figalttext{Four eastern-China maps compare the primary and
+  \figalttext{Four eastern-China maps compare the analysis and
   nested site lattices, then show weights concentrated near one reference site
   under the 126-km graph and spread across the domain under the 2,013-km graph.}
   \label{fig:study-area}
@@ -763,34 +737,34 @@ Saturated $T_w$ is obtained by solving
 at the original pressure with 40 bisection iterations on
 $[T_d,T]$; even a 100-K initial interval then falls below $10^{-9}$ K. Values
 with $T_d>T$ are clipped at equality before evaluation. The Stull approximation
-\citep{stull2011} is an exploratory sensitivity analysis; the primary
-calculation follows the pseudoadiabatic definition discussed by
-\citet{davies2008}.
+provides a comparison \citep{stull2011}; the main calculation follows the
+pseudoadiabatic definition discussed by \citet{davies2008}.
 
 For each UTC day, the 121 simultaneous values at the peak regional mean form
 the daily field. Within each month-year, the upper regional-mean quartile is
-high, the middle half is middle and the lower quartile is excluded.
-Neither the label nor the selected hour uses graph dispersion. UTC+8 days,
+high, the middle half is middle and the lower quartile is excluded. Labels
+depend on regional mean WBT, and the selected hour maximises that mean; graph
+dispersion enters after selection. UTC+8 days,
 alternative thresholds, sitewise maxima, all 24 fixed UTC hours and daily-mean
-fields provide sensitivity checks. At each fixed hour, both the original
+fields provide comparisons. At each fixed hour, both the original
 peak-based labels and labels recomputed from that hour's regional mean are
-analysed; daily-mean labels are likewise recomputed from daily-mean WBT. A
+analysed; daily-mean labels are likewise recomputed from daily-mean WBT\@. A
 dated event manifest records the type-7 thresholds, membership and absence of
 ties.
 
-Three checks address within-month seasonal progression. We compare the
-day-of-month distributions of the two regimes, fit and remove a separate
-linear day-of-month trend at every site within each year--month, and subtract
-each site's calendar-day climatology, estimated from all summers except the
-one being analysed. Event labels remain unchanged in the last two checks, so they
-ask whether the original regime contrast survives removal of those calendar
-components. A separate date-matched calculation compares each high day with
+Three checks address within-month seasonal progression: comparison of the
+day-of-month distributions, removal of a separate
+linear day-of-month trend at every site within each year--month, and
+subtraction of each site's calendar-day climatology, estimated from all
+summers except the one being analysed. The last two calculations use the
+original event labels.
+A date-matched calculation compares each high day with
 all middle days in the same month-year lying within $\pm3$ or $\pm5$ calendar
 days. It first averages the available high-day-specific ratios and then uses
-the same equal-month, equal-scale and equal-summer hierarchy as the primary
+the same equal-month, equal-scale and equal-summer hierarchy as the
 estimator; unmatched-day and empty-record counts are retained.
 
-An exploratory continuous diagnostic regresses $\log Q_h$ on centred regional
+A continuous diagnostic regresses $\log Q_h$ on centred regional
 mean WBT within each month-year and bandwidth. Slopes are then averaged equally
 over months, bandwidths and evaluation summers. This slope supplements the
 quartile estimand with a graded summary.
@@ -803,73 +777,66 @@ and from 382 to 7,113, compared with 366 to 7,109 for the Gaussian graphs;
 the full matched-distance and effective-edge metadata accompany the analysis.
 
 A nested $0.8^\circ\times0.9^\circ$ lattice adds 344 land sites while retaining
-all primary locations. For numerical convergence, we hold the five physical
-bandwidths, primary peak times and labels fixed, and compare 121 sites with a
-239-site longitude refinement, a 236-site latitude refinement and all 465
-sites. We also reselect peak times and labels on the full grid as a separate
-design sensitivity. Thin-plate REML surfaces \citep{wood2003} are used only
+all 121 locations. Numerical convergence is assessed at the five physical
+bandwidths by comparing 121 sites with a 239-site longitude refinement, a
+236-site latitude refinement and all 465 sites under the evaluation events;
+peak times and labels are also reselected on the full grid. Thin-plate REML
+surfaces \citep{wood2003} are used only
 for display in Figures~\ref{fig:multiscale-evidence} and
 \ref{fig:spatial-decomposition}; every estimate uses observed nodes.
 
-We assess ERA5-Land WBT against the National Oceanic and Atmospheric
-Administration Integrated Surface Database (NOAA ISD) \citep{smith2011}. A
-pre-access plan fixed an enumerated set of ten summers excluded from method
-development (1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2023 and 2025)
-before their station values were retrieved. After applying the planned archive,
-operating-period and geographic eligibility rules detailed in the Supplement,
-including one outcome-blind metadata amendment, a deterministic maximin design
-selected 30 dispersed stations. We retained a station-year when it had
+We compare ERA5-Land WBT with observations from the National Oceanic and
+Atmospheric Administration Integrated Surface Database (NOAA ISD)
+\citep{smith2011}. The station comparison uses ten summers (1992, 1996, 2000,
+2004, 2008, 2012, 2016,
+2020, 2023 and 2025) selected before station retrieval. Archive,
+operating-period and geographic eligibility rules followed by a deterministic
+maximin design selected 30 dispersed stations. A station-year was retained
+when it had
 at least 400 quality-controlled, complete exact-hour observations of
 temperature, dew point and sea-level pressure; station elevation supplied
 surface pressure under a standard atmosphere. At two offshore stations, all
 variables were missing from the nearest ERA5-Land grid cells, leaving 28
 usable stations and 175,172 exact-hour WBT pairs.
 
-For the station-field calculation, we kept the 121-site ERA5-Land peak times
-and high--middle labels fixed. At each retained time, NOAA and ERA5-Land graph
+The station-field calculation uses peak times and high--middle labels from the
+121-site ERA5-Land fields. At each retained time, NOAA and ERA5-Land graph
 contrasts use the identical station subset and require at least 10 stations.
 All 30 year-month records retained at least one field in each regime. The
 503-, 1,006- and 2,013-km graphs were designated as station-supported before
 evaluation; the two narrower graphs diagnose the limit of the station
-geometry. This analysis assesses measurement agreement and whether the sparse
-station network yields the same direction of spatial contrast under the fixed
-ERA5-Land labels.
+geometry. The comparison assesses measurement agreement and the direction of
+spatial contrast on this sparse network.
 
-\subsection{Primary evaluation-period multiscale result}
+\subsection{Evaluation-period multiscale result}
 
-Across the 33 evaluation summers, the prespecified five-scale finite-record
+Across the 33 evaluation summers, the five-scale
 contrast was $-7.28\%$. None of the 99,999 independently sampled product
 cyclic shifts produced a statistic as negative as the observed value, giving
 the plus-one one-sided value $p=0.00001$ under the conditional
-product-invariance null,
-the minimum attainable value for this Monte Carlo run. The complete five-scale
+product-invariance null. This was the minimum attainable value for the Monte
+Carlo run. The complete five-scale
 daily profile was shifted jointly within each of the 99 month-year records.
-This exploratory calculation assesses the observed finite record under the
-stated product-invariance condition.
 
 Twenty-eight summer-specific contrasts were negative, and leave-one-summer-out
 estimates ranged from $-7.69\%$ to $-6.64\%$. For process-model comparison,
 the 95\% independent-summer $t$-reference interval is
 $[-10.00,-4.57]\%$. The fraction negative is 0.85 (Wilson interval
 $[0.69,0.93]$), with a one-sided independent-sign reference value of
-$3.3\times10^{-5}$. These exploratory process-model references are secondary
-to the finite-record estimate; the cyclic-shift calculation provides an
-exploratory finite-record randomisation assessment under the stated conditional
-product-invariance null.
+$3.3\times10^{-5}$.
 
 The fitted trend was $-0.22$ percentage points per year (95\% descriptive OLS
-reference interval
-$[-0.48,0.05]$, two-sided $p=0.10$). The 2008--2025 mean was 2.95 points more
-negative than the 1991--2007 mean, with a descriptive Welch reference interval
-of $[-8.43,2.52]$ points. These descriptive trends are too imprecise to
-establish temporal stability; process-level inference requires assumptions
-beyond the finite record.
+reference interval $[-0.48,0.05]$, two-sided $p=0.10$). The 2008--2025 mean
+was 2.95 points more negative than the 1991--2007 mean, with a descriptive
+Welch reference interval of $[-8.43,2.52]$ points. Both intervals include zero,
+leaving the temporal trend uncertain.
 
 Effects increase in magnitude from $-2.86\%$ under the 126-km graph to
 $-13.27\%$ under the 2,013-km graph
 (Table~\ref{tab:confirm-scales}; Figure~\ref{fig:multiscale-evidence}).
 Negative-summer counts rise from 22 to 30. A 31-point log-spaced bandwidth
-curve decreases monotonically across the same 126--2,013-km range.
+profile decreases at each successive evaluated bandwidth across the same
+126--2,013-km range.
 Complete-graph variance falls 14.45\% and is negative in all 33
 summers.
 
@@ -892,46 +859,45 @@ summers.
   \label{fig:multiscale-evidence}
 \end{figure}
 
-\paragraph{Historical extension, 1950--1990.}
-Applying the unchanged construction to 1950--1990 gave a five-scale contrast of
+\subsubsection*{Historical extension, 1950--1990}
+The 1950--1990 extension gave a five-scale contrast of
 $-11.04\%$ (95\% descriptive interval
-$[-12.84,-9.24]\%$). Forty of 41 summer contrasts were negative, the
-leave-one-summer-out range was $-11.33\%$ to $-10.62\%$. The pre-access
-extension protocol also specified the 99,999-draw product-shift calculation;
-none of the sampled statistics was as negative as the observed statistic
+$[-12.84,-9.24]\%$). Forty of 41 summer contrasts were negative, and the
+leave-one-summer-out range was $-11.33\%$ to $-10.62\%$. Its 99,999-draw
+product-shift calculation produced no statistic as negative as the observed
+value
 (plus-one $p=0.00001$). The scale profile was $-5.96,-7.51,-10.08,-14.50$ and
 $-17.17\%$ from 126 to 2,013 km, with 38, 39, 40, 41 and 41 negative summers.
 The negative sign and strengthening contraction with bandwidth also appear in
-the 41 summers preceding the primary window.
+the 41 earlier summers.
 
 The production-history split gave $-10.50\%$ in 1950--1978 (28 of 29 summers
-negative) and $-12.34\%$ in 1979--1990 (12 of 12 negative). We report these
-segments because the pre-1979 record uses different forcing; the split is
-descriptive.
-An exploratory historical climatology--anomaly decomposition re-estimates the
+negative) and $-12.34\%$ in 1979--1990 (12 of 12 negative). The segments are
+reported separately because the pre-1979 record uses different forcing.
+The historical climatology--anomaly decomposition re-estimates the
 site-specific monthly climatological field from the 41 summers in 1950--1990.
 At 2,013 km, the historical anomaly-energy component was $-0.28$ points
 (95\% descriptive interval $[-1.01,0.45]$),
 whereas the climatology--anomaly cross component was $-16.89$ points
 ($[-19.31,-14.47]$) and negative in all 41 summers. Both the
 latitude and latitude--longitude structured components were negative in every
-summer at every bandwidth. The earlier record is therefore consistent with
-the same broad structural pattern, subject to the documented pre-1979 forcing
-caveat.
+summer at every bandwidth. In the earlier record, most broad-scale contraction
+was likewise in the alignment term. The 1950--1978 estimates inherit the
+uncertainty of the preliminary forcing data.
 
 \subsection{Spatial structure and energy decomposition}
 
 \begin{figure}[!t]
 \centering
   \includegraphics[width=0.90\textwidth, height=0.60\textheight, keepaspectratio]{figure04_primary_spatial_decomposition.pdf}
-  \caption{Spatial structure of the primary 121-site evaluation contrast.
-  (A,B) Middle- and high-day within-field anomalies; (C) their difference;
-  (D) exact observed-node allocations averaged over the five prespecified
+  \caption{Spatial structure of the 121-site evaluation contrast.
+  (A,B) Middle- and high-day spatially centred fields; (C) their difference;
+  (D) exact observed-node allocations averaged over the five
   graph scales. The 121 allocations sum to $-7.28\%$, identical to the
-  primary finite-record estimand. The interpolated surfaces visualise the 121
+  five-scale estimand. The interpolated surfaces visualise the 121
   observed-node values; estimation and inference use the observed nodes.}
   \figalttext{Four smoothed eastern-China maps derived from
-  121 analysis sites, shown as dots. The anomaly surfaces show a weaker
+  121 analysis sites, shown as dots. The spatially centred surfaces show a weaker
   north--south contrast on high days; the
   high-minus-middle surface changes from positive in the north to negative in
   the south, and most observed-node allocations are negative, with the
@@ -954,11 +920,11 @@ latitude--longitude--elevation basis gives a 2,013-km structured component of
 $-14.34$ points (95\% descriptive interval
 $[-16.75,-11.92]$), negative in all 33 summers, and a residual of $+1.07$
 points. At 126 km, however, its structured component is $-1.16$ points
-($[-2.66,0.33]$) and is negative in only 18 summers. The nested bases show a
-broad low-dimensional geographic--topographic structure dominated by the
-north--south component, with weaker structured attribution at 126 km. Node
-allocations are negative at 106 sites and sum exactly to $-7.28\%$; they are
-symmetric incident-edge allocations, not unique local effects.
+($[-2.66,0.33]$) and is negative in only 18 summers. At broad scales, the
+nested bases show that latitude accounts for most of the low-dimensional
+geographic--topographic structure; structured attribution is weaker at 126 km. Node
+allocations are negative at 106 sites and sum exactly to $-7.28\%$. Each is a
+symmetric incident-edge allocation.
 
 The climatology--anomaly decomposition in
 Equation~\eqref{eq:climatology-anomaly} locates the broad-scale change. At
@@ -976,28 +942,28 @@ own broad-scale energy changes little.
   \caption{Exact decomposition of the raw-field graph contrast. Dark circles,
   teal triangles and orange squares denote total change, anomaly-energy change
   and the climatology--anomaly cross component; bars are 95\% descriptive
-  intervals. The fixed monthly-climatology energy cancels within each record.}
+  intervals. Monthly-climatology energy cancels within each record.}
   \figalttext{Across five bandwidths, dark circles become
   increasingly negative. Teal triangles remain near zero at broad scales,
   while orange squares closely follow the negative total.}
   \label{fig:energy-decomposition}
 \end{figure}
 
-The convergence analysis compares each grid with the 465-site fixed-event
-reference. The primary 121-site scale profile differs by at most 0.99
+The convergence analysis compares each grid with the 465-site result using the
+evaluation events. The 121-site scale profile differs by at most 0.99
 percentage points, with a five-scale root mean squared difference of 0.76
 points. Latitude refinement reduces these values to 0.50 and 0.38 points;
-longitude refinement gives 0.93 and 0.73 points. Adding all sites with primary
-events fixed yields $-8.03\%$; reselecting events yields $-7.25\%$.
-Contraction strengthens with bandwidth at every resolution. Resolution
-sensitivity and station limitations are greatest at 126 km, where the primary
-spacing and station support are coarsest.
+longitude refinement gives 0.93 and 0.73 points. Adding all sites with the
+evaluation events yields $-8.03\%$; reselecting events yields $-7.25\%$.
+Contraction strengthens with bandwidth at every resolution. Agreement between
+spatial supports is weakest at 126 km, where the 121-site spacing and station
+support are coarsest.
 
 \begin{table}[H]
 \centering
 \caption{Physical scale of the evaluation-period graph contrasts. $Q^M$ and $Q^H$ are
 equal-record descriptive means in $^\circ\mathrm C^2$; RMS columns report
-$(2Q)^{1/2}$ in $^\circ\mathrm C$. The graph effect is the prespecified mean
+$(2Q)^{1/2}$ in $^\circ\mathrm C$. The graph effect is the mean
 of record-specific squared-difference ratios, so it need not equal the ratio
 of the two descriptive $Q$ columns. Negative gives the number of summers with
 a negative graph effect.}
@@ -1027,21 +993,20 @@ $-8.27\%$. Early- and late-period summaries have overlapping descriptive
 intervals. These checks assess the stability of the spatial contrast across
 analysis choices.
 
-Applying the same equal-month, equal-scale and equal-year formula to 2015 and
-2022 gives $-15.14\%$. This descriptive development-period value is excluded
-from primary inference.
+For comparison, the same equal-month, equal-scale and equal-year formula gives
+$-15.14\%$ for the 2015 and 2022 design summers.
 
 \subsection{Robustness and external measurement agreement}
 
 The 495 middle-day denominators range from 2.25 to
 $25.99\;{}^\circ\mathrm{C}^2$ across records and scales; within-scale
-coefficients of variation are 0.076--0.177, with no near-zero value. The
-prespecified raw ratio is therefore numerically stable in this application,
-although the simulation shows that it is not uniformly resistant to small
+coefficients of variation are 0.076--0.177, with a minimum of
+$2.25\;{}^\circ\mathrm{C}^2$. The raw ratio is numerically stable over these
+data; the heavy-tail simulation examines its behaviour with small
 denominators. The back-transformed log-ratio is $-8.30\%$; the bounded
 symmetric contrast $2(Q^H-Q^M)/(Q^H+Q^M)$ is $-8.59\%$. Cosine-latitude area
 weighting gives $-8.11\%$
-when the original labels are fixed, and $-7.67\%$ when labels are recomputed
+using the original labels, and $-7.67\%$ when labels are recomputed
 from the area-weighted regional mean. Kernels matched to the Gaussian weighted
 mean distance give $-7.71\%$ (exponential) and $-7.33\%$ (compact quadratic).
 All preserve the negative direction and strengthening contraction with
@@ -1053,8 +1018,8 @@ $[-0.082,-0.048]$), with negative summer slopes in 31 of
 33 years. Scale-specific slopes become more negative from
 $-0.032\;{}^\circ\mathrm C^{-1}$ at 126 km to
 $-0.110\;{}^\circ\mathrm C^{-1}$ at 2,013 km; the corresponding negative-year
-counts rise from 29 to 32. The association is therefore graded across the
-within-month WBT distribution and is not confined to the upper-quartile cut.
+counts rise from 29 to 32. The negative association extends across the
+within-month WBT distribution.
 
 The estimated contrast depends on the definition of the spatial field.
 Subtracting each site's 35-year monthly climatology reduces the estimate to
@@ -1087,21 +1052,21 @@ under both windows. The profiles run from $-2.32\%$ to $-8.87\%$ for
 $\pm3$ days and from $-2.54\%$ to $-9.89\%$ for $\pm5$ days, retaining the
 strengthening contraction with bandwidth.
 
-All fixed-hour and daily-mean analyses yielded negative estimates. With
-original event days fixed, all 24 fixed-hour
+All fixed-hour and daily-mean analyses yielded negative estimates. Using the
+original event days, all 24 fixed-hour
 estimates are negative, from $-10.07\%$ at 00 UTC to $-6.03\%$ at 11 UTC, and
 daily-mean fields give $-7.58\%$. When labels are recomputed from each fixed
 hour, all estimates remain negative, from $-14.65\%$ at 22 UTC to $-5.42\%$
 at 11 UTC; labels recomputed from daily-mean WBT give $-9.14\%$. Peak hours
 have nearly identical distributions in the original high and middle groups
-(median 06 UTC). Figure~\ref{fig:application-robustness} compares the primary
+(median 06 UTC). Figure~\ref{fig:application-robustness} compares the main
 estimate with transformation, graph-construction, spatial-resolution and
 field-definition alternatives.
 
 \begin{figure}[t]
 \centering
   \includegraphics[width=\textwidth, height=0.62\textheight, keepaspectratio]{figure06_application_robustness.pdf}
-  \caption{Robustness of the mean profile effect. Dark rows denote the primary
+  \caption{Robustness of the mean profile effect. Dark rows denote the main
   and transformation analyses; green, orange and purple rows denote graph
   construction, spatial resolution and field definition. Points and bars are
   estimates and 95\% descriptive intervals.}
@@ -1121,8 +1086,8 @@ had no finite values at their nearest ERA5-Land grid cells.
 At 126, 252, 503, 1,006 and 2,013 km, the station high--middle contrasts are
 $-6.23,-7.23,-12.50,-18.03$ and $-21.47\%$; the corresponding ERA5-Land
 values on identical station subsets are $-11.60,-12.74,-17.13,-21.60$ and
-$-24.23\%$. The numbers of negative station summers increase across these
-scales from 6, 7 and 8 to 9 and 9. Averaged over the three predesignated
+$-24.23\%$. The numbers of negative station summers across the five scales are
+6, 7, 8, 9 and 9. Averaged over the three predesignated
 station-supported scales, the station effect is $-17.34\%$
 ($[-28.49,-6.18]\%$), with 9 of 10 summer contrasts negative; the paired
 ERA5-Land effect is $-20.99\%$ ($[-28.57,-13.40]\%$), with all 10 negative.
@@ -1134,9 +1099,9 @@ clear evidence of a local-scale contrast
 \begin{figure}[t]
 \centering
   \includegraphics[width=\textwidth, height=0.62\textheight, keepaspectratio]{figure07_noaa_agreement.pdf}
-  \caption{NOAA station and ERA5-Land agreement in ten summers excluded from
-  method development. (A) Exact-hour WBT at 28 stations, with summaries from
-  all 175,172 matches. (B) High--middle graph contrasts at the five fixed
+  \caption{NOAA station and ERA5-Land agreement in ten station-comparison
+  summers. (A) Exact-hour WBT at 28 stations, with summaries from
+  all 175,172 matches. (B) High--middle graph contrasts at the five
   bandwidths, using ERA5-Land peak times and labels and identical station
   subsets. Dashed diagonals denote equality; pale segments in panel B connect
   station estimates to equality.}
@@ -1152,10 +1117,10 @@ clear evidence of a local-scale contrast
 
 Across the 33 evaluation summers, spatial WBT contrast was lower when the
 regional mean was high. The five-scale mean was $-7.28\%$, 28 summer effects
-were negative, and an exploratory product cyclic-shift assessment gave
+were negative, and the product cyclic-shift assessment gave
 $p=0.00001$ under the conditional product-invariance null. Contraction
-strengthened from 126 to 2,013 km,
-indicating that the largest difference was at broad geographic scales.
+strengthened from 126 to 2,013 km, with the largest estimated contraction at
+broad geographic scales.
 The 1950--1990 extension showed the same scale pattern, with a mean of
 $-11.04\%$ and 40 of 41 summer effects below zero. Station data also agreed in
 direction at 503 km and broader: the three-scale mean was $-17.34\%$, with
@@ -1163,38 +1128,39 @@ negative contrasts in 9 of 10 summers. At 126 km, the station and matched
 reanalysis intervals both included zero. These contrasts describe spatial
 arrangement, a feature distinct from the area exceeding a heat threshold.
 
-The statistical contribution is the integration of scale-indexed graph
-dispersion, finite-record randomisation and exact spatial accounting for an
-observational field. The five fixed graphs define a single estimand while
-retaining its scale profile; product shifts preserve the within-record
-dependence among scales; and node and energy decompositions recover the regional contrast
-exactly. This combination shows how the change is distributed over nodes and
-scales, while keeping the observed-record analysis separate from a stochastic
-process model. Product-shift rejection remained near nominal in the simulated
-null settings. Separate simulations show why Student and HAC intervals can be
+Our analysis integrates scale-indexed graph dispersion, finite-record
+randomisation and exact spatial accounting for an observational field. The
+five graphs define a single estimand while retaining its scale profile,
+product shifts preserve within-record dependence among scales, and node and
+energy decompositions recover the regional contrast exactly. Together, these
+elements show how the change is distributed over nodes and scales. The
+finite-record calculation and stochastic process model answer
+different inferential questions. Product-shift rejection remained near
+nominal in the simulated null settings. Separate simulations show why Student
+and HAC intervals can be
 unreliable with only 33 dependent summers.
 
-The decompositions give a specific climatic interpretation. The contrast is
-dominated by the north--south structure: after removing each day's regional
-mean, high-day fields are relatively warmer in the north and cooler in the
-south than middle-day fields. This pattern compresses the persistent monthly
-gradient. At broad scales, the climatology--anomaly cross component accounts
+The decompositions locate the contrast in the spatial field. After removing
+each day's regional mean, high-day fields are relatively warmer in the north
+and cooler in the south than middle-day fields, and the north--south component
+accounts for most of the contrast. At broad scales, the
+climatology--anomaly cross component accounts
 for nearly all of the contraction, whereas the anomaly field's own energy
 changes little. High regional mean WBT is therefore associated with a flatter
-relative geographic pattern, rather than uniform smoothing of transient
-anomalies. The negative raw-field contrast persists under area weighting,
-alternative kernels, fixed-hour analyses and calendar matching. Its attenuation
-after site-month and site--year--month demeaning further locates the result in
-the cross-site climatic gradient.
+relative geographic pattern. The negative raw-field contrast persists under
+area weighting, alternative kernels, fixed-hour analyses and calendar
+matching. Its attenuation after site-month and site--year--month demeaning
+further locates the result in the cross-site climatic gradient.
 
 Several limitations remain. The 126-km graph has the coarsest effective
-spatial support and the weakest station evidence. The rectangular domain is a
-fixed sampling support, so other boundaries may produce different allocations.
+spatial support and the weakest station evidence. The rectangular domain
+defines the sampling support, and other boundaries may produce different
+allocations.
 The historical extension uses the same reanalysis product, and the 1950--1978
 segment carries the documented preliminary-forcing caveat. The station
 comparison covers 28 locations in ten summers and uses event times and labels
-from ERA5-Land; it assesses measurement agreement and station-sampled contrast,
-but not independent event identification or full-field replication.
+from ERA5-Land. It measures agreement for those events on the sampled station
+network.
 Pressure-level circulation, population-weighted fields and health outcomes are
 needed to examine mechanism and exposure. Across the analysed finite record,
 high-regional-mean days had weaker broad-scale WBT contrast while transient
@@ -1217,13 +1183,9 @@ their source providers.
 
 \section*{Acknowledgements}
 
-The authors used OpenAI Codex for language and substantive text revision,
-\LaTeX{} preparation, writing and modifying analysis code, data-processing
-support, code-based figure preparation, and checks of code, results and
-manuscript consistency. The authors reviewed and approved the final data
-processing, code, computations, figures and text, made the scientific
-decisions, and take responsibility for the analyses, interpretations and
-manuscript.
+OpenAI Codex was used for language checking and code debugging. The authors
+reviewed all changes and take full responsibility for the manuscript and
+analysis.
 
 \section*{Funding}
 

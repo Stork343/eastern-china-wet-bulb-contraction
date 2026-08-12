@@ -190,7 +190,7 @@ def main() -> None:
     expected_sections = [
         "Introduction",
         "Multiscale graph regime contrasts",
-        "Finite-record inference and analysis protocol",
+        "Finite-record inference and study design",
         "Simulation study",
         "Humid-heat application",
         "Discussion",
@@ -250,11 +250,10 @@ def main() -> None:
     supplement = SUPPLEMENT_FILE.read_text()
     require("Primary finite-record estimate" in supplement and
             "Pre-access extension" in supplement and
-            "Protocol-specified conditional randomisation assessment" in supplement and
-            "The global row is an exploratory finite-record test" in supplement and
+            "Exploratory inferential analysis" in supplement and
+            "Conditional randomisation under the product-invariance null" in supplement and
             "Historical climatology--anomaly decomposition" in supplement and
-            "negative-moment condition required by the process-level ratio argument" in
-            supplement and
+            "process-level ratio argument additionally assumes" in supplement and
             "negative-moment condition in Equation" not in supplement and
             "Secondary reference summaries" not in supplement and
             "Extension plan set before retrieval" not in supplement,
@@ -288,9 +287,8 @@ def main() -> None:
     application_text = main_text.split(
         "\\section{Humid-heat application}", 1
     )[1].split("\\section{Discussion}", 1)[0]
-    require("exploratory finite-record assessment" in main_text and
-            "exploratory finite-record randomisation" in application_text and
-            "an exploratory product cyclic-shift assessment" in main_text and
+    require("report its $p$-value as exploratory" in main_text and
+            "the product cyclic-shift assessment gave" in main_text and
             "cyclic-shift result provides the finite-record inferential assessment"
             not in main_text,
             "Global product-shift timing or exploratory status is inconsistent")

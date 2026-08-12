@@ -48,22 +48,21 @@ def make_year_tables(frame: pd.DataFrame) -> list[str]:
     frame = frame.sort_values(keys).reset_index(drop=True)
 
     lines = [
-        r"\begin{landscape}",
         r"\scriptsize",
-        r"\setlength{\tabcolsep}{3.2pt}",
-        r"\begin{longtable}{rrllrrrrrrrrr}",
-        r"\caption{Complete 108-cell repeated-summer results: estimation, coverage and standardised-mean diagnostics. Bias and RMSE are percentage points; coverage is per cent. $L$ is the growing Bartlett lag. The standardised columns use the known long-run variance.}\label{tab:year-simulation-complete-a}\\",
+        r"\setlength{\tabcolsep}{3.5pt}",
+        r"\begin{longtable}{rrllrrrrr}",
+        r"\caption{Complete 108-cell repeated-summer results: estimation and coverage. Bias and RMSE are percentage points; coverage is per cent.}\label{tab:year-simulation-complete-a}\\",
         r"\toprule",
-        r"$R$ & $\rho$ & Innovation & Effect & Bias & RMSE & $L$ & Student & Lag 2 & Growing & $z$ mean & $z$ SD & $z_{.025},z_{.975}$ \\",
-        r" & & & & \multicolumn{2}{c}{percentage points} & & \multicolumn{3}{c}{coverage (\%)} & & & \\",
+        r"$R$ & $\rho$ & Innovation & Effect & Bias & RMSE & Student & Lag 2 & Growing \\",
+        r" & & & & \multicolumn{2}{c}{percentage points} & \multicolumn{3}{c}{coverage (\%)} \\",
         r"\midrule",
         r"\endfirsthead",
-        r"\multicolumn{13}{l}{\tablename\ \thetable\ continued}\\",
+        r"\multicolumn{9}{l}{\tablename\ \thetable\ continued}\\",
         r"\toprule",
-        r"$R$ & $\rho$ & Innovation & Effect & Bias & RMSE & $L$ & Student & Lag 2 & Growing & $z$ mean & $z$ SD & $z_{.025},z_{.975}$ \\",
+        r"$R$ & $\rho$ & Innovation & Effect & Bias & RMSE & Student & Lag 2 & Growing \\",
         r"\midrule",
         r"\endhead",
-        r"\midrule\multicolumn{13}{r}{Continued on next page}\\\endfoot",
+        r"\midrule\multicolumn{9}{r}{Continued on next page}\\\endfoot",
         r"\bottomrule\endlastfoot",
     ]
     for row in frame.itertuples(index=False):
@@ -71,19 +70,44 @@ def make_year_tables(frame: pd.DataFrame) -> list[str]:
         effect = {"null": "Null", "moderate": r"$-3.5\%$", "application": r"$-7\%$"}[row.effect]
         lines.append(
             f"{row.sample_size:d} & {row.rho:.1f} & {innovation} & {effect} & "
-            f"{100 * row.bias:.3f} & {100 * row.rmse:.3f} & {row.growing_lag:d} & "
+            f"{100 * row.bias:.3f} & {100 * row.rmse:.3f} & "
             f"{pct(row.coverage_student)} & {pct(row.coverage_nw2)} & "
-            f"{pct(row.coverage_hac)} & {row.z_mean:.3f} & {row.z_sd:.3f} & "
-            f"{row.z_q025:.2f}, {row.z_q975:.2f} \\\\"
+            f"{pct(row.coverage_hac)} \\\\"
         )
-    lines += [r"\end{longtable}", r"\end{landscape}", ""]
+    lines += [r"\end{longtable}", ""]
 
     lines += [
-        r"\begin{landscape}",
         r"\scriptsize",
-        r"\setlength{\tabcolsep}{5pt}",
+        r"\setlength{\tabcolsep}{4.5pt}",
+        r"\begin{longtable}{rrllrrrr}",
+        r"\caption{Complete 108-cell repeated-summer results: standardised-mean diagnostics. $L$ is the growing Bartlett lag; the standardised columns use the known long-run variance.}\label{tab:year-simulation-complete-b}\\",
+        r"\toprule",
+        r"$R$ & $\rho$ & Innovation & Effect & $L$ & $z$ mean & $z$ SD & $z_{.025},z_{.975}$ \\",
+        r"\midrule",
+        r"\endfirsthead",
+        r"\multicolumn{8}{l}{\tablename\ \thetable\ continued}\\",
+        r"\toprule",
+        r"$R$ & $\rho$ & Innovation & Effect & $L$ & $z$ mean & $z$ SD & $z_{.025},z_{.975}$ \\",
+        r"\midrule",
+        r"\endhead",
+        r"\midrule\multicolumn{8}{r}{Continued on next page}\\\endfoot",
+        r"\bottomrule\endlastfoot",
+    ]
+    for row in frame.itertuples(index=False):
+        innovation = {"gaussian": "Gaussian", "skewed": "Skewed", "t3": "$t_3$"}[row.innovation]
+        effect = {"null": "Null", "moderate": r"$-3.5\%$", "application": r"$-7\%$"}[row.effect]
+        lines.append(
+            f"{row.sample_size:d} & {row.rho:.1f} & {innovation} & {effect} & "
+            f"{row.growing_lag:d} & {row.z_mean:.3f} & {row.z_sd:.3f} & "
+            f"{row.z_q025:.2f}, {row.z_q975:.2f} \\\\"
+        )
+    lines += [r"\end{longtable}", ""]
+
+    lines += [
+        r"\scriptsize",
+        r"\setlength{\tabcolsep}{4.5pt}",
         r"\begin{longtable}{rrllrrrrr}",
-        r"\caption{Complete 108-cell repeated-summer results: one-sided rejection percentages. The three-test column requires Student, lag-2 and sign values all to be at most 0.025. Under non-null cells the entries are power, not size.}\label{tab:year-simulation-complete-b}\\",
+        r"\caption{Complete 108-cell repeated-summer results: one-sided rejection percentages. The three-test column requires Student, lag-2 and sign values all to be at most 0.025. Under non-null cells the entries are power, not size.}\label{tab:year-simulation-complete-c}\\",
         r"\toprule",
         r"$R$ & $\rho$ & Innovation & Effect & Student & Lag 2 & Growing & Sign & Three-test \\",
         r"\midrule",
@@ -105,7 +129,7 @@ def make_year_tables(frame: pd.DataFrame) -> list[str]:
             f"{pct(row.rejection_hac)} & {pct(row.rejection_sign)} & "
             f"{pct(row.rejection_three_025)} \\\\"
         )
-    lines += [r"\end{longtable}", r"\end{landscape}", ""]
+    lines += [r"\end{longtable}", ""]
     return lines
 
 

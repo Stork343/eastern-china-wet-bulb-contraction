@@ -1,7 +1,7 @@
 \pdfminorversion=7
 \documentclass[namedate,webpdf,modern,mediumone]{oup-authoring-template}
 
-\usepackage{booktabs,tabularx,float,longtable,pdflscape}
+\usepackage{booktabs,tabularx,float,longtable}
 \graphicspath{{figures/}}
 \newcommand{\societylogo}{}
 \usepackage{xurl}
@@ -42,29 +42,22 @@ contraction of spatial wet-bulb temperature contrasts in eastern China''}
 
 This supplement provides the proof of Proposition~1, a process-level
 strong-mixing result, additional applied analyses and the simulation
-specifications and results. The applied tables use 33 evaluation summers;
-2015 and 2022 were reserved for method development and are excluded from
-these summaries.
+specifications and results. Unless stated otherwise, evaluation-period tables
+use 33 summers and exclude the 2015 and 2022 method-development summers. The
+historical and station extensions state their own temporal supports.
 
-\section*{Analytical roles}
+\section*{Analysis sequence}
 \label{sec:status}
 
-Table~\ref{tab:status} uses three status families: primary specification or
-primary finite-record estimate, exploratory analysis, and pre-access
-extension. Descriptors within a family identify inferential, structural,
-reference or sensitivity purposes.
-Unless the table identifies an alternative estimand, every analysis uses the
-original 121-site labels, five bandwidths and equal-month, equal-scale and
-equal-summer estimator. Exploratory analyses were undertaken after completion
-of the primary analysis. The historical and station-extension plans were
-finalised after the primary analysis and before the extension data were
-retrieved. They assess temporal transfer and measurement agreement under the
-original event definition.
+Table~\ref{tab:status} summarises the sequence of analyses. Unless stated
+otherwise, each calculation uses the 121-site labels, five bandwidths and
+equal-month, equal-scale and equal-summer estimator. The historical and station
+extensions were designed before their respective data were retrieved.
 
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{Z{0.22\textwidth}Z{0.20\textwidth}Z{0.22\textwidth}Z{0.26\textwidth}}
-\caption{Analytical status and purpose of the applied analyses.}
+\caption{Sequence and purpose of the applied analyses.}
 \label{tab:status}\\
 \toprule
 Element & Analytical status & Data or support & Scientific purpose \\
@@ -80,91 +73,47 @@ Element & Analytical status & Data or support & Scientific purpose \\
 \endfoot
 \bottomrule
 \endlastfoot
-121-site support, UTC daily peak field and quality rules &
-Primary specification & 2015 and 2022 development summers &
-Data construction for the 33 evaluation summers \\
-
-Within-record quartile labels, five Gaussian bandwidths, raw ratio and equal
-aggregation &
-Primary specification & Development summers and outcome-free simulations &
-Definition of the finite-record estimand \\
+Field construction, event labels, five graph scales and aggregation &
+Primary specification & 2015 and 2022 design summers &
+Definition of the evaluation-period estimand \\
 
 33-summer evaluation-period contrast &
 Primary finite-record estimate & 33 evaluation summers &
-Application of the fixed specification to the evaluation record \\
-
-Student, calendar-lag HAC and sign summaries &
-Exploratory reference analysis & 33 evaluation summers and outcome-free summer
-simulations &
-Descriptive and process-model comparisons \\
+Evaluation-period estimate \\
 
 Global 99,999-draw product shift &
 Exploratory inferential analysis & 33 evaluation summers &
-Conditional randomisation assessment under the product-invariance null for the
-observed records and fixed statistic \\
+Conditional randomisation under the product-invariance null \\
 
-Physical $Q_h$/RMS reporting and alternative effect measures &
-Exploratory sensitivity analysis & 33 evaluation summers &
-Expression of the result in $^\circ$C$^2$, $^\circ$C and alternative
-ratio scales \\
-
-Anomaly fields, latitude and planar bases, and climatology--anomaly energy &
-Exploratory structural analysis & 33 evaluation summers &
-Decomposition of the changing spatial component \\
+Process-model references, alternative effect measures, spatial bases,
+bandwidth and support comparisons &
+Exploratory analyses & 33 evaluation summers and outcome-free simulations &
+Reference inference, structural decomposition and sensitivity analyses \\
 
 Historical climatology--anomaly decomposition &
 Exploratory structural analysis & 41 historical summers &
 Period-specific accounting of anomaly energy and climatology--anomaly
 alignment \\
 
-Elevation-augmented spatial basis &
-Exploratory structural analysis & 33 evaluation summers and invariant
-geopotential &
-Assessment of the broad structured component after adding elevation to the
-geographic basis \\
-
-Nested 465-site support &
-Exploratory sensitivity analysis & Four nested or partially nested supports &
-Spatial-support sensitivity with the original event times and labels \\
-
-31-point bandwidth curve and four-configuration convergence comparison &
-Exploratory sensitivity analysis & 121-site and nested-grid outcomes &
-Scale-profile smoothness and discretisation sensitivity \\
-
 1950--1990 ERA5-Land extension &
 Pre-access extension & 41 JJA summers &
-Temporally separated evaluation using the same reanalysis product and fixed
-121-site estimator \\
-
-Historical 99,999-draw product shift &
-Pre-access extension & 123 historical month-year records &
-Protocol-specified conditional randomisation assessment of the fixed
-historical-extension statistic \\
-
-Continuous intensity and $\pm3/\pm5$-day matching &
-Exploratory sensitivity analysis & 33 evaluation summers &
-Sensitivity to quartile categorisation and seasonal calendar separation \\
-
-Heavy-tailed ratio comparison &
-Exploratory simulation & Heavy-tailed stress design &
-Comparison of raw, log and bounded statistics \\
-
-Cross-record dependence simulation &
-Exploratory simulation & Simulated two-summer records &
-Sensitivity of product-shift size to shared temporal dependence across monthly
-records \\
+Temporal extension and its product-shift calculation \\
 
 Ten-year NOAA--ERA5-Land extension &
 Pre-access extension &
 Ten evaluation years & External measurement and temporally separated effect
 comparison \\
+
+Heavy-tail, coupled-field and cross-record simulations &
+Exploratory simulations & Outcome-free simulated records &
+Estimator behaviour and randomisation calibration \\
 \end{longtable}
 \normalsize
 
 \section{Finite-record product cyclic-shift validity}
 \label{sec:product-proof}
 
-Let $X$ collect the fixed regional-mean records used to define the event
+Let $X$ collect the regional-mean records used to define the event
 labels, and let $D$ collect the corresponding daily graph-dispersion profiles.
 The finite group $G$ acts on $D$ by independently rotating the complete
 multiscale profile within each month-year record. Conditional on $X$, suppose
@@ -478,17 +427,14 @@ A finite sum of variables with finite $s$th moments also has a finite $s$th
 moment. Applying this argument to each component proves the final claim.
 \end{proof}
 
-The observed middle-day denominators, 495 values across 99 records and five
-scales, range from 2.25 to $25.99\;{}^\circ$C$^2$. This range excludes a
-numerical near-zero denominator in the observed record but does not establish
-the negative-moment condition required by the process-level ratio argument.
-The process theorem and finite-record product-shift analysis therefore address
-distinct inferential settings.
+The 495 observed middle-day denominators range from 2.25 to
+$25.99\;{}^\circ$C$^2$. The process-level ratio argument additionally assumes
+the negative moment stated in Theorem~S1.
 
 \section{Global product-shift result}
 \label{sec:global-shift}
 
-The exploratory product-shift analysis used the statistic
+The product-shift analysis used the statistic
 $T=\widehat\theta_{\mathcal Y_H}$. Each draw independently selected one
 cyclic offset in each of the 99 evaluation month-year records and shifted all
 five graph-dispersion columns together. Regional-mean series and event labels
@@ -528,13 +474,9 @@ Five-scale mean & $-7.283$ & $0.824$ & $1.565$ & 0.00001 & -- \\
 \end{tabular}
 \end{table}
 
-The global row is an exploratory finite-record test formulated after the
-initial 33-summer estimate. The statistic was fixed before evaluation, whereas
-the decision to calculate its randomisation distribution followed that initial
-estimate. Its null is the conditional product-invariance
-statement in Equation~\eqref{eq:s-cyclic-null}; a stationary
-long-run climate parameter lies outside the scope of this test. The scale-wise
-rows summarize the same joint draws and are mutually dependent.
+The relevant null is the conditional product-invariance statement in
+Equation~\eqref{eq:s-cyclic-null}. The scale-wise rows use the same joint draws
+and are mutually dependent.
 
 \section{Physical scale of the graph contrast}
 \label{sec:physical-scale}
@@ -649,16 +591,16 @@ For a centred basis matrix $\mathbf B$, define the graph-orthogonal projection
 The structured energy of $\widehat{\mathbf y}_{th}$ and the residual energy
 of $\mathbf y_t-\widehat{\mathbf y}_{th}$ add exactly to $Q_h(\mathbf y_t)$.
 Table~\ref{tab:basis-decomposition} compares centred latitude, the
-latitude--longitude plane and a latitude--longitude--elevation basis. We
-obtained elevation from the invariant ERA5-Land geopotential field, selected
-the nearest 0.1-degree grid value at each analysis site and divided
-geopotential by $9.80665\ \mathrm{m\,s^{-2}}$. The 121 elevations range from
+latitude--longitude plane and a latitude--longitude--elevation basis. Elevation
+comes from the invariant ERA5-Land geopotential field: the nearest 0.1-degree
+grid value at each analysis site was divided by
+$9.80665\ \mathrm{m\,s^{-2}}$. The 121 elevations range from
 $-0.9$ to $1{,}940.3$ m. Each basis column was centred and scaled before the
 projection. Such scaling leaves its column space unchanged.
 
 \begin{table}[htbp]
 \centering
-\caption{Nested spatial-basis sensitivity. Values are mean percentage-point
+\caption{Nested spatial-basis comparison. Values are mean percentage-point
 contributions across the evaluation summers. The structured and residual
 columns for each basis add to the total, apart from rounding.}
 \label{tab:basis-decomposition}
@@ -703,11 +645,10 @@ $2.78\times10^{-16}$.
 
 \subsection{Thirty-one-point bandwidth curve}
 
-The estimand is the equal-weight mean over the five prespecified bandwidths.
-We also evaluated 31 logarithmically spaced values between 125.800 and
-2,012.796 km on the same 121 sites, with the original event fields and labels.
-This exploratory profile describes the curve between the five bandwidths;
-only the prespecified values define the estimand.
+The estimand is the equal-weight mean over five design bandwidths. A denser
+curve evaluates 31 logarithmically spaced values between 125.800 and 2,012.796 km on
+the same 121 sites, using the evaluation fields and labels. The five design
+bandwidths define the estimand; the denser curve describes its scale profile.
 
 \begin{table}[htbp]
 \centering
@@ -738,7 +679,7 @@ $h$ (km) & Effect & $h$ (km) & Effect & $h$ (km) & Effect \\
 
 All 30 adjacent changes are negative, and all 31 pointwise 95\% intervals have
 upper endpoints below zero. The
-five prespecified estimates remain $-2.86,-3.94,-5.91,-10.44$ and
+five design estimates remain $-2.86,-3.94,-5.91,-10.44$ and
 $-13.27\%$. The curve shows no reversal at the 31 evaluated bandwidths.
 The intervals are descriptive pointwise summaries; no simultaneous confidence
 band is estimated.
@@ -748,27 +689,26 @@ band is estimated.
 \includegraphics[width=0.92\textwidth]{supp_dense_bandwidth_profile.pdf}
 \caption{Bandwidth-resolution profile on the 121-site support. The blue line
 and shaded band show the 31-point profile and its pointwise 95\% intervals;
-orange open circles mark the five prespecified bandwidths.}
-\figalttext{A line descends smoothly as bandwidth increases
+orange open circles mark the five design bandwidths.}
+\figalttext{A line decreases at every evaluated bandwidth
 from 126 to 2,013 km. All 31 estimated effects are negative, and the five
-prespecified bandwidths lie on the same monotone profile.}
+design bandwidths lie on the same monotone profile.}
 \label{fig:dense-bandwidth}
 \end{figure}
 
 \subsection{Four spatial-support configurations}
 
-The convergence comparison keeps the five physical bandwidths, primary peak times
-and original 121-site labels fixed. The 239-site configuration refines
-longitude while retaining the primary latitudes; the 236-site configuration
-refines latitude while retaining the primary longitudes. Each contains every
-primary site and is a subset of the 465-site grid, although the two
-one-direction refinements are not nested within one another.
+The convergence comparison uses the five physical bandwidths, evaluation peak
+times and 121-site labels. The 239-site configuration refines longitude; the
+236-site configuration refines latitude. Each contains all 121 sites and is a
+subset of the 465-site grid. The two one-direction refinements differ in their
+added sites.
 
 \begin{table}[htbp]
 \centering
 \caption{Four-configuration spatial-resolution comparison. Effects and the two
 error summaries are in percentage points. Differences use the 465-site result
-at the same fixed physical bandwidth as the reference.}
+at the same physical bandwidth as the reference.}
 \label{tab:spatial-convergence}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -777,7 +717,7 @@ at the same fixed physical bandwidth as the reference.}
 Configuration & Sites & 126 & 252 & 503 & 1,006 & 2,013 & Max.
 $|\Delta|$ & RMSE \\
 \midrule
-Primary support & 121 & $-2.856$ & $-3.945$ & $-5.907$ & $-10.441$ & $-13.268$ & 0.991 & 0.764 \\
+Analysis support & 121 & $-2.856$ & $-3.945$ & $-5.907$ & $-10.441$ & $-13.268$ & 0.991 & 0.764 \\
 Longitude refined & 239 & $-2.839$ & $-3.846$ & $-5.968$ & $-10.552$ & $-13.351$ & 0.929 & 0.728 \\
 Latitude refined & 236 & $-3.129$ & $-4.308$ & $-6.529$ & $-10.865$ & $-13.458$ & 0.500 & 0.384 \\
 Dense support & 465 & $-3.395$ & $-4.543$ & $-6.898$ & $-11.340$ & $-13.959$ & 0.000 & 0.000 \\
@@ -788,23 +728,22 @@ Dense support & 465 & $-3.395$ & $-4.543$ & $-6.898$ & $-11.340$ & $-13.959$ & 0
 Every support retains the broad-to-local ordering and a negative effect at all
 five bandwidths. Relative to 465 sites, the 121-site profile has a maximum
 absolute discrepancy of 0.99 points and an across-scale RMSE of 0.76 points.
-These finite-grid comparisons quantify sensitivity to the available spatial
-support. Their scope is finite-support sensitivity, with continuous-domain
-convergence left unassessed. Intersite spacing and the separate station
-comparison provide the least support for the narrowest graph.
+These finite-grid comparisons show how the estimates change with spatial
+support. Agreement is weakest for the narrowest graph, consistent with its
+shorter length scale relative to intersite spacing.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\textwidth]{supp_spatial_convergence.pdf}
-\caption{Differences from the 465-site estimate at five fixed bandwidths.
-Orange circles with a solid line denote the primary 121-site support; purple
+\caption{Differences from the 465-site estimate at five bandwidths.
+Orange circles with a solid line denote the 121-site support; purple
 triangles with a dashed line, the latitude-refined 236-site support; teal
 squares with a dot-dash line, the longitude-refined 239-site support; and dark
 diamonds with a long-dash line, the dense 465-site reference.}
 \figalttext{Four lines compare each spatial support with the
 465-site reference across five bandwidths. All differences are between zero
 and one percentage point, and the broad-to-local ordering of the underlying
-effects is unchanged.}
+effects is preserved.}
 \label{fig:spatial-convergence}
 \end{figure}
 
@@ -814,21 +753,18 @@ effects is unchanged.}
 The ERA5-Land archive distributed through the Copernicus Climate Data Store
 begins in January 1950.\footnote{Dataset overview:
 \url{https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview}.}
-The historical-extension plan was finalised on 9 August 2026, after the
-1991--2025 analysis and before retrieval of any 1950--1990 value. It specified
-all 41 JJA summers, the same 121 sites, the five bandwidths and the original
-quality control, Bolton wet-bulb calculation, UTC daily-peak rule and type-7
-within-record quartiles. The analysis weights the three months, five scales
-and summers equally. The extension is separated in calendar time from the
-1991--2025 period, but both analyses share the ERA5-Land model and assimilation
-system. The dated plan also specified one 99,999-draw joint product
-cyclic-shift calculation with seed 20260810, with all five dispersion columns
-rotated together within each historical month-year record.
+A plan dated 9 August 2026 defined the 41 summers, 121 sites, field
+construction, five scales, aggregation and product-shift calculation before
+the historical values were retrieved. The analysis weights the three months,
+five scales and summers equally. The two periods are separated in calendar
+time but share the ERA5-Land model and assimilation system. The product-shift
+calculation uses 99,999 draws, seed 20260810 and joint rotation of all five
+dispersion columns within each month-year record.
 
 The five-scale effect over 1950--1990 is $-11.04\%$ (95\% interval
 $[-12.84,-9.24]\%$), with a negative estimate in 40 of 41
 summers. Deleting one summer at a time gives estimates from $-11.33\%$ to
-$-10.62\%$. Table~\ref{tab:historical-extension} gives the fixed period split
+$-10.62\%$. Table~\ref{tab:historical-extension} gives the period split
 and the five-scale profile.
 
 \begin{table}[htbp]
@@ -864,16 +800,14 @@ production note:
 Both period estimates are negative, and their intervals overlap. The
 1950--1978 estimate inherits uncertainty from the preliminary forcing data.
 
-As specified in the pre-access extension plan, we applied the product
-cyclic-shift calculation to 123 month-year records, using $B=99{,}999$ joint
-five-scale shifts and seed 20260810. None of the
+We applied the product cyclic-shift calculation to 123 month-year records. None of the
 sampled statistics was at or below the observed $-11.043\%$, so the plus-one
 lower-tail value is 0.00001. The sampled null mean and standard deviation are
 $0.853\%$ and $1.436$ percentage points. Every scale has an unadjusted value
 of 0.00001; the complete-null single-step values range from 0.00001 to
 0.00006.
 
-For the exploratory historical climatology--anomaly decomposition, the monthly
+For the historical climatology--anomaly decomposition, the monthly
 reference field was estimated within 1950--1990:
 \[
  \boldsymbol\mu_m^{H}=\frac{1}{41}\sum_{y=1950}^{1990}
@@ -886,22 +820,22 @@ across the 41 historical summers. The anomaly and
 alignment terms therefore describe departures from the historical period's
 own persistent monthly spatial pattern.
 
-Table~\ref{tab:historical-structure} reports the protocol-specified latitude
-and planar accounting and the exploratory climatology--anomaly accounting for
-the historical extension. The latitude and planar structured components are
+Table~\ref{tab:historical-structure} reports the latitude, planar and
+climatology--anomaly accounting for the historical extension. The latitude
+and planar structured components are
 negative in all 41 summers at every bandwidth. At 2,013 km, anomaly energy is
 $-0.28$ points with interval $[-1.01,0.45]$, while the climatology--anomaly
 alignment component is $-16.89$ points $[-19.31,-14.47]$ and is negative in
-all 41 summers. Thus the broad-scale historical result has a low-dimensional
-and alignment-dominated accounting pattern similar to that in the 1991--2025
-period.
+all 41 summers. The broad-scale historical result is therefore also
+alignment-dominated, and its latitude and planar components have the same
+negative direction as in the 1991--2025 period.
 
 \begin{table}[htbp]
 \centering
 \caption{Structural accounting for the 1950--1990 extension. Entries are
 percentage points. Within each geographic basis, the structured and residual
 columns add to the total. The anomaly and alignment columns also add to the
-total because the fixed climatology-energy difference is zero.}
+total because the climatology-energy difference is zero.}
 \label{tab:historical-structure}
 \scriptsize
 \setlength{\tabcolsep}{4pt}
@@ -922,30 +856,24 @@ Bandwidth & Total & Latitude & Latitude & Planar & Planar & Anomaly & Climatolog
 \section{NOAA station extension in ten evaluation years}
 \label{sec:noaa-extension}
 
-The station-extension plan was finalised on 9 August 2026 before retrieval of
-the new station-year files or calculation of their high--middle effects. The
-plan fixed the years by enumeration rather than by a rule applied to station
-outcomes: 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2023 and 2025. The
-set can be written as $\{1992+4k:k=0,\ldots,7\}\cup\{2023,2025\}$. The protocol
-defines the year set by this enumeration; station coverage and effect estimates
-do not enter the choice. The 2015 and 2022 development years are excluded. We archived the
+The station comparison uses the ten summers enumerated before station
+retrieval: 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2023 and 2025. The
+set is $\{1992+4k:k=0,\ldots,7\}\cup\{2023,2025\}$. The
 official Integrated Surface Database (ISD) station-history snapshot used for
-selection.\footnote{NOAA Integrated Surface Database:
+selection was archived.\footnote{NOAA Integrated Surface Database:
 \url{https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database}.}
 The planned eligibility rule required a station-history end date on or after
 31 August 2025, but that snapshot contained no such candidate: its global
-maximum end date was 28 August and its maximum inside the fixed study
+maximum end date was 28 August and its maximum inside the study
 rectangle was 24 August. The operational administrative cutoff was therefore
-24 August. This outcome-blind metadata amendment was made before retrieval of
-station WBT observations, matched ERA5-Land values or calculation of any graph
-contrast. The year set, study rectangle, geographic proximity rule and target
-sample size were unchanged.
+24 August. This administrative change preceded retrieval of station WBT
+observations and matched ERA5-Land values.
 
 For a candidate station $s$, the proximity criterion was
 \[
  d(s,\mathcal S_{121})=\min_{i\in\mathcal S_{121}}d(s,i)\leq150\ \mathrm{km},
 \]
-where $\mathcal S_{121}$ is the fixed primary analysis support. For coordinate
+where $\mathcal S_{121}$ is the 121-site analysis support. For coordinate
 differences in degrees, the pairwise distance was
 \[
 d(s,i)=\left[
@@ -955,20 +883,20 @@ d(s,i)=\left[
 \]
 with $\bar\phi_{si}$, the pair's mean latitude, converted to radians in the
 cosine. This filter was
-applied before maximin selection and kept station locations close to the
-primary spatial support. Of the 228 stations satisfying the rectangle and date
+applied before maximin selection and restricted station locations to within
+150 km of the analysis support. Of the 228 stations satisfying the rectangle and date
 conditions, 20 exceeded 150 km, leaving 208 candidates; the largest retained
 nearest-site distance was 147.73 km and the smallest excluded distance was
 155.72 km. A
 deterministic maximin rule based on station coordinates selected 30 stations.
 The study rectangle defined the candidate domain. A station-year qualified with at least 400 exact UTC
 hours having temperature, dew point and usable station pressure; 26--30 of the
-30 selected stations qualified in each year. We calculated station wet-bulb
-temperature with the same Bolton implementation used for ERA5-Land.
+30 selected stations qualified in each year. Station wet-bulb temperature was
+calculated with the same Bolton implementation used for ERA5-Land.
 
 The nearest ERA5-Land cells for the Shengsi and Taidong island stations had no
-finite land values at any requested time. We recorded both point series as
-unavailable. The other
+finite land values at any requested time, so both point series were recorded
+as unavailable. The other
 28 station locations had finite ERA5-Land series. Combining this land-mask
 restriction with the hourly qualification rule left 24--28 matched stations
 per year and 175,172 paired hours. Table~\ref{tab:noaa-extension-measurement}
@@ -1010,8 +938,8 @@ the event days, and we aligned station observations to those events. Each
 graph field used the same available station subset
 for NOAA and ERA5-Land and required at least ten stations. All 30
 month-year records retained at least one high and one middle field, giving
-345 usable event fields. We formed a high-to-middle ratio within record,
-averaged the three months equally within year and then averaged the ten years.
+345 usable event fields. We formed high-to-middle ratios within records, then
+averaged them equally over months within years and over the ten years.
 Table~\ref{tab:noaa-extension-effect} reports 95\% intervals. Inference focuses
 on the 503-, 1,006- and 2,013-km graphs supported by the station spacing; the
 two narrower graphs remain descriptive.
@@ -1044,29 +972,27 @@ The station and paired ERA5-Land profiles are negative at all five scales and
 become more negative with bandwidth. Averaging the three station-supported
 scales within each year gives $-17.34\%$ (95\% interval
 $[-28.49,-6.18]\%$), with a negative average in nine of ten years. The same
-fixed broad-profile calculation for the matched ERA5-Land fields gives
-$-20.99\%$ ($[-28.57,-13.40]\%$), negative in all ten years. These results
-compare the two fields on identical, time-varying station supports. Because
-ERA5-Land defines the event times and labels, this is an external measurement
-and temporally separated effect comparison under a common event definition,
-not an independent event replication. The irregularly sampled years, changing
-qualified subsets and sparse support at 126 and 252 km limit the comparison.
+broad-profile calculation for the matched ERA5-Land fields gives
+$-20.99\%$ ($[-28.57,-13.40]\%$), negative in all ten years. The two fields
+are compared on identical, time-varying station supports. Because
+ERA5-Land defines the event times and labels, the comparison measures agreement
+for common events on a sparse station network. Coverage is weakest at 126 and
+252 km.
 
 \section{Continuous intensity and calendar matching}
 \label{sec:intensity-calendar}
 
-We evaluated two alternative event contrasts using the same sites, graphs and
-aggregation hierarchy. For the continuous calculation, we
-regressed $\log Q_h$ on centred regional wet-bulb temperature separately in
-each month-year record. We then averaged slopes equally across months, scales
-and the 33 evaluation summers. The five-scale mean slope is
+Two alternative event contrasts use the same sites, graphs and aggregation
+hierarchy. The continuous calculation regresses $\log Q_h$ on centred regional
+wet-bulb temperature separately in each month-year record, then averages the
+slopes equally over months, scales and the 33 evaluation summers. The five-scale mean slope is
 $-0.0650\ {{}^\circ\mathrm C}^{-1}$, with a 95\% interval
 of $[-0.0822,-0.0479]$ and negative summer slopes in 31 of 33 years.
 
 The calendar-matched calculation compares each high day with the mean of
 middle days no more than three or five calendar days away in the same
-month-year record. We average eligible high-day contrasts within record
-before applying the original equal-month, equal-scale and equal-summer
+month-year record. Eligible high-day contrasts are averaged within records
+before application of the original equal-month, equal-scale and equal-summer
 hierarchy. The $\pm3$-day window matches 670 of 792 high days (84.6\%); the
 $\pm5$-day window matches 750 (94.7\%). Each of the 99 evaluation month-year
 records contributes at least one match under both windows.
@@ -1102,7 +1028,7 @@ the high-day average.
 \section{Heavy-tailed ratio stress test}
 \label{sec:ratio-stress}
 
-We compared the raw effect $r-1$, the log effect $\log r$ and the bounded
+We compare the raw effect $r-1$, the log effect $\log r$ and the bounded
 symmetric effect $2(r-1)/(r+1)$, where $r$ is the high-to-middle dispersion
 ratio. The stress design uses the 121 observed site locations, exponential
 spatial covariance with 450-km range and 5\% nugget, circular field
@@ -1122,7 +1048,7 @@ a high-day energy multiplier of 0.93.}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrrrrrrr}
 \toprule
-Measure & Null bias & Null RMSE & Size & Alternative target & Alt. bias & Alt. RMSE & Power \\
+Measure & Null bias & Null RMSE & Size & Alternative target & Alt.~bias & Alt.~RMSE & Power \\
 \midrule
 Raw ratio         & $0.3716$  & $1.4725$ & $0.0470$ & $-0.0700$ & $0.3456$  & $1.3694$ & $0.0795$ \\
 Log ratio         & $-0.0698$ & $0.3283$ & $0.0490$ & $-0.0726$ & $-0.0698$ & $0.3283$ & $0.0850$ \\
@@ -1133,9 +1059,9 @@ Bounded symmetric & $-0.0657$ & $0.2771$ & $0.0475$ & $-0.0725$ & $-0.0574$ & $0
 
 The three product-shift tests retain near-nominal size in this design. The raw
 ratio nevertheless has an RMSE more than five times that of the bounded
-measure under the null. Randomisation validity governs label assignment for a
-fixed statistic, whereas ratio-estimation stability also depends on the right
-tail of daily energy. The log and bounded summaries reduce that instability,
+measure under the null. Product-shift calibration concerns the randomisation
+distribution of a fixed statistic; ratio-estimation stability also depends on
+the right tail of daily energy. The log and bounded summaries reduce that instability,
 with the bounded measure giving the smallest RMSE in these cells.
 
 \section{Simulation specifications and results}
@@ -1228,8 +1154,8 @@ The following tables report all eight coupled cells and all 108 annual cells.
 
 Proposition~\ref{prop:product-shift} requires joint invariance under independent
 rotations of all monthly records. Marginal cyclic invariance of each record does
-not imply this product condition. We examined the departure using the 121
-observed site coordinates, the five fixed Gaussian graphs and six records from
+not imply this product condition. The stress test uses the 121
+observed site coordinates, the five Gaussian graphs and six records from
 two simulated summers. The June, July and August record lengths were 30, 31 and
 31 days in each summer.
 
@@ -1255,9 +1181,9 @@ covariance $0.95\exp(-d/450)+0.05I$, where $d$ is in km. The retained basis was
 rescaled to mean site variance one. Its circular moving-average filter had
 weights $(0.20,0.50,1,0.50,0.20)$, normalised to unit Euclidean norm.
 Regional-mean series $X_{ymt}$ were generated from an independent random-number
-stream with a circular filter proportional to $(0.25,0.60,1,0.60,0.25)$. We set
-$\mathbf y_{ymt}=X_{ymt}\mathbf 1+\mathbf z_{ymt}$ and used within-record type-7
-quartiles of $X_{ymt}$ for the high and middle labels.
+stream with a circular filter proportional to $(0.25,0.60,1,0.60,0.25)$.
+The simulated field is $\mathbf y_{ymt}=X_{ymt}\mathbf 1+\mathbf z_{ymt}$;
+within-record type-7 quartiles of $X_{ymt}$ define the high and middle labels.
 
 Each individual record has a cyclically stationary Gaussian distribution. The
 shared Fourier coefficients align the three monthly phases within a summer, so
@@ -1296,9 +1222,8 @@ Shared loading $\lambda$ & Rejection rate & Monte Carlo SE \\
 \end{table}
 
 Rejection remained between 4.90\% and 5.15\% as the shared component increased.
-This result indicates limited sensitivity to the simulated departures. It does
-not extend Proposition~\ref{prop:product-shift} beyond its joint
-product-invariance condition.
+Thus rejection remained near its nominal level for these simulated departures
+from joint product invariance.
 
 \begin{thebibliography}{9}
 
