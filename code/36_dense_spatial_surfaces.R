@@ -19,10 +19,10 @@ project_dir <- normalizePath(file.path(code_dir, ".."))
 source(file.path(code_dir, "esh_utils.R"))
 
 input_dir <- file.path(project_dir, "data", "era5_dense", "daily_fields")
-output_dir <- file.path(project_dir, "output_dense")
+output_dir <- file.path(project_dir, "results")
 manifest_file <- file.path(project_dir, "data", "grid",
                            "eastern_china_dense_sites.csv")
-primary_output <- file.path(project_dir, "output_confirmatory")
+primary_output <- file.path(project_dir, "results")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 files <- list.files(
@@ -383,7 +383,7 @@ scale_map_panel <- function(item, index, show_x, show_y, tag) {
     scale_y_continuous(breaks = c(20, 25, 30, 35, 40)) +
     labs(x = if (show_x) "Longitude (degrees E)" else NULL,
          y = if (show_y) "Latitude (degrees N)" else NULL,
-         title = sprintf("%.0f-km graph", h), tag = tag) +
+         title = sprintf("%s-km graph", format(round(h), big.mark = ",")), tag = tag) +
     theme_map +
     theme(
       plot.tag = element_text(face = "bold", size = 10),

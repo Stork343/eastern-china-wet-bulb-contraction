@@ -557,7 +557,7 @@ displayed marginal means.
 \caption{Physical scale of graph dispersion in the evaluation summers. The RMS
 columns are
 $(2Q_h)^{1/2}$ transformations of the displayed mean $Q_h$ columns. The
-interval is a 95\% $t$-based interval that treats summers as independent. RMS
+interval is a 95\% $(t)$-reference interval under an independent-summer model. RMS
 change is the mean record-level relative change in $D_h^{\mathrm{RMS}}$.}
 \label{tab:physical}
 \footnotesize
@@ -620,7 +620,8 @@ soil-moisture or other physical mechanism.
 \begin{table}[htbp]
 \centering
 \caption{Exact climatology--anomaly decomposition. Entries are percentage
-points; brackets are 95\% intervals. The
+points; brackets are 95\% descriptive $(t)$-reference intervals based on
+between-summer variation. The
 climatology-energy difference is zero by construction.}
 \label{tab:energy-decomposition}
 \small
@@ -721,14 +722,15 @@ Bandwidth & Total & Latitude & Latitude & Planar & Planar & Geographic-- & Geogr
 
 The latitude component is negative in 33 of 33 summers at every scale. The
 planar component is negative in 32 summers at 126 km and all 33 summers at the
-other four scales. At 2,013 km, its 95\% interval is $[-18.16,-14.30]$ points
-and the residual interval is
+other four scales. At 2,013 km, its 95\% descriptive $(t)$-reference interval
+based on between-summer variation is $[-18.16,-14.30]$ points, and the residual interval is
 $[1.59,4.33]$ points. Adding longitude makes the structured component more
 negative and the compensating residual more positive.
 
 The geographic--topographic component is negative in 18, 21, 28, 33 and 33
 of the 33 summers as bandwidth increases. At 126 km its estimate is $-1.16$
-points with a 95\% interval of $[-2.66,0.33]$, which includes zero. At
+points with a 95\% descriptive $(t)$-reference interval based on
+between-summer variation of $[-2.66,0.33]$, which includes zero. At
 2,013 km the estimate is $-14.34$ points
 $[-16.75,-11.92]$, and the residual is $+1.07$ points. The broad contraction
 persists after adding elevation to the latitude--longitude basis. The
@@ -775,7 +777,8 @@ $h$ (km) & Effect & $h$ (km) & Effect & $h$ (km) & Effect \\
 \end{tabular}
 \end{table}
 
-All 30 adjacent changes are negative, and all 31 pointwise 95\% intervals have
+All 30 adjacent changes are negative, and all 31 pointwise 95\% descriptive
+$(t)$-reference intervals based on between-summer variation have
 upper endpoints below zero. The
 five design estimates remain $-2.86,-3.94,-5.91,-10.44$ and
 $-13.27\%$. The curve shows no reversal at the 31 evaluated bandwidths.
@@ -786,7 +789,8 @@ band is estimated.
 \centering
 \includegraphics[width=0.92\textwidth]{supp_dense_bandwidth_profile.pdf}
 \caption{Bandwidth-resolution profile on the 121-site support. The blue line
-and shaded band show the 31-point profile and its pointwise 95\% intervals;
+and shaded band show the 31-point profile and its pointwise 95\% descriptive
+$(t)$-reference intervals based on between-summer variation;
 orange open circles mark the five design bandwidths.}
 \figalttext{A line decreases at every evaluated bandwidth
 from 126 to 2,013 km. All 31 estimated effects are negative, and the five
@@ -937,15 +941,16 @@ and the five-scale profile.
 
 \begin{table}[htbp]
 \centering
-\caption{The 1950--1990 historical extension. Estimates and intervals
-are percentages; the final column counts summers with a negative estimate.
-Period rows average the five bandwidths. Scale rows use all 41 summers.}
+\caption{The 1950--1990 historical extension. Estimates and 95\% descriptive
+$(t)$-reference intervals based on between-summer variation are percentages;
+the final column counts summers with a negative estimate. Period rows average
+the five bandwidths. Scale rows use all 41 summers.}
 \label{tab:historical-extension}
 \small
 \setlength{\tabcolsep}{7pt}
 \begin{tabular}{lrrrr}
 \toprule
-Period or bandwidth & Summers & Estimate & 95\% interval & Negative summers \\
+Period or bandwidth & Summers & Estimate & 95\% descriptive $(t)$-reference interval & Negative summers \\
 \midrule
 1950--1990 overall & 41 & $-11.04$ & $[-12.84,-9.24]$ & 40 \\
 1950--1978 & 29 & $-10.50$ & $[-12.50,-8.51]$ & 28 \\
@@ -1119,7 +1124,8 @@ for NOAA and ERA5-Land and required at least ten stations. All 30
 month-year records retained at least one high and one middle field, giving
 345 usable event fields. We formed high-to-middle ratios within records, then
 averaged them equally over months within years and over the ten years.
-Table~\ref{tab:noaa-extension-effect} reports 95\% intervals. Inference focuses
+Table~\ref{tab:noaa-extension-effect} reports 95\% descriptive $(t)$-reference
+intervals based on between-summer variation. Inference focuses
 on the 503-, 1,006- and 2,013-km graphs supported by the station spacing; the
 two narrower graphs remain descriptive.
 
@@ -1141,7 +1147,7 @@ estimate. Each scale contains all 30 month-year records and an average of
 \setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\textwidth}{rYrYr}
 \toprule
-Bandwidth & NOAA contrast [95\% interval] & NOAA negative & ERA5-Land contrast [95\% interval] & ERA negative \\
+Bandwidth & NOAA contrast [95\% descriptive $(t)$-reference interval] & NOAA negative & ERA5-Land contrast [95\% descriptive $(t)$-reference interval] & ERA negative \\
 (km) & & years & & years \\
 \midrule
 126   & $-6.23\ [-25.87,13.41]$ & 6/10 & $-11.60\ [-27.49,4.29]$    & 7/10 \\
@@ -1155,7 +1161,7 @@ Bandwidth & NOAA contrast [95\% interval] & NOAA negative & ERA5-Land contrast [
 
 The station and paired ERA5-Land profiles are negative at all five scales and
 become more negative with bandwidth. Averaging the three station-supported
-scales within each year gives $-17.34\%$ (95\% interval
+scales within each year gives $-17.34\%$ (95\% descriptive $(t)$-reference interval
 $[-28.49,-6.18]\%$), with a negative average in nine of ten years. The same
 broad-profile calculation for the matched ERA5-Land fields gives
 $-20.99\%$ ($[-28.57,-13.40]\%$), negative in all ten years. The two fields
@@ -1178,7 +1184,8 @@ Two alternative event contrasts use the same sites, graphs and aggregation
 hierarchy. The continuous calculation regresses $\log Q_h$ on centred regional
 wet-bulb temperature separately in each month-year record, then averages the
 slopes equally over months, scales and the 33 evaluation summers. The five-scale mean slope is
-$-0.0650\ {{}^\circ\mathrm C}^{-1}$, with a 95\% interval
+$-0.0650\ {{}^\circ\mathrm C}^{-1}$, with a 95\% descriptive $(t)$-reference interval
+based on between-summer variation
 of $[-0.0822,-0.0479]$ and negative summer slopes in 31 of 33 years.
 
 The calendar-matched calculation compares each high day with the mean of
@@ -1193,7 +1200,8 @@ records contributes at least one match under both windows.
 \centering
 \caption{Continuous-intensity and calendar-matched results for the 33 evaluation
 summers. Continuous entries are slopes of $\log Q_h$ per $^\circ$C. Matching
-entries are percentage effects. Brackets give 95\% intervals.}
+entries are percentage effects. Brackets give 95\% descriptive $(t)$-reference
+intervals based on between-summer variation.}
 \label{tab:intensity-calendar}
 \footnotesize
 \setlength{\tabcolsep}{5pt}

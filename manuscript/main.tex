@@ -807,9 +807,10 @@ summer signs and a one-sided independent-summer sign reference value of
 $3.3\times10^{-5}$.
 
 The fitted trend was $-0.22$ percentage points per year (95\% descriptive OLS
-reference interval $[-0.48,0.05]$, two-sided $p=0.10$). The 2008--2025 mean
-was 2.95 points more negative than the 1991--2007 mean, with a descriptive
-Welch reference interval of $[-8.43,2.52]$ points. Both intervals include zero,
+interval based on between-summer variation, $[-0.48,0.05]$, two-sided $p=0.10$).
+The 2008--2025 mean was 2.95 points more negative than the 1991--2007 mean,
+with a descriptive Welch interval based on between-summer variation of
+$[-8.43,2.52]$ points. Both intervals include zero,
 leaving the temporal trend uncertain.
 
 Contrasts increase in magnitude from $-2.86\%$ as the Gaussian bandwidth is
@@ -830,7 +831,8 @@ summers.
   $-2.86\%$, $-5.91\%$ and $-13.27\%$. The interpolated surfaces visualise the
   121 observed-node values; estimation and inference use the observed nodes.
   (D) Small circles show summer-specific contrasts at all five bandwidths;
-  large circles and bars show means and 95\% descriptive intervals. Labels
+  large circles and bars show means and 95\% descriptive $(t)$-reference intervals
+  based on between-summer variation. Labels
   give the numbers of negative summers.}
   \figalttext{Three smoothed eastern-China maps, each
   overlaid with the 121 analysis sites, show increasingly coherent negative
@@ -860,7 +862,8 @@ reported separately because the pre-1979 record uses different forcing.
 The historical climatology--anomaly decomposition re-estimates the
 site-specific monthly climatological field from the 41 summers in 1950--1990.
 At 2,013 km, the historical anomaly-energy component was $-0.28$ points
-(95\% descriptive interval $[-1.01,0.45]$),
+(95\% descriptive $(t)$-reference interval based on between-summer variation,
+$[-1.01,0.45]$),
 whereas the climatology--anomaly cross component was $-16.89$ points
 ($[-19.31,-14.47]$) and negative in all 41 summers. Both the
 latitude and latitude--longitude structured components were negative in every
@@ -891,19 +894,21 @@ uncertainty of the preliminary forcing data.
 
 The decomposition in Equation~\eqref{eq:gradient-decomposition}
 localises most of the contrast to the north--south gradient. At 126 km it
-accounts for $-2.58$ points (95\% independent-summer reference interval
-$[-2.92,-2.24]$) of the $-2.86$-point contrast. From 252 to 2,013 km its mean
-contribution is more negative than the total
+accounts for $-2.58$ points (95\% $(t)$-reference interval under an
+independent-summer model, $[-2.92,-2.24]$) of the $-2.86$-point contrast. From
+252 to 2,013 km its mean contribution is more negative than the total
 ($-4.60,-8.38,-12.73,-14.96$ points), while residual contrasts contribute
 $+0.66,+2.48,+2.29,+1.69$ points. The gradient component is negative in all
 33 evaluation summers at every bandwidth. Adding longitude to the basis makes
 the 2,013-km structured component $-16.23$ points, compared with $-14.96$
 points for latitude alone; the corresponding residuals are positive. The
 latitude--longitude--elevation basis gives a 2,013-km structured component of
-$-14.34$ points (95\% descriptive interval
-$[-16.75,-11.92]$), negative in all 33 summers, and a residual of $+1.07$
-points. At 126 km, however, its structured component is $-1.16$ points
-($[-2.66,0.33]$) and is negative in only 18 summers. At broad scales, the
+$-14.34$ points (95\% descriptive $(t)$-reference interval based on
+between-summer variation, $[-16.75,-11.92]$), negative in all 33 summers, and
+a residual of $+1.07$ points. At 126 km, however, its structured component is
+$-1.16$ points (95\% descriptive $(t)$-reference interval based on
+between-summer variation, $[-2.66,0.33]$) and is negative in only 18 summers.
+At broad scales, the
 nested bases show that latitude accounts for most of the low-dimensional
 geographic--topographic structure; structured localisation is weaker at 126 km. Node
 allocations are negative at 106 sites and sum exactly to $-7.28\%$. Each is a
@@ -914,8 +919,10 @@ Equation~\eqref{eq:climatology-anomaly} provides a descriptive location of the b
 126 km, anomaly-energy change
 contributes $-2.63$ points and the climatology--anomaly cross term contributes
 $-0.22$ points. At 2,013 km, the anomaly-energy component is $+0.41$ points
-(reference interval $[-0.50,1.31]$), whereas the cross term is $-13.68$ points
-($[-16.68,-10.67]$) and is negative in all 33 summers. Thus the broad-scale
+(95\% descriptive $(t)$-reference interval based on between-summer variation,
+$[-0.50,1.31]$), whereas the cross term is $-13.68$ points
+(95\% descriptive $(t)$-reference interval based on between-summer variation,
+$[-16.68,-10.67]$) and is negative in all 33 summers. Thus the broad-scale
 contraction was accounted for algebraically by high-day anomalies opposing
 the chosen monthly climatological pattern, while their own broad-scale energy
 changed little. The cross term is not an energy and this accounting does not
@@ -1022,7 +1029,8 @@ All preserve the negative direction and strengthening contraction with
 bandwidth.
 
 The continuous-intensity diagnostic gives a five-scale $\log Q_h$ slope of
-$-0.065\;{}^\circ\mathrm C^{-1}$ (95\% descriptive interval
+$-0.065\;{}^\circ\mathrm C^{-1}$ (95\% descriptive $(t)$-reference interval
+based on between-summer variation,
 $[-0.082,-0.048]$), with negative summer slopes in 31 of
 33 years. Scale-specific slopes become more negative from
 $-0.032\;{}^\circ\mathrm C^{-1}$ at 126 km to
@@ -1042,7 +1050,8 @@ little.
 
 The regime dates have a systematic but nonmonotone seasonal pattern. Averaged
 over June--August, high days occur 1.96 days later than middle days (95\%
-$t$-reference interval $[1.10,2.83]$ days): they occur 7.82 and 6.34 days
+descriptive $(t)$-reference interval based on between-summer variation,
+$[1.10,2.83]$ days): they occur 7.82 and 6.34 days
 later in June and July, but 8.29 days earlier in August. Removing a separate
 linear day-of-month trend within each site--year--month gives $-8.81\%$
 ($[-13.43,-4.19]\%$); subtracting the leave-one-year calendar-day climatology
@@ -1052,7 +1061,8 @@ site--year--month anomaly results show that different demeaning operations
 target different spatial fields.
 
 Calendar matching attenuates the contrast but preserves its direction. With
-95\% descriptive intervals in parentheses, the
+95\% descriptive $(t)$-reference intervals based on between-summer variation
+in parentheses, the
 $\pm3$-day estimator is $-5.21\%$ ($[-8.01,-2.41]\%$), with 24 of 33 summer
 contrasts negative and 670 of 792 high days matched; the $\pm5$-day estimator is
 $-5.72\%$ ($[-8.43,-3.02]\%$), with 25 negative summers and 750 matched high

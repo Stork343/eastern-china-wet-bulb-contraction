@@ -26,8 +26,8 @@ if (length(missing_packages)) {
   stop("Missing required packages: ", paste(missing_packages, collapse = ", "))
 }
 
-confirmatory_dir <- file.path(project_dir, "output_confirmatory")
-output_dir <- file.path(project_dir, "output_jrssc")
+confirmatory_dir <- file.path(project_dir, "results")
+output_dir <- file.path(project_dir, "results")
 manuscript_figure_dir <- file.path(project_dir, "manuscript", "figures")
 preview_dir <- file.path(manuscript_figure_dir, "png")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -417,7 +417,7 @@ scale_map_data <- lapply(scale_indices, function(index) {
   d[, node_allocation_pp := 100 * get(column)]
   surface <- fit_surface(
     d, "node_allocation_pp", "primary_scale_attribution",
-    sprintf("%.0f-km graph", metadata$bandwidth_km[index]),
+    sprintf("%s-km graph", format(round(metadata$bandwidth_km[index]), big.mark = ",")),
     100 * scale_check$estimate[index]
   )$surface
   list(nodes = d, surface = surface, index = index)
@@ -430,7 +430,7 @@ scale_panels <- lapply(seq_along(scale_map_data), function(k) {
   index <- item$index
   base_surface_map(
     item$surface, item$nodes,
-    sprintf("%.0f-km graph", metadata$bandwidth_km[index]),
+    sprintf("%s-km graph", format(round(metadata$bandwidth_km[index]), big.mark = ",")),
     sprintf("(%s)", LETTERS[k]),
     "Node allocation (percentage points)", scale_limit,
     show_x = TRUE, show_y = k == 1L,
