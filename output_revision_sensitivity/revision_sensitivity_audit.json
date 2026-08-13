@@ -1,0 +1,397 @@
+{
+  "created_utc": "2026-08-13T04:34:11.576331+00:00",
+  "script": "55_revision_sensitivity_analyses.py",
+  "script_sha256": "e5fe7b2f7ccebcc43dd8cd175adbf49ba4955e9fd303fb904c73d0a9ee5bf757",
+  "analysis_status": "post-review sensitivity; does not redefine primary",
+  "source_project": "eastern-china-wet-bulb-contraction",
+  "output_directory": "output_revision_sensitivity",
+  "spatial": {
+    "fixed_bandwidths_km": [
+      125.799765031298,
+      251.599530062597,
+      503.199060125194,
+      1006.39812025039,
+      2012.79624050077
+    ],
+    "primary_sites": 121,
+    "dense_sites": 465,
+    "china_mainland_sites": 445,
+    "primary_reproduction_estimate": -0.0728344831814079,
+    "stored_primary_estimate": -0.0728344831814084,
+    "primary_reproduction_absolute_error": 4.996003610813204e-16,
+    "max_projected_minus_wgs84_distance_km": 214.753666175518,
+    "boundary_limitation": "Only inward boundary movements are estimable because no ERA5-Land points were downloaded outside the original rectangle.",
+    "time_rule": "All dense-domain checks retain each day's frozen primary-grid peak hour; fixed and domain-relabelled event definitions are both reported."
+  },
+  "climatology_decomposition": {
+    "inclusive_35_summer_monthly_climatology": {
+      "maximum_daily_identity_error": 6.039613253960852e-14,
+      "maximum_record_climatology_energy_contrast": 3.5560246822225615e-16
+    },
+    "leave_one_summer_out_monthly_climatology": {
+      "maximum_daily_identity_error": 7.105427357601002e-14,
+      "maximum_record_climatology_energy_contrast": 4.411556908535223e-16
+    }
+  },
+  "station": {
+    "availability": {
+      "scheduled_high_middle_fields": 680,
+      "fields_with_any_station": 430,
+      "fields_with_at_least_10_stations": 345,
+      "high_minus_middle_station_count": {
+        "n_years": 10,
+        "estimate": 0.1564393939393936,
+        "standard_error": 1.0894290386093486,
+        "ci_lower": -2.3080203091719986,
+        "ci_upper": 2.620899097050786,
+        "negative_years": 3
+      },
+      "high_minus_middle_eligibility_fraction": {
+        "n_years": 10,
+        "estimate": 0.001515151515151525,
+        "standard_error": 0.04286685893721807,
+        "ci_lower": -0.09545642047873257,
+        "ci_upper": 0.09848672350903562,
+        "negative_years": 3
+      }
+    },
+    "fixed_support": {
+      "definition": "Within each summer, intersection of station IDs across every frozen-label event field that originally had at least 10 stations.",
+      "year_details": {
+        "1992": {
+          "eligible_fields": 24,
+          "common_stations": 17,
+          "station_ids": [
+            "53463099999",
+            "53646099999",
+            "54311099999",
+            "54342099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58338099999",
+            "58834099999",
+            "59007099999",
+            "59287099999",
+            "59316099999"
+          ]
+        },
+        "1996": {
+          "eligible_fields": 17,
+          "common_stations": 20,
+          "station_ids": [
+            "48823099999",
+            "53646099999",
+            "53698099999",
+            "53705099999",
+            "54311099999",
+            "54342099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57554099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58150099999",
+            "58338099999",
+            "58834099999",
+            "59007099999",
+            "59287099999",
+            "59316099999"
+          ]
+        },
+        "2000": {
+          "eligible_fields": 23,
+          "common_stations": 10,
+          "station_ids": [
+            "48823099999",
+            "54857099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57793099999",
+            "58150099999",
+            "58338099999",
+            "58834099999",
+            "59007099999"
+          ]
+        },
+        "2004": {
+          "eligible_fields": 21,
+          "common_stations": 22,
+          "station_ids": [
+            "48823099999",
+            "53463099999",
+            "53646099999",
+            "53705099999",
+            "54311099999",
+            "54342099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58150099999",
+            "58338099999",
+            "58834099999",
+            "59007099999",
+            "59287099999",
+            "59316099999",
+            "59658099999"
+          ]
+        },
+        "2008": {
+          "eligible_fields": 45,
+          "common_stations": 21,
+          "station_ids": [
+            "53463099999",
+            "53646099999",
+            "53698099999",
+            "54539099999",
+            "54857099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58150099999",
+            "58338099999",
+            "58834099999",
+            "59007099999",
+            "59287099999",
+            "59316099999",
+            "59658099999"
+          ]
+        },
+        "2012": {
+          "eligible_fields": 45,
+          "common_stations": 19,
+          "station_ids": [
+            "48823099999",
+            "53463099999",
+            "53646099999",
+            "54342099999",
+            "54539099999",
+            "54857099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58150099999",
+            "58338099999",
+            "59007099999",
+            "59287099999",
+            "59316099999",
+            "59658099999"
+          ]
+        },
+        "2016": {
+          "eligible_fields": 43,
+          "common_stations": 21,
+          "station_ids": [
+            "48823099999",
+            "53463099999",
+            "53705099999",
+            "54311099999",
+            "54342099999",
+            "54539099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58338099999",
+            "58834099999",
+            "59007099999",
+            "59287099999",
+            "59316099999",
+            "59658099999"
+          ]
+        },
+        "2020": {
+          "eligible_fields": 48,
+          "common_stations": 23,
+          "station_ids": [
+            "53231099999",
+            "53698099999",
+            "53705099999",
+            "54342099999",
+            "54539099999",
+            "54857099999",
+            "57046099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57707099999",
+            "57793099999",
+            "57866099999",
+            "57922099999",
+            "58027099999",
+            "58150099999",
+            "58338099999",
+            "58834099999",
+            "59007099999",
+            "59287099999",
+            "59316099999",
+            "59658099999"
+          ]
+        },
+        "2023": {
+          "eligible_fields": 40,
+          "common_stations": 22,
+          "station_ids": [
+            "48823099999",
+            "53231099999",
+            "53463099999",
+            "53646099999",
+            "53698099999",
+            "53705099999",
+            "54342099999",
+            "54539099999",
+            "54857099999",
+            "57046099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57707099999",
+            "57793099999",
+            "57866099999",
+            "58027099999",
+            "58834099999",
+            "59287099999",
+            "59316099999"
+          ]
+        },
+        "2025": {
+          "eligible_fields": 39,
+          "common_stations": 18,
+          "station_ids": [
+            "53231099999",
+            "53463099999",
+            "53646099999",
+            "54311099999",
+            "54342099999",
+            "54539099999",
+            "57046099999",
+            "57083099999",
+            "57259099999",
+            "57306099999",
+            "57399099999",
+            "57554099999",
+            "57707099999",
+            "57793099999",
+            "57866099999",
+            "58027099999",
+            "58834099999",
+            "59316099999"
+          ]
+        }
+      },
+      "global_intersection_of_year_specific_supports": [
+        "57306099999",
+        "57793099999"
+      ]
+    },
+    "pressure": {
+      "conversion_formula": "p_station_Pa = SLP_hPa * 100 * max(1 - 2.25577e-5 * elevation_m, 0.1)^5.2559",
+      "station_elevation_min_m": 3.0,
+      "station_elevation_max_m": 2063.0,
+      "matched_station_hours": 175172,
+      "slp_as_surface_minus_converted_wbt_mean_c": 0.07155940539298515,
+      "slp_as_surface_minus_converted_wbt_mean_absolute_c": 0.07155940539298515,
+      "slp_as_surface_minus_converted_wbt_max_absolute_c": 1.346020071298427
+    },
+    "station_defined_events": {
+      "peak_days": 671,
+      "month_year_records": 30,
+      "high_days": 236,
+      "middle_days": 435,
+      "daily_peak_rule": "Within each UTC day, maximise the equal-station observed WBT mean over hours with at least 10 matched stations; apply record-specific quartile labels to those station means."
+    }
+  },
+  "china_land_operational_definition": {
+    "source": "user-supplied Natural Earth-compatible file",
+    "file": "world.gpkg",
+    "file_sha256": "dbb45f569a8ca92d68c355b1bb1bb9ffeb6698e28c36791c5ec79954319f29b7",
+    "feature": "country feature named China (ISO CN where available)",
+    "taiwan": "Excluded: the source stores Taiwan as a separate feature, and only the China feature is selected.",
+    "intersection": "Point support is the intersection of this polygon, the downloaded 105--125 E by 20.4--42 N lattice, and the frozen ERA5-Land-valid mask."
+  },
+  "outputs": [
+    {
+      "file": "revision_sensitivity_summary.csv",
+      "rows": 60,
+      "sha256": "2e9a00d8f4e32305b49890b0770b1a2eb578a9114c3467fde3c0799dd492ea3a"
+    },
+    {
+      "file": "revision_spatial_scale_curves.csv",
+      "rows": 130,
+      "sha256": "9b307fa8d335ffdd14481c31af96463940d0e57c8b295495ee353cc639800313"
+    },
+    {
+      "file": "revision_spatial_profile_summary.csv",
+      "rows": 26,
+      "sha256": "0866503edb22f1f591629f47ee2f88b6d66c18557814ebe224ecc3d429e87930"
+    },
+    {
+      "file": "revision_domain_masks.csv",
+      "rows": 4650,
+      "sha256": "f7490b530e4c7746dd0ca4cf1770fd9bdb4ba64ec970354a116e536ad3b9e41a"
+    },
+    {
+      "file": "revision_climatology_loso_scale_curve.csv",
+      "rows": 40,
+      "sha256": "5031e7885708280dbd03dd898110f65f414d799da8292665e8ef7ad804224f88"
+    },
+    {
+      "file": "revision_climatology_loso_profile_summary.csv",
+      "rows": 8,
+      "sha256": "59d696a376f885915ee04d5335e254f551da201084308219dd60673c08839993"
+    },
+    {
+      "file": "revision_station_scale_uncertainty.csv",
+      "rows": 90,
+      "sha256": "d35f7604fdfdd9a4bc99cf1f06e1d2795e84c71766e9f17bb0826c981db87862"
+    },
+    {
+      "file": "revision_station_availability.csv",
+      "rows": 22,
+      "sha256": "1837de46f628bc454251ffe65b0d442c058398e2c50750fb7136164386933df3"
+    },
+    {
+      "file": "revision_station_record_effects.csv",
+      "rows": 2250,
+      "sha256": "027f7d03276f255679aaee2f3bd8abb921255a5ff83121909d04e64d3e878ca4"
+    },
+    {
+      "file": "REVISION_SENSITIVITY_NOTE.md",
+      "rows": null,
+      "sha256": "946c402b218d5716ebd8315b06974db86a7da1ba71a5d0d36b7e3211cb45d1d7"
+    }
+  ]
+}

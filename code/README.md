@@ -27,6 +27,13 @@ root in this order:
 | 20 | `41_extended_analyses.py` | Run the 33-summer global product shift, physical-effect summaries, exact climatology--anomaly and nested-basis decompositions, dense bandwidth curve, and four-level spatial convergence |
 | 21 | `38_jrssc_main_figures.R` | Assemble the unified vector figures and invoke the 121-node display renderer after all simulations and diagnostics finish |
 | 22 | `30_verify_confirmatory_bundle.py` | Verify archives, panels, diagnostics, simulation scales, portable source paths, manuscript structure, figures, spatial identities, and final PDFs |
+
+After the manuscript review, run `55_revision_sensitivity_analyses.py` before
+the final verifiers. It writes the WGS84 and boundary-support curves, the
+leave-one-summer-out climatology decomposition, and the station availability,
+fixed-support, stricter-day-count, station-event and pressure checks to
+`output_revision_sensitivity/`. These are explicitly additional sensitivity
+analyses and do not replace the protocol-defined primary target.
 At the end of the figure build, script 38 sources
 `53_primary_smooth_spatial_surfaces.R`. Script 53 fits low-rank thin-plate REML
 surfaces to the exact 121-node anomaly and allocation summaries, overlays all
@@ -97,8 +104,12 @@ The frozen decisions for the multi-year extension are in
 data; the other 33 years in 1991--2025 form the held-out sample. The main
 paper reports the prespecified finite-record mean and its scale profile. The
 Student, fixed-lag and sign calculations in the historical protocol are kept
-as an audit trail, but their intersection is not presented as a newly proved
-level-controlled test.
+as an audit trail. The manuscript now reports all three values and that their
+prespecified consistency rule passed, but does not present the rule as
+definitive long-run process inference. The protocol's stated freeze date and
+SHA-256 are retained; because the first visible public commit is later, public
+Git history alone is not treated as proof of the freeze time. The subsequently
+added global product shift is labelled exploratory throughout.
 
 Run `20_define_spatial_grid.R` before remote acquisition. The CDS point
 downloader requires the packages in `requirements-era5.txt` and the personal

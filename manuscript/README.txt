@@ -30,6 +30,5 @@ node-sum identities.
 
 The compiled supplementary PDF is below the JRSS C limit of 2 MB per
 supplementary-material file. The larger scientific reproducibility archive is
-available at
-https://github.com/Stork343/eastern-china-wet-bulb-contraction. A versioned
-release should be archived with a persistent identifier on acceptance.
+frozen at
+https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v1-2026-08-13.

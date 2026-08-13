@@ -347,12 +347,12 @@ base_surface_map <- function(surface, node_data, title, tag,
 nodes[, profile_contribution_pp := 100 * profile_contribution]
 composite_specs <- list(
   list(
-    variable = "moderate_anomaly", panel = "Middle-day anomaly",
-    legend = "WBT anomaly (degrees C)", reference = NA_real_
+    variable = "moderate_anomaly", panel = "Middle-day spatially centred WBT",
+    legend = "WBT minus regional mean (degrees C)", reference = NA_real_
   ),
   list(
-    variable = "extreme_anomaly", panel = "High-day anomaly",
-    legend = "WBT anomaly (degrees C)", reference = NA_real_
+    variable = "extreme_anomaly", panel = "High-day spatially centred WBT",
+    legend = "WBT minus regional mean (degrees C)", reference = NA_real_
   ),
   list(
     variable = "anomaly_difference", panel = "High - middle",

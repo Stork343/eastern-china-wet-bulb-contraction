@@ -9,6 +9,7 @@
 library(data.table)
 library(ggplot2)
 library(maps)
+library(ggrepel)
 
 script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 if (length(script_arg) != 1L) stop("Run this file with Rscript")
@@ -175,12 +176,12 @@ allocation_limit <- spatial_maps[, max(abs(node_allocation_pp))]
 
 spatial_panels <- list(
   primary_map_panel(
-    spatial_maps, "moderate_anomaly", "Middle-day anomaly",
-    anomaly_limit, "WBT anomaly (degrees C)", show_x = FALSE
+    spatial_maps, "moderate_anomaly", "Middle-day spatially centred WBT",
+    anomaly_limit, "WBT minus regional mean (degrees C)", show_x = FALSE
   ),
   primary_map_panel(
-    spatial_maps, "extreme_anomaly", "High-day anomaly",
-    anomaly_limit, "WBT anomaly (degrees C)",
+    spatial_maps, "extreme_anomaly", "High-day spatially centred WBT",
+    anomaly_limit, "WBT minus regional mean (degrees C)",
     show_x = FALSE, show_y = FALSE
   ),
   primary_map_panel(
@@ -646,9 +647,10 @@ review_robustness <- review_robustness[
         "Primary ratio",
       analysis == "equal_site_ratio" & estimand == "log_effect",
         "Log ratio (back-transformed)",
-      analysis == "area_weighted_fixed_labels", "Area-weighted graph",
+      analysis == "area_weighted_fixed_labels",
+        "Area-weighted graph, primary distances",
       analysis == "area_weighted_relabelled_primary_hours",
-        "Area-weighted graph; labels recomputed",
+        "Area-weighted graph, primary distances; labels recomputed",
       analysis == "exponential_matched_distance", "Exponential kernel",
       analysis == "compact_quadratic_matched_distance", "Compact kernel",
       analysis == "site_month_climatology_anomaly", "Monthly-climatology anomaly",
@@ -666,8 +668,8 @@ review_robustness <- review_robustness[
 dense <- fread(file.path(dense_dir, "dense_primary_results.csv"))[
   configuration %chin% c("dense_465_fixed_labels", "dense_465_recomputed"),
   .(analysis = fifelse(configuration == "dense_465_fixed_labels",
-                       "465 sites; primary events",
-                       "465 sites; events recomputed"),
+                       "465 sites; primary distances and events",
+                       "465 sites; primary distances; events recomputed"),
     estimate, ci_lower, ci_upper)
 ]
 robustness <- rbind(
@@ -678,12 +680,12 @@ robustness <- rbind(
 display_order <- c(
   "Primary ratio",
   "Log ratio (back-transformed)",
-  "Area-weighted graph",
-  "Area-weighted graph; labels recomputed",
+  "Area-weighted graph, primary distances",
+  "Area-weighted graph, primary distances; labels recomputed",
   "Exponential kernel",
   "Compact kernel",
-  "465 sites; primary events",
-  "465 sites; events recomputed",
+  "465 sites; primary distances and events",
+  "465 sites; primary distances; events recomputed",
   "Site-record linear-detrended field",
   "Leave-one-year daily-climatology anomaly",
   "Monthly-climatology anomaly",
@@ -722,7 +724,7 @@ figure5 <- ggplot(robustness,
     labels = function(x) sprintf("%g%%", x)
   ) +
   labs(
-    x = "Mean profile effect (95% t-based interval)",
+    x = "Mean profile contrast (descriptive t interval)",
     y = NULL
   ) +
   jr_theme(10.2) +
@@ -805,27 +807,39 @@ effect_panel <- ggplot(station_graph,
     aes(xend = equality_value, yend = equality_value),
     colour = pale, linewidth = 2.2, lineend = "round"
   ) +
+  geom_errorbar(
+    aes(ymin = 100 * station_effect_ci_lower,
+        ymax = 100 * station_effect_ci_upper),
+    width = 0, colour = blue, linewidth = 0.48
+  ) +
+  geom_errorbarh(
+    aes(xmin = 100 * era_effect_ci_lower,
+        xmax = 100 * era_effect_ci_upper),
+    height = 0, colour = orange, linewidth = 0.48
+  ) +
   geom_point(
     aes(fill = bandwidth_km), shape = 21, size = 5.1,
     stroke = 0.85, colour = ink
   ) +
-  geom_text(
-    aes(x = label_x, y = label_y, label = bandwidth_label),
-    size = 3.1, colour = ink, fontface = "bold"
+  geom_text_repel(
+    aes(label = bandwidth_label),
+    seed = 20260813, direction = "both", box.padding = 0.28,
+    point.padding = 0.35, min.segment.length = 0,
+    max.overlaps = Inf, size = 2.8, colour = ink, fontface = "bold"
   ) +
   annotate("text", x = -9, y = -6.5, label = "equality",
            angle = 45, hjust = 0, size = 3.0, colour = muted) +
   scale_fill_gradient(low = orange, high = blue, trans = "log10",
                       guide = "none") +
   scale_x_continuous(labels = function(x) sprintf("%g%%", x),
-                     breaks = seq(-30, 10, 10)) +
+                     breaks = seq(-40, 20, 10)) +
   scale_y_continuous(labels = function(x) sprintf("%g%%", x),
-                     breaks = seq(-30, 10, 10)) +
-  coord_equal(xlim = c(-32, 8), ylim = c(-32, 8), expand = FALSE) +
+                     breaks = seq(-40, 20, 10)) +
+  coord_equal(xlim = c(-40, 20), ylim = c(-40, 20), expand = FALSE) +
   labs(
     x = "ERA5-Land high-to-middle graph contrast",
     y = "NOAA station high-to-middle graph contrast",
-    title = "B  Effect agreement at common event times"
+    title = "B  Contrast agreement at common event times"
   ) +
   jr_theme(10.2) +
   theme(
@@ -839,6 +853,12 @@ save_figure("fig6_noaa_agreement", figure6, 8.3, 4.7)
 
 # Copy each canonical vector file to the manuscript names used by LaTeX.  The
 # smooth-map renderer below replaces Figures 3 and 4 after these copies.
+study_area_source <- file.path(corrected_dir, "fig5_study_area.pdf")
+if (!file.exists(study_area_source)) {
+  study_area_source <- file.path(
+    manuscript_figure_dir, "figure02_study_area.pdf"
+  )
+}
 portable_figures <- setNames(
   c(
     "figure01_simulation_diagnostics.pdf",
@@ -851,7 +871,7 @@ portable_figures <- setNames(
   ),
   c(
     file.path(output_dir, "fig4_simulation_diagnostics.pdf"),
-    file.path(corrected_dir, "fig5_study_area.pdf"),
+    study_area_source,
     file.path(output_dir, "fig_energy_decomposition.pdf"),
     file.path(output_dir, "fig5_application_robustness.pdf"),
     file.path(output_dir, "fig6_noaa_agreement.pdf"),
@@ -861,9 +881,9 @@ portable_figures <- setNames(
 )
 copy_status <- mapply(
   function(source, destination) {
-    file.copy(
-      source, file.path(manuscript_figure_dir, destination), overwrite = TRUE
-    )
+    destination_path <- file.path(manuscript_figure_dir, destination)
+    if (normalizePath(source) == normalizePath(destination_path)) return(TRUE)
+    file.copy(source, destination_path, overwrite = TRUE)
   },
   names(portable_figures), unname(portable_figures),
   USE.NAMES = FALSE

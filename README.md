@@ -17,9 +17,8 @@ requests, station selection and source-file hashes.
 
 The scientific archive is larger than the JRSS C limit of 2 MB for an
 individual supplementary-material file and should not be uploaded as a single
-supplementary file. Its unpacked contents are publicly available at
-<https://github.com/Stork343/eastern-china-wet-bulb-contraction>. A versioned
-release should be archived with a persistent identifier on acceptance.
+supplementary file. Its submission-matched contents are frozen in the release
+<https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v1-2026-08-13>.
 
 ## Directory guide
 
@@ -32,6 +31,8 @@ release should be archived with a persistent identifier on acceptance.
 - `manuscript/` contains portable LaTeX sources, the generated complete
   simulation table and all submitted vector figures.
 - `output/pdf/` contains the final main and supplementary PDFs.
+- `SUBMISSION_MANIFEST.sha256` hashes the protocols, submitted text and PDFs,
+  key result tables, verification programs and added sensitivity audit.
 - The three protocol files at the archive root record the primary, dense-grid
   and extension designs.
 
@@ -40,6 +41,20 @@ Public filenames describe the analytical task. In particular,
 seasonal, hourly and station diagnostics, while `41_extended_analyses.py`
 contains the global product shift, physical-scale summaries, exact energy and
 basis decompositions, dense bandwidth profile and spatial-support comparison.
+The additional checks requested before submission are kept separately in
+`55_revision_sensitivity_analyses.py` and `output_revision_sensitivity/` so
+their timing cannot be confused with the protocol-defined primary analysis.
+They cover WGS84 distances and boundary support, leave-one-summer-out
+climatology, station availability and fixed support, station-defined events,
+and pressure conversion.
+
+The Version 2 confirmatory protocol reports a freeze date of 2 August 2026 and
+has SHA-256
+`13c3a32532921e9230d00e88e07bb1aaa95e1a27ac970d843739bbb3090a3a70`.
+The first commit visible in the public Git history is later, so that history
+does not independently establish the stated freeze date. The manuscript and
+supplement report the original three-component rule and all three results,
+while clearly identifying the global product-shift analysis as exploratory.
 
 ## Analysis order
 
@@ -56,6 +71,13 @@ The three verifiers check dimensions, simulation sizes, decomposition
 identities, retained estimates, extension records, manuscript structure and
 the final PDF page counts. They require the full retained simulations rather
 than smoke-test output.
+
+To reproduce the added spatial-support, climatology and station checks before
+running the verifiers:
+
+```text
+python3 code/55_revision_sensitivity_analyses.py
+```
 
 ## Primary analysis and map display
 
@@ -126,6 +148,7 @@ replications across 108 cells.
 - R 4.3.2
 - data.table 1.17.8
 - ggplot2 3.5.2
+- ggrepel 0.9.6
 - patchwork 1.3.1
 - maps 3.4.3
 - mgcv 1.9-1
@@ -135,6 +158,8 @@ replications across 108 cells.
 - Python 3.12.1
 - NumPy 1.26.4
 - pandas 2.2.2
+- geopandas 1.0.1
+- pyproj 3.6.1
 - SciPy 1.14.0
 - xarray 2026.7.0
 - h5netcdf 1.8.1

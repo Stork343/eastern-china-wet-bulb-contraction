@@ -739,7 +739,9 @@ def verify_noaa_analysis(qualification: pd.DataFrame,
             (fields.era_q.astype(float) > 0).all() and
             set(fields.regime) <= {"high", "middle"},
             "NOAA graph fields violate support, positivity, or frozen regimes")
-    events = read_csv(PROJECT / "output_confirmatory" / "sensitivity_event_manifest.csv")
+    events = read_csv(
+        PROJECT / "output_confirmatory" / "sensitivity_event_manifest.csv"
+    )
     events = events.loc[events.year.astype(int).isin(NOAA_YEARS)]
     field_times = set(pd.to_datetime(fields.time_utc))
     event_times = set(pd.to_datetime(events.peak_time))
@@ -785,8 +787,14 @@ def verify_manuscript_integration() -> None:
         "latitude--longitude--elevation basis",
         "2,000 heavy-tailed data sets",
         "figure07_noaa_agreement.pdf",
-        "Supplementary Section~S11.3 examines a",
+        "Supplementary Section~S11.4 studies one shared",
         "report its $p$-value as exploratory",
+        "The protocol-defined three-component",
+        "WGS84 geodesic distances",
+        "leave-one-summer-out version gave",
+        "fixed common support within each summer",
+        "regional means over the available station network defined both",
+        "station-based event definition on the available dynamic network",
     ]
     missing_main = [item for item in required_main if item not in main_text]
     require(not missing_main,
@@ -808,11 +816,15 @@ def verify_manuscript_integration() -> None:
         "\\section{Heavy-tailed ratio stress test}",
         "\\subsection{Cross-record dependence stress test}",
         "\\label{tab:cross-record-stress}",
-        "Primary finite-record estimate",
-        "Conditional randomisation under the product-invariance null",
+        "primary finite-record summary",
+        "Confirmatory component",
+        "Confirmatory rule",
+        "conditional product-invariance null",
         "Historical climatology--anomaly decomposition",
         "Thus $\\boldsymbol\\mu_m^{H}$ is the site-specific mean field",
         "leaving 208 candidates",
+        "\\label{tab:domain-scale-curves}",
+        "North edge inward $1.8^\\circ$, relabelled",
         "\\input{generated/supp_complete_simulation_tables.tex}",
     ]
     missing_supplement = [
@@ -824,11 +836,60 @@ def verify_manuscript_integration() -> None:
     print("[OK] completed extension results are integrated in main and supplement")
 
 
+def verify_post_review_sensitivities() -> None:
+    """Verify the spatial-support, LOSO-climatology, and station checks."""
+    output_dir = PROJECT / "output_revision_sensitivity"
+    audit = read_json(
+        output_dir / "revision_sensitivity_audit.json",
+        "post-review sensitivity audit",
+    )
+    script = need(PROJECT / "code" / "55_revision_sensitivity_analyses.py")
+    require(audit.get("script_sha256") == sha256(script),
+            "Post-review sensitivity script hash changed")
+    for item in audit.get("outputs", []):
+        path = need(output_dir / item["file"], "post-review sensitivity output")
+        require(sha256(path) == item["sha256"],
+                f"Post-review sensitivity hash mismatch: {item['file']}")
+
+    spatial = read_csv(output_dir / "revision_spatial_profile_summary.csv")
+    require(len(spatial) == 26 and
+            (spatial.n_years.astype(int) == 33).all() and
+            (spatial.estimate.astype(float) < 0).all(),
+            "Spatial-support sensitivity panel is incomplete or changes sign")
+    curves = read_csv(output_dir / "revision_spatial_scale_curves.csv")
+    require(len(curves) == 26 * 5 and
+            curves.groupby("analysis").size().eq(5).all() and
+            curves.groupby("analysis").estimate.apply(
+                lambda values: values.astype(float).is_monotonic_decreasing
+            ).all(),
+            "Spatial-support curves do not retain all five ordered bandwidths")
+
+    loso = read_csv(output_dir / "revision_climatology_loso_scale_curve.csv")
+    require(len(loso) == 2 * 5 * 4 and
+            float(audit["climatology_decomposition"]
+                  ["leave_one_summer_out_monthly_climatology"]
+                  ["maximum_daily_identity_error"]) <= 1e-12,
+            "LOSO climatology decomposition is incomplete or fails identity")
+
+    station = read_csv(output_dir / "revision_station_scale_uncertainty.csv")
+    require(len(station) == 90 and
+            station.groupby(["analysis", "field"]).size().eq(5).all(),
+            "Station support/day-count/event-definition checks are incomplete")
+    availability = read_csv(output_dir / "revision_station_availability.csv")
+    all_years = availability.loc[availability.aggregation == "all_years"]
+    require(len(all_years) == 2 and
+            set(all_years.regime) == {"high", "middle"} and
+            int(all_years.days_eligible_ge10.sum()) == 345,
+            "State-specific station-availability audit changed")
+    print("[OK] post-review spatial, climatology, and station sensitivities")
+
+
 def main() -> None:
     verify_historical_acquisition_and_analysis()
     verify_continuous_calendar_and_ratio_stress()
     verify_elevation_basis()
     verify_complete_simulation_tables()
+    verify_post_review_sensitivities()
     verify_cross_record_dependence_stress()
     manifest, qualification = verify_noaa_acquisition()
     available = verify_noaa_era_points(manifest)

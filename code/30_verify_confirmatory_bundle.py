@@ -211,13 +211,17 @@ def main() -> None:
             "Abstract exceeds the JRSS C 200-word limit")
     require("\\cite" not in abstract_match.group(1),
             "Abstract contains a citation command")
-    require(re.search(
-                r"An exploratory 99,999-draw product\s+cyclic-shift analysis",
-                abstract_match.group(1)) is not None and
-            "conditional product-invariance" in abstract_match.group(1),
-            "Abstract does not identify the global product shift as exploratory")
+    require("product cyclic" not in abstract_match.group(1).lower() and
+            "p_{" not in abstract_match.group(1) and
+            "p=" not in abstract_match.group(1),
+            "Abstract must not foreground the post-result product-shift p-value")
+    require("weighted mean squared" in abstract_match.group(1) and
+            "root-mean-square" in abstract_match.group(1) and
+            "Gaussian graph bandwidth" in abstract_match.group(1) and
+            "sparse external station comparison" in abstract_match.group(1),
+            "Abstract lacks the squared/RMS distinction, bandwidth wording, or station limitation")
     abstract_abbreviations = [
-        token for token in ("WBT", "NOAA", "ERA5", "ERA5-Land")
+        token for token in ("NOAA", "ERA5")
         if token in abstract_match.group(1)
     ]
     require(not abstract_abbreviations,
@@ -236,10 +240,10 @@ def main() -> None:
     )[0]
     require("\\subsection" not in introduction,
             "Introduction must not contain subsections")
-    require(main_text.count("\\begin{proposition}") == 1 and
-            main_text.count("\\end{proposition}") == 1 and
-            "Product cyclic-shift validity" in main_text,
-            "Main text must state exactly one finite-record proposition")
+    require(main_text.count("\\begin{proposition}") == 0 and
+            main_text.count("\\end{proposition}") == 0 and
+            "the proof and the plus-one Monte Carlo" in main_text,
+            "Technical product-shift proposition must remain in the supplement")
     require("\\begin{theorem}" not in main_text and
             "\\begin{proof}" not in main_text and
             "\\label{thm:asymptotic}" not in main_text and
@@ -248,10 +252,15 @@ def main() -> None:
     require(SUPPLEMENT_FILE.exists(),
             "Supplementary proof source is missing")
     supplement = SUPPLEMENT_FILE.read_text()
-    require("Primary finite-record estimate" in supplement and
+    require("primary finite-record summary" in supplement and
             "Pre-access extension" in supplement and
-            "Exploratory inferential analysis" in supplement and
-            "Conditional randomisation under the product-invariance null" in supplement and
+            "Exploratory conditional randomisation" in supplement and
+            "conditional product-invariance null" in supplement and
+            "Confirmatory component" in supplement and
+            "Confirmatory rule" in supplement and
+            "2.56\\times10^{-6}" in supplement and
+            "3.54\\times10^{-6}" in supplement and
+            "3.31\\times10^{-5}" in supplement and
             "Historical climatology--anomaly decomposition" in supplement and
             "process-level ratio argument additionally assumes" in supplement and
             "negative-moment condition in Equation" not in supplement and
@@ -288,15 +297,16 @@ def main() -> None:
         "\\section{Humid-heat application}", 1
     )[1].split("\\section{Discussion}", 1)[0]
     require("report its $p$-value as exploratory" in main_text and
-            "the product cyclic-shift assessment gave" in main_text and
+            "In the post-result exploratory calculation" in main_text and
+            "The later product-shift result is exploratory" in main_text and
             "cyclic-shift result provides the finite-record inferential assessment"
             not in main_text,
             "Global product-shift timing or exploratory status is inconsistent")
-    require(simulation_text.count("\\begin{table}") == 2 and
+    require(simulation_text.count("\\begin{table}") == 0 and
             application_text.count("\\begin{table}") == 1 and
             main_text.count("\\begin{table}") == 3 and
             "\\section*{Tables}" not in main_text,
-            "Result tables must be integrated into Sections 4 and 5")
+            "Main tables must be contribution, status, and physical-scale tables")
     main_figure_count = main_text.count("\\begin{figure}")
     require(main_figure_count == 7,
             "Main text must contain exactly seven integrated figures")
@@ -429,6 +439,96 @@ def main() -> None:
     for name in extended_required:
         require((OUTPUT_DIR / name).exists(),
                 f"extended analysis output is missing: {name}")
+
+    sensitivity_dir = PROJECT_DIR / "output_revision_sensitivity"
+    sensitivity_required = [
+        "revision_sensitivity_summary.csv",
+        "revision_spatial_scale_curves.csv",
+        "revision_spatial_profile_summary.csv",
+        "revision_domain_masks.csv",
+        "revision_climatology_loso_scale_curve.csv",
+        "revision_climatology_loso_profile_summary.csv",
+        "revision_station_scale_uncertainty.csv",
+        "revision_station_availability.csv",
+        "revision_station_record_effects.csv",
+        "revision_sensitivity_audit.json",
+    ]
+    for name in sensitivity_required:
+        require((sensitivity_dir / name).exists(),
+                f"Post-review sensitivity output is missing: {name}")
+
+    sensitivity_audit = json.loads(
+        (sensitivity_dir / "revision_sensitivity_audit.json").read_text()
+    )
+    require(
+        sensitivity_audit.get("script_sha256") ==
+        sha256(PROJECT_DIR / "code" / "55_revision_sensitivity_analyses.py"),
+        "Post-review sensitivity script hash disagrees with its audit",
+    )
+    for item in sensitivity_audit.get("outputs", []):
+        output_path = sensitivity_dir / item["file"]
+        require(output_path.exists() and sha256(output_path) == item["sha256"],
+                f"Post-review sensitivity hash mismatch: {item['file']}")
+
+    spatial_sensitivity = pd.read_csv(
+        sensitivity_dir / "revision_spatial_profile_summary.csv"
+    ).set_index("analysis")
+    spatial_expected = {
+        "primary_equirect_equal_fixed_labels": -0.0728344831814079,
+        "primary_wgs84_equal_fixed_labels": -0.06973712319708796,
+        "primary_wgs84_area_fixed_labels": -0.07802418189600338,
+        "primary_wgs84_area_relabelled": -0.07369593119050659,
+        "natural_earth_china_mainland_intersection_wgs84_equal_domain_mean_relabelled":
+            -0.0635290360129743,
+    }
+    for analysis, expected in spatial_expected.items():
+        require(analysis in spatial_sensitivity.index and
+                abs(float(spatial_sensitivity.loc[analysis, "estimate"]) -
+                    expected) <= 1e-12,
+                f"Post-review spatial result changed: {analysis}")
+    boundary_relabelled = spatial_sensitivity.loc[
+        spatial_sensitivity.label_rule == "domain_mean_relabelled"
+    ]
+    require(boundary_relabelled.estimate.max() < 0 and
+            boundary_relabelled.estimate.min() >= -0.08 and
+            boundary_relabelled.estimate.max() <= -0.063,
+            "Boundary relabelling no longer preserves the reported range")
+
+    loso = pd.read_csv(
+        sensitivity_dir / "revision_climatology_loso_scale_curve.csv"
+    )
+    loso_broad = loso.loc[
+        (loso.analysis == "leave_one_summer_out_monthly_climatology") &
+        (loso.bandwidth_km > 2000)
+    ].set_index("component")
+    require(abs(float(loso_broad.loc[
+                "anomaly_energy_component", "estimate"]) -
+                0.003988234249113046) <= 1e-12 and
+            abs(float(loso_broad.loc[
+                "climatology_anomaly_cross_component", "estimate"]) +
+                0.13667231408658762) <= 1e-12,
+            "Leave-one-summer-out climatology decomposition changed")
+
+    station_sensitivity = pd.read_csv(
+        sensitivity_dir / "revision_sensitivity_summary.csv"
+    )
+    station_sensitivity = station_sensitivity.loc[
+        (station_sensitivity.section == "station_comparison") &
+        (station_sensitivity.field_or_component == "observed_wbt_c")
+    ].set_index("analysis")
+    station_expected = {
+        "dynamic_support_frozen_era_labels_min1": -0.17368174971664208,
+        "dynamic_support_frozen_era_labels_min2": -0.1342232326809351,
+        "dynamic_support_frozen_era_labels_min3": -0.15244151163448613,
+        "dynamic_support_frozen_era_labels_min5": -0.1455542563510763,
+        "dynamic_support_station_defined_peak_and_labels": -0.15988788778923385,
+        "year_specific_fixed_common_support_frozen_era_labels": -0.18076925378583827,
+    }
+    for analysis, expected in station_expected.items():
+        require(analysis in station_sensitivity.index and
+                abs(float(station_sensitivity.loc[analysis, "estimate"]) -
+                    expected) <= 1e-12,
+                f"Post-review station result changed: {analysis}")
 
     global_shift = pd.read_csv(
         OUTPUT_DIR / "extended_global_cyclic_randomisation.csv"
@@ -693,6 +793,20 @@ def main() -> None:
         "dense_scale_identity_error": float(
             dense_scale_identity.absolute_error.max()
         ),
+        "post_review_sensitivity_outputs": len(sensitivity_required),
+        "wgs84_primary_profile": float(spatial_sensitivity.loc[
+            "primary_wgs84_equal_fixed_labels", "estimate"
+        ]),
+        "china_land_profile": float(spatial_sensitivity.loc[
+            "natural_earth_china_mainland_intersection_wgs84_equal_domain_mean_relabelled",
+            "estimate",
+        ]),
+        "loso_broad_cross_component": float(loso_broad.loc[
+            "climatology_anomaly_cross_component", "estimate"
+        ]),
+        "station_fixed_support_profile": float(station_sensitivity.loc[
+            "year_specific_fixed_common_support_frozen_era_labels", "estimate"
+        ]),
         "manuscript_sha256": sha256(PDF_FILE),
         "supplement_sha256": sha256(SUPPLEMENT_PDF_FILE),
     }
