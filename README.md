@@ -7,7 +7,7 @@ https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrss
 is an earlier version. The current companion archive is
 `jrssc_reproducibility_bundle.zip`, available with the matching manuscripts
 and portable LaTeX source at
-https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v7-2026-09-08.
+https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v8-2026-09-08.
 
 ## Inspecting the reported results
 
@@ -89,3 +89,11 @@ climatological structure and geographic coverage. Numerical outputs are
 unchanged. Supplement S14 retains the thermodynamic conversion, field
 selection and spatial-weighting details moved from the main text. The
 calendar-specific simulation is retained in S11.3.
+
+## Table pagination in v8
+
+Each displayed table is confined to one page. The three 108-row simulation
+result families are arranged as independent tables for each sample size,
+with 27 original rows per table. All numerical rows and units are retained.
+The formatting step is `code/revision_202609/09_paginate_tables.py`; it operates
+on existing TeX output and does not rerun simulations.

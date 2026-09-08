@@ -38,3 +38,16 @@ full primary-field information and uses no dense temperatures as inputs.
 Area targets approximate the retained land at 0.8° × 0.9° sampling resolution.
 Coverage curves use strict exceedance. Only fixed grid neighbours determine
 connected area. The additional 344-site check is for area, not connectivity.
+
+## Formatting the complete simulation tables
+
+After regenerating the retained simulation tables, create independent tables
+for each sample size with:
+
+```text
+python3 code/revision_202609/09_paginate_tables.py --input results/supp_complete_simulation_tables.tex --output manuscript/generated/supp_complete_simulation_tables.tex
+```
+
+These paths refer to the public archive. In the journal workspace, use
+`JRSSC/manuscript/generated/supp_complete_simulation_tables.tex` as the output.
+The formatter preserves every numerical row and does not run simulations.

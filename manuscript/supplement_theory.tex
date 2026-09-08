@@ -1,7 +1,7 @@
 \pdfminorversion=7
 \documentclass[namedate,webpdf,modern,mediumone]{oup-authoring-template}
 
-\usepackage{booktabs,tabularx,float,longtable,etoolbox}
+\usepackage{booktabs,tabularx,float,etoolbox}
 \graphicspath{{figures/}}
 \newcommand{\societylogo}{}
 \makeatletter
@@ -29,6 +29,7 @@
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theequation}{S\arabic{equation}}
 
+\raggedbottom
 \begin{document}
 
 \journaltitle{Journal of the Royal Statistical Society Series C: Applied Statistics}
@@ -80,23 +81,15 @@ original acquisition rationale undocumented. Evaluation uses the other
 
 \footnotesize
 \setlength{\tabcolsep}{3pt}
-\begin{longtable}{Z{0.17\textwidth}Z{0.16\textwidth}Z{0.15\textwidth}Z{0.24\textwidth}Z{0.19\textwidth}}
+\begin{table}[H]
+\centering
+\footnotesize
 \caption{Protocol status, timing, observed result and final interpretive role.}
-\label{tab:status}\\
+\label{tab:status}
+\begin{tabular}{Z{0.17\textwidth}Z{0.16\textwidth}Z{0.15\textwidth}Z{0.24\textwidth}Z{0.19\textwidth}}
 \toprule
 Element & Original status & Fixed before the 33-summer results? & Observed result and final role & Reason or scope \\
 \midrule
-\endfirsthead
-\multicolumn{5}{l}{\footnotesize Table~\thetable\ continued}\\
-\toprule
-Element & Original status & Fixed before the 33-summer results? & Observed result and final role & Reason or scope \\
-\midrule
-\endhead
-\midrule
-\multicolumn{5}{r}{\footnotesize Continued on the next page}\\
-\endfoot
-\bottomrule
-\endlastfoot
 Field construction, event labels, five graph scales and aggregation &
 Primary specification & Yes & Retained; defines the finite-record target &
 Developed using 2015 and 2022, which were excluded from evaluation \\
@@ -145,7 +138,9 @@ Matched events defined using ERA5-Land \\
 Heavy-tail, coupled-field and cross-record simulations &
 Exploratory simulations & After method development & Estimator behaviour and conditional-randomisation calibration &
 Test size under the specified dependence models \\
-\end{longtable}
+\bottomrule
+\end{tabular}
+\end{table}
 \normalsize
 
 \section{Conditional validity of the randomisation test}
