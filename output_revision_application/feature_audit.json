@@ -1,0 +1,32 @@
+{
+  "primary_reproduction_error": 6.245004513516506e-16,
+  "zero_variance_days": 0,
+  "bandwidths_km": [
+    125.7997650312984,
+    251.5995300625968,
+    503.1990601251936,
+    1006.3981202503873,
+    2012.7962405007745
+  ],
+  "variogram_bin_edges_km": [
+    150.17809275494255,
+    600.7123710197775,
+    850.8792023489882,
+    1201.4247420395532,
+    1553.6381010567623,
+    2991.944582309274
+  ],
+  "bin_counts": [
+    1422,
+    1471,
+    1454,
+    1458,
+    1455
+  ],
+  "interpolation_extrapolated_dense_sites": 8,
+  "sole_feature_source": "121 primary sites; dense coordinates/area used as fixed geometry",
+  "original_files": {
+    "files": 812,
+    "changed": []
+  }
+}

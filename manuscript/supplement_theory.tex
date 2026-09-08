@@ -25,6 +25,7 @@
 \renewcommand{\thetheorem}{S\arabic{theorem}}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theequation}{S\arabic{equation}}
 
@@ -56,27 +57,26 @@ historical and station extensions state their own temporal supports.
 Table~\ref{tab:status} summarises the sequence of analyses. Unless stated
 otherwise, each calculation uses the 121-site labels, five bandwidths and
 equal-month, equal-scale and equal-summer estimator. The historical and station
-extensions were designed before their respective data were retrieved. The
-protocol-defined status of an analysis is retained below even when later
-diagnostics changed how it is interpreted in the final paper.
+extensions were designed before their respective data were retrieved. Table~\ref{tab:status} distinguishes the primary analyses from subsequent
+comparisons and states the assumptions used for inference.
 
-The archived protocol file states that Version~2 was frozen on 2 August 2026,
-before acquisition or inspection of the 33 evaluation summers. Its SHA-256 is
+The original Version~2 protocol, retained as
+\path{protocols/archive/CONFIRMATORY_ANALYSIS_PROTOCOL.md} in the
+reproducibility archive, states a freeze date of 2 August 2026, before
+acquisition or inspection of the 33 evaluation summers. Its SHA-256 is
 \url{13c3a32532921e9230d00e88e07bb1aaa95e1a27ac970d843739bbb3090a3a70}.
 The first
 commit visible in the public Git history is later, on 11 August 2026
-(\texttt{2464330}). The public Git history therefore does not independently
-establish the file's stated freeze date. The submission release at
+(\texttt{2464330}). The protocol date is recorded in the file; the public record begins with
+that later commit. The submission release at
 \url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v1-2026-08-13}
 archives the protocol, its digest, this status table and the submitted analysis
 together.
 
-The surviving project record identifies 2015 and 2022 as the only complete
-summers used to develop and correct the method, but it preserves no
-contemporaneous rationale for why those two summers were acquired first. The
-wet-bulb fields and graph profiles from both summers were inspected during
-development. They were then excluded from the 33-summer evaluation period; no
-claim that they were random or representative development summers is made.
+We developed the method using the complete 2015 and 2022 summers, inspecting
+their wet-bulb fields and graph profiles. The available records leave the
+original acquisition rationale undocumented. Evaluation uses the other
+33 summers.
 
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -111,24 +111,24 @@ Later simulations showed undercoverage under appreciable interannual dependence 
 
 Lag-2 Newey--West test &
 Confirmatory component & Yes & One-sided $p=3.54\times10^{-6}$; process reference &
-A fixed lag does not by itself ensure consistent long-run variance estimation \\
+Consistency depends on the omitted autocovariances \\
 
 Independent-summer exact binomial sign reference &
 Confirmatory component & Yes & 28/33 negative; $p=3.31\times10^{-5}$; recurrence reference &
 Its exact-binomial interpretation requires independent summer signs \\
 
 Three-component consistency rule &
-Confirmatory rule & Yes & \texttt{confirmatory\_consistency = TRUE} at the prespecified 0.025 threshold &
-All three protocol components passed; reported transparently but not treated as definitive long-run process inference \\
+Confirmatory rule & Yes & All three $p$-values below 0.025 &
+Student and HAC coverage depends on interannual correlation \\
 
 Global 99,999-draw product shift &
 Not in the protocol & No; added after observing the primary result & Exploratory conditional randomisation; $p_{\mathrm{MC}}=10^{-5}$ &
-Applies only under the conditional product-invariance null \\
+Conditional product-invariance null \\
 
 Process-model references, alternative effect measures, spatial bases,
 bandwidth and support comparisons &
 Exploratory analyses & No, except where separately dated & Reference inference, structural descriptions and sensitivity analyses &
-Do not replace the protocol-defined raw-ratio target \\
+Comparisons with the primary raw-ratio summary \\
 
 1950--1990 ERA5-Land extension &
 Pre-access extension & Before access to historical values & Retained as a temporally separated extension &
@@ -136,15 +136,15 @@ Shares the ERA5-Land system with the evaluation record \\
 
 Historical climatology--anomaly decomposition &
 Exploratory structural analysis & No & Period-specific algebraic accounting &
-Descriptive, not a physical-mechanism analysis \\
+Climatological alignment and anomaly energy \\
 
 Ten-year NOAA--ERA5-Land extension &
 Pre-access extension & Before station results were retrieved & Sparse external measurement comparison &
-ERA5-Land defines events; not an independent event replication \\
+Matched events defined using ERA5-Land \\
 
 Heavy-tail, coupled-field and cross-record simulations &
 Exploratory simulations & After method development & Estimator behaviour and conditional-randomisation calibration &
-A simulated departure cannot verify product invariance in the observed climate record \\
+Test size under the specified dependence models \\
 \end{longtable}
 \normalsize
 
@@ -159,12 +159,11 @@ multiscale profile within each month-year record. Conditional on $X$, suppose
  (D\mid X)\overset{d}{=}(gD\mid X)\quad\text{for every }g\in G.
  \label{eq:s-cyclic-null}
 \end{equation}
-In nontechnical terms, conditional on the observed regional-mean series,
+Conditional on the observed regional-mean series,
 independently changing the circular phase of the complete dispersion profile
-in any month-year record must leave the joint distribution unchanged. This is
-a conditional phase-invariance null. It is stronger than
-$\operatorname E(Q^H-Q^M)=0$ and is not a general null of no association
-between regional mean and spatial dispersion. Common weather modes across
+in any month-year record must leave the joint distribution unchanged. This conditional
+phase-invariance assumption specifies the distribution of the full profiles,
+beyond the mean restriction $\operatorname E(Q^E-Q^M)=0$. Common weather modes across
 months, circulation or soil-moisture persistence, and other shared seasonal or
 interannual drivers can violate the product condition because independent
 record-wise rotations break their phase alignment.
@@ -523,14 +522,10 @@ Five-scale mean & $-7.283$ & $0.824$ & $1.565$ & 0.00001 & -- \\
 \end{tabular}
 \end{table}
 
-The relevant null is the conditional product-invariance statement in
-Equation~\eqref{eq:s-cyclic-null}. The value is not evidence against every
-zero-mean or no-association null and does not establish a causal or universal
-climate-process conclusion. The scale-wise rows use the same joint draws and
-are mutually dependent. The cross-record stress experiment in
-Section~\ref{sec:cross-record-stress} assesses one specified shared-process
-departure; near-nominal rejection in that experiment cannot establish that the
-observed records satisfy product invariance.
+The test evaluates the conditional product-invariance null in
+Equation~\eqref{eq:s-cyclic-null}. Scale-specific rows use the same joint
+draws and are mutually dependent. Section~\ref{sec:cross-record-stress}
+examines test size under a shared process across month-year records.
 
 \section{Physical scale of the graph contrast}
 \label{sec:physical-scale}
@@ -584,13 +579,11 @@ and the averaging steps do not commute. In either form, a percentage change
 in squared pairwise differences is larger in magnitude than the corresponding
 change in RMS amplitude.
 
-The five quoted distances are Gaussian bandwidths $h$, not observed pair
-distances or hard cut-offs. At $h=126,252,503,1{,}006$ and $2{,}013$ km, the
+The five distances specify the Gaussian bandwidths $h$. At $h=126,252,503,1{,}006$ and $2{,}013$ km, the
 edge-weighted mean pair distances are respectively 200, 319, 549, 826 and
 992 km; the corresponding Kish effective edge counts are 366, 1,138, 3,223,
 6,005 and 7,109 out of 7,260. The five-scale summary is an equal-weight mean
-over this prespecified logarithmic bandwidth grid. It is a defined summary of
-that grid, not a unique natural regional index.
+over this logarithmic bandwidth grid.
 
 \section{Structural decompositions}
 \label{sec:structural-checks}
@@ -612,10 +605,8 @@ two terms by the middle-day total $Q_h$ mean. The resulting anomaly-energy and
 climatology--anomaly alignment components add to the original relative
 contrast before any aggregation.
 
-The middle term is a signed bilinear cross term and can be negative; it is not
-an energy. The decomposition localises the observed contrast algebraically
-with respect to a chosen climatology. It does not identify a circulation,
-soil-moisture or other physical mechanism.
+The middle term measures the signed alignment of daily anomalies with the
+monthly climatology. Opposing patterns give a negative contribution.
 
 \begin{table}[htbp]
 \centering
@@ -660,7 +651,7 @@ $-13.68$ points.
 \centering
 \caption{Sensitivity of the exact decomposition to leave-one-summer-out
 monthly climatology. Entries are percentage points. ``Cross'' denotes the
-signed climatology--anomaly bilinear term, not an energy or mechanism.}
+signed climatology--anomaly bilinear term.}
 \label{tab:loso-decomposition}
 \small
 \setlength{\tabcolsep}{6pt}
@@ -916,7 +907,7 @@ non-rectangular target as the low-resolution feature named China, excluding
 the separately stored Taiwan feature, intersected with the downloaded lattice
 and its ERA5-Land-valid mask. These checks support the direction and scale
 ordering, but they also show that the magnitude belongs to the specified
-domain rather than to a unique definition of eastern China.
+domain.
 
 \section{Historical extension, 1950--1990}
 \label{sec:historical-extension}
@@ -1167,15 +1158,13 @@ broad-profile calculation for the matched ERA5-Land fields gives
 $-20.99\%$ ($[-28.57,-13.40]\%$), negative in all ten years. The two fields
 are compared on identical, time-varying station supports. Because
 ERA5-Land defines the event times and labels, the comparison measures agreement
-for common events on a sparse station network. It is external measurement
-consistency, not an independent event definition or replication. Coverage is
+for common events on the station network. Coverage is
 weakest at 126 and 252 km. Requiring two, three or five retained days per state
 gave broad-scale station summaries of $-13.42\%$, $-15.24\%$ and $-14.56\%$;
 the last used only six years. A year-specific fixed common-station support gave
 $-18.08\%$. Defining daily peaks and high/middle labels from station regional
-means, with at least five days per state, gave $-15.99\%$. These variants
-retain the broad-scale negative direction but do not remove the limitations of
-the sparse, changing station network.
+means, with at least five days per state, gave $-15.99\%$. The broad-scale contrast remains negative under these event and
+station-support definitions.
 
 \section{Continuous intensity and calendar matching}
 \label{sec:intensity-calendar}
@@ -1230,10 +1219,8 @@ the high-day average.
 
 We compare the raw effect $r-1$, the log effect $\log r$ and the bounded
 symmetric effect $2(r-1)/(r+1)$, where $r$ is the high-to-middle dispersion
-ratio. The raw ratio is the protocol-defined primary measure and is retained
-as such. It is asymmetric, can be unstable when the middle-day denominator is
-small, and gives different summaries when ratios are averaged rather than
-marginal means divided. Its randomisation distribution need not be centred at
+ratio. The primary summary averages the raw ratios across records. Small
+middle-day denominators amplify the upper tail of this asymmetric measure. Its randomisation distribution need not be centred at
 zero. The 495 observed middle-day denominators range from 2.25 to
 $25.99\;{}^\circ$C$^2$; the log ratio is the principal robustness summary.
 In the observed 33-summer record, the five-scale raw-ratio summary is
@@ -1272,10 +1259,8 @@ ratio nevertheless has an RMSE more than five times that of the bounded
 measure under the null. Product-shift calibration concerns the randomisation
 distribution of a fixed statistic; ratio-estimation stability also depends on
 the right tail of daily energy. The log and bounded summaries reduce that instability,
-with the bounded measure giving the smallest RMSE in these cells. Good
-randomisation calibration therefore does not establish that the raw-ratio
-point estimator is stable. A log or symmetric scale would be a preferable
-default in future studies not constrained by this protocol.
+with the bounded measure giving the smallest RMSE in these cells. The smaller RMSE of the log and bounded contrasts supports their use
+when daily energies have heavy right tails.
 
 \section{Simulation specifications and results}
 \label{sec:complete-simulations}
@@ -1300,10 +1285,8 @@ Amplitude multipliers are 0.97, 0.955, 0.94, 0.92 and 0.90. The archived range
 grid is labelled 525, 587, 650, 725 and 800 km, but the simulator uses three
 covariance matrices: both settings below 600 km use a 525-km range, both
 settings from 600 to below 750 km use a 650-km range, and the last uses 800 km.
-The near-duplicate weak and medium rows are retained in
-Table~\ref{tab:baseline-power-complete} because they form part of 25 archived
-cells, including two duplicated range implementations, not because they are
-distinct covariance designs. The range
+Table~\ref{tab:baseline-power-complete} reports all 25 simulation cells;
+the five range labels correspond to three distinct covariance designs. The range
 change enters the innovation covariance and can persist through the field
 AR(1) state. Gradient alternatives add the standardised pattern proportional
 to $0.8x+y$ with middle-day amplitude 1.8 and high-day amplitudes 1.6, 1.5,
@@ -1378,8 +1361,7 @@ Gradient & 1.2 & $-27.37$ & 100.0 & 100.0 & 100.0 & 97.6 & 100.0 & 99.8 & 100.0 
 \end{tabularx}
 \end{table}
 
-These mechanisms were chosen by the authors and do not define a general
-optimality class. The graph profile has the largest minimum power across these
+The graph profile has the largest minimum power across the
 15 alternatives, but nearest-neighbour semivariance is stronger for range
 expansion and variance or the variogram profile is stronger for weak gradient
 suppression. Standardisation leaves Moran's $I$ and Geary's $C$ with near-null
@@ -1547,9 +1529,55 @@ Shared loading $\lambda$ & Rejection rate & Monte Carlo SE \\
 \end{table}
 
 Rejection remained between 4.90\% and 5.15\% as the shared component increased.
-Thus rejection remained near its nominal level for these particular simulated
-departures from joint product invariance. This result does not verify the
-conditional product-invariance null for the observed climate record.
+Rejection rates remain near the nominal level across the four shared-process
+settings.
+
+
+\section{Sensitivity to event thresholds}
+\label{sec:partitions}
+We compare six event partitions across the 99 evaluation month-year records.
+These exploratory analyses were added on 7 September 2026.
+For each record, replace the lower and upper
+quantile probabilities in the main-text event sets by $(a,b)$. High days have
+$\bar y_t\ge q_{b,ym}$, middle days have
+$q_{a,ym}\le\bar y_t<q_{b,ym}$ and low days are excluded. We retain the UTC
+peak fields, 121 sites, original distances, five bandwidths and equal-month,
+equal-scale and equal-summer aggregation. Linear sample quantiles are
+identical to type 7.
+
+\begin{table}[H]
+\centering\small
+\caption{Event-partition sensitivity over 33 evaluation summers. Entries are
+relative changes in percent; the interval is a descriptive 95\% $t$-reference
+interval based on between-summer variation, calculated under independence
+of summers. $V$ is ordinary spatial variance, evaluated with identical
+labels and equal-month/equal-summer aggregation. The continuous row reports
+within-record $\log Q_h$ slopes per $^\circ$C, using all days.}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+$(a,b)$ & Five-scale mean & Interval & 126 km & 2,013 km & $V$\\
+\midrule
+$(.25,.75)$ & $-7.28$ & $[-10.00,-4.57]$ & $-2.86$ & $-13.27$ & $-14.45$ \\
+$(1/3,2/3)$ & $-6.48$ & $[-9.08,-3.89]$ & $-2.42$ & $-12.05$ & $-13.14$ \\
+$(.20,.80)$ & $-8.48$ & $[-11.18,-5.78]$ & $-3.42$ & $-15.04$ & $-16.30$ \\
+$(.30,.70)$ & $-6.88$ & $[-9.50,-4.26]$ & $-2.59$ & $-12.65$ & $-13.78$ \\
+$(.25,.70)$ & $-6.90$ & $[-9.54,-4.26]$ & $-2.61$ & $-12.78$ & $-13.94$ \\
+$(.25,.80)$ & $-8.27$ & $[-10.93,-5.61]$ & $-3.34$ & $-14.52$ & $-15.70$ \\
+Continuous & $-0.065$ & $[-0.082,-0.048]$ & $-0.032$ & $-0.110$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The five-scale mean is negative in 27--29 of the 33 summers across the six
+partitions. Tertile records contain 10 or 11 high days and 10 middle days.
+All six mean profiles become more negative at each successive bandwidth.
+Changing the cut points changes the contrast between the warm and reference
+states: the five-scale contraction ranges from $6.48\%$ for tertiles to
+$8.48\%$ for the 20th/80th-percentile partition. Ordinary variance also
+contracts under each partition. The direction and scale ordering persist
+across these threshold choices.
+
+\input{generated/application_supplement.tex}
 
 \begin{thebibliography}{9}
 

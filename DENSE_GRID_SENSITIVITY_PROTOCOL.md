@@ -12,7 +12,7 @@ of using a visibly sparse set of locations. The domain remains 105--125 degrees
 E and 20--42 degrees N. A candidate lattice uses 0.8-degree longitude spacing
 and 0.9-degree latitude spacing, with every original site inserted exactly.
 The same ERA5-Land reference mask used for the primary design removes ocean
-locations. Script `32_define_dense_spatial_grid.R` freezes 465 land sites:
+locations. Script `define_dense_spatial_grid.R` freezes 465 land sites:
 all 121 primary sites and 344 added sites. The original coordinates are never
 moved, averaged, or replaced.
 

@@ -1,46 +1,46 @@
-# Corrected analysis pipeline
+# Analysis pipeline
+
+All program filenames use lower-case `snake_case` and describe their task.
+Execution order is documented here rather than encoded in filenames. Shared
+helpers end in `_utils`; acquisition, construction, analysis, figure and
+verification programs begin with a corresponding action verb.
 
 The manuscript uses only the scripts listed below. Run them from the repository
 root in this order:
 
 | Order | Script | Output |
 |---:|---|---|
-| 1 | `02_rebuild_consistent_era5.R` | Six pressure-aware WBT files on one fixed 121-site grid in `data/era5_consistent/` |
-| 2 | `06_corrected_empirical.R` | Primary estimates, month-year effects, shift tests, and continuous model in `output_corrected/` |
-| 3 | `04_corrected_null_calibration.R` | Null calibration of the circular-shift test |
-| 4 | `07_corrected_sensitivity.R` | Threshold, daily-field, WBT-algorithm, and kernel sensitivity analyses |
-| 5 | `13_corrected_figures.R` | Supplementary null-calibration figure |
-| 6 | `16_graph_esh_empirical.R` | Five-bandwidth graph-dispersion profile, omnibus test, and FWER-adjusted scale tests |
-| 7 | `17_verify_graph_theory.R` | Numerical verification of the graph identities and spectral bounds |
-| 8 | `18_graph_esh_simulation.R` | Cyclic and AR(1) calibration plus three spatial mechanisms, comparing the graph profile with a five-bin variogram profile and five classical summaries |
-| 9 | `20_define_spatial_grid.R` | Reconstruct and audit the 169-candidate/121-land-site sampling rule |
-| 10 | `21_download_confirmatory_cds_points.py` | Acquire and assemble the frozen 1991-2025 ERA5-Land point panel from the official CDS time-series service |
-| 11 | `22_build_confirmatory_fields.py` | Apply quality gates, pressure-aware WBT, and UTC/UTC+8 daily-field definitions |
-| 12 | `23_confirmatory_analysis.R` | Run the held-out multi-year analysis with year as the replication unit |
-| 13 | `24_year_level_inference_simulation.R` | Stress-test and summarise the 33-year confirmatory decision rule |
-| 14 | `25_study_area_figure.R` | Generate the audited study-area and sampling-lattice figure |
-| 15 | `26_download_noaa_isd.py` | Download a deterministic, dispersed NOAA ISD station sample |
-| 16 | `27_validate_noaa_isd.R` | Match quality-controlled station hours to native ERA5-Land fields |
-| 17 | `31_spatial_field_decomposition.R` | Decompose the profile and each graph scale exactly over the 121 sites, with raw-node identity checks |
-| 18 | `39_sensitivity_diagnostics.py` | Recompute denominator, transformation, fixed and relabelled area weights, matched kernels, seasonal progression, fixed-hour relabelling, gradient uncertainty, and distance-adjusted station diagnostics |
-| 19 | `40_joint_dgp_simulation.R` | Stress-test the graph and five-bin variogram profiles under shared latent weather, within-month progression, anisotropic covariance and peak-hour selection |
-| 20 | `41_extended_analyses.py` | Run the 33-summer global product shift, physical-effect summaries, exact climatology--anomaly and nested-basis decompositions, dense bandwidth curve, and four-level spatial convergence |
-| 21 | `38_jrssc_main_figures.R` | Assemble the unified vector figures and invoke the 121-node display renderer after all simulations and diagnostics finish |
-| 22 | `30_verify_confirmatory_bundle.py` | Verify archives, panels, diagnostics, simulation scales, portable source paths, manuscript structure, figures, spatial identities, and final PDFs |
+| 1 | `rebuild_consistent_era5.R` | Six pressure-aware WBT files on one fixed 121-site grid in `data/era5_consistent/` |
+| 2 | `corrected_empirical.R` | Primary estimates, month-year effects, shift tests, and continuous model in `results/` |
+| 3 | `corrected_null_calibration.R` | Null calibration of the circular-shift test |
+| 4 | `corrected_sensitivity.R` | Threshold, daily-field, WBT-algorithm, and kernel sensitivity analyses |
+| 5 | `corrected_figures.R` | Supplementary null-calibration figure |
+| 6 | `graph_esh_empirical.R` | Five-bandwidth graph-dispersion profile, omnibus test, and FWER-adjusted scale tests |
+| 7 | `verify_graph_theory.R` | Numerical verification of the graph identities and spectral bounds |
+| 8 | `graph_esh_simulation.R` | Cyclic and AR(1) calibration plus three spatial mechanisms, comparing the graph profile with a five-bin variogram profile and five classical summaries |
+| 9 | `define_spatial_grid.R` | Reconstruct and audit the 169-candidate/121-land-site sampling rule |
+| 10 | `download_confirmatory_cds_points.py` | Acquire and assemble the frozen 1991-2025 ERA5-Land point panel from the official CDS time-series service |
+| 11 | `build_confirmatory_fields.py` | Apply quality gates, pressure-aware WBT, and UTC/UTC+8 daily-field definitions |
+| 12 | `confirmatory_analysis.R` | Run the held-out multi-year analysis with year as the replication unit |
+| 13 | `year_level_inference_simulation.R` | Stress-test and summarise the 33-year confirmatory decision rule |
+| 14 | `study_area_figure.R` | Generate the audited study-area and sampling-lattice figure |
+| 15 | `download_noaa_isd.py` | Download a deterministic, dispersed NOAA ISD station sample |
+| 16 | `validate_noaa_isd.R` | Match quality-controlled station hours to native ERA5-Land fields |
+| 17 | `spatial_field_decomposition.R` | Decompose the profile and each graph scale exactly over the 121 sites, with raw-node identity checks |
+| 18 | `sensitivity_diagnostics.py` | Recompute denominator, transformation, fixed and relabelled area weights, matched kernels, seasonal progression, fixed-hour relabelling, gradient uncertainty, and distance-adjusted station diagnostics |
+| 19 | `joint_dgp_simulation.R` | Stress-test the graph and five-bin variogram profiles under shared latent weather, within-month progression, anisotropic covariance and peak-hour selection |
+| 20 | `extended_analyses.py` | Run the 33-summer global product shift, physical-effect summaries, exact climatology--anomaly and nested-basis decompositions, dense bandwidth curve, and four-level spatial convergence |
+| 21 | `main_figures.R` | Assemble the unified vector figures and invoke the 121-node display renderer after all simulations and diagnostics finish |
+| 22 | `verify_confirmatory_bundle.py` | Verify archives, panels, diagnostics, simulation scales, portable source paths, manuscript structure, figures, spatial identities, and final PDFs |
 
-After the manuscript review, run `55_revision_sensitivity_analyses.py` before
-the final verifiers. It writes the WGS84 and boundary-support curves, the
-leave-one-summer-out climatology decomposition, and the station availability,
-fixed-support, stricter-day-count, station-event and pressure checks to
-`output_revision_sensitivity/`. These are explicitly additional sensitivity
-analyses and do not replace the protocol-defined primary target.
-At the end of the figure build, script 38 sources
-`53_primary_smooth_spatial_surfaces.R`. Script 53 fits low-rank thin-plate REML
+At the end of the figure build, `main_figures.R` sources
+`primary_smooth_spatial_surfaces.R`. The latter fits low-rank thin-plate REML
 surfaces to the exact 121-node anomaly and allocation summaries, overlays all
 source nodes, and writes the final Figures 3 and 4. The 0.1-degree raster is a
 display grid only. It does not enter graph construction, estimation,
-uncertainty calculations or node-sum identities. Script 53 can also be run
-directly after script 31 when only these two figures need to be rebuilt.
+uncertainty calculations or node-sum identities. It can also be run directly
+after `spatial_field_decomposition.R` when only these two figures need to be
+rebuilt.
 
 ## Nested-grid spatial-resolution sensitivity
 
@@ -50,18 +50,18 @@ confirmatory analysis. Its grid contains every primary site exactly and adds
 
 | Order | Script | Output |
 |---:|---|---|
-| 1 | `32_define_dense_spatial_grid.R` | Freeze and audit the nested 0.8 by 0.9 degree grid |
-| 2 | `33_download_dense_cds_points.py` | Reuse 121 primary archives and acquire only the 344 new core-variable point series |
-| 3 | `34_build_dense_daily_fields.py` | Build fields at primary-grid and dense-grid UTC peak times |
-| 4 | `35_dense_resolution_analysis.R` | Reproduce the 121-site result, then run fixed-label and recomputed-label 465-site analyses at the original absolute bandwidths |
-| 5 | `36_dense_spatial_surfaces.R` | Verify the dense node decomposition and generate clipped thin-plate REML display surfaces with sampled sites overlaid |
-| 6 | `37_verify_dense_bundle.py` | Verify the nested manifest, new archives, dense panels, daily fields, embedded-primary reproduction, spatial identities, and figures |
+| 1 | `define_dense_spatial_grid.R` | Freeze and audit the nested 0.8 by 0.9 degree grid |
+| 2 | `download_dense_cds_points.py` | Reuse 121 primary archives and acquire only the 344 new core-variable point series |
+| 3 | `build_dense_daily_fields.py` | Build fields at primary-grid and dense-grid UTC peak times |
+| 4 | `dense_resolution_analysis.R` | Reproduce the 121-site result, then run fixed-label and recomputed-label 465-site analyses at the original absolute bandwidths |
+| 5 | `dense_spatial_surfaces.R` | Verify the dense node decomposition and generate clipped thin-plate REML display surfaces with sampled sites overlaid |
+| 6 | `verify_dense_bundle.py` | Verify the nested manifest, new archives, dense panels, daily fields, embedded-primary reproduction, spatial identities, and figures |
 
 After both branches and the sensitivity diagnostics finish, run
-`41_extended_analyses.py`, then
-`38_jrssc_main_figures.R` to assemble the unified main-text PDF figures in
-`output_jrssc/`, then compile the manuscript and run
-`30_verify_confirmatory_bundle.py`.
+`extended_analyses.py`, then
+`main_figures.R` to assemble the unified main-text PDF figures in
+`results/`, then compile the manuscript and run
+`verify_confirmatory_bundle.py`.
 
 The smooth surfaces are descriptive. All estimates and tests use observed
 node values; the profile and scale-specific contribution sums are checked
@@ -104,46 +104,42 @@ The frozen decisions for the multi-year extension are in
 data; the other 33 years in 1991--2025 form the held-out sample. The main
 paper reports the prespecified finite-record mean and its scale profile. The
 Student, fixed-lag and sign calculations in the historical protocol are kept
-as an audit trail. The manuscript now reports all three values and that their
-prespecified consistency rule passed, but does not present the rule as
-definitive long-run process inference. The protocol's stated freeze date and
-SHA-256 are retained; because the first visible public commit is later, public
-Git history alone is not treated as proof of the freeze time. The subsequently
-added global product shift is labelled exploratory throughout.
+as an audit trail, but their intersection is not presented as a newly proved
+level-controlled test.
 
-Run `20_define_spatial_grid.R` before remote acquisition. The CDS point
+Run `define_spatial_grid.R` before remote acquisition. The CDS point
 downloader requires the packages in `requirements-era5.txt` and the personal
 access token in `~/.cdsapirc`. It retains each raw point archive, resumes from
 completed sites, trims the prespecified seasonal buffers, and assembles the 35
-yearly panels consumed by script 22. The service normally permits only one
+yearly panels consumed by `build_confirmatory_fields.py`. The service normally permits only one
 queued time-series request per account, so the default `--workers 1` should be
 kept unless the CDS limit changes.
 
 ## Post-analysis 1950--1990 temporal extension
 
 The frozen design is in `../EXTENSION_ANALYSIS_PROTOCOL.md`. This branch is
-isolated from `data/era5_confirmatory/` and `output_confirmatory/`; it neither
+isolated from `data/era5_confirmatory/` and `results/`; it neither
 rewrites nor reclassifies the 1991--2025 analysis.
 
 | Order | Script | Output |
 |---:|---|---|
-| 1 | `42_download_historical_extension_cds_points.py` | Core-variable archives, trimmed JJA buffers and 41 yearly 121-site panels in `data/era5_historical_extension/` |
-| 2 | `43_build_historical_extension_fields.py` | Pressure-aware Bolton WBT at the frozen UTC regional-peak hour and file-hash audit |
-| 3 | `44_analyze_historical_extension.py` | Overall, five-scale, annual and forcing-segment effects; the 99,999-draw product shift; energy and latitude/planar basis decompositions in `output_historical_extension/` |
+| 1 | `download_historical_extension_cds_points.py` | Core-variable archives, trimmed JJA buffers and 41 yearly 121-site panels in `data/era5_historical_extension/` |
+| 2 | `build_historical_extension_fields.py` | Pressure-aware Bolton WBT at the frozen UTC regional-peak hour and file-hash audit |
+| 3 | `analyze_historical_extension.py` | Overall, five-scale, annual and forcing-segment effects; the 99,999-draw product shift; energy and latitude/planar basis decompositions in `results/` |
 
 The downloader uses the same fixed site manifest but only the three variables
 needed for WBT. Completed ZIP and NetCDF files are resumable and written
 atomically. For a full run:
 
 ```sh
-python3 code/42_download_historical_extension_cds_points.py --workers 4
-python3 code/43_build_historical_extension_fields.py
-python3 code/44_analyze_historical_extension.py
+python3 code/download_historical_extension_cds_points.py --workers 4
+python3 code/build_historical_extension_fields.py
+python3 code/analyze_historical_extension.py
 ```
 
 ECMWF documents that 1950--1978 ERA5-Land was forced by the preliminary ERA5
 back extension, including a sub-optimal representation of some tropical
-cyclones. Script 44 therefore reports 1950--1978 and 1979--1990 separately;
+cyclones. `analyze_historical_extension.py` therefore reports 1950--1978 and 1979--1990 separately;
 the split is fixed by production history rather than the observed effect.
 
 The completed branch contains 121 retained point archives, 41 yearly panels,
@@ -151,7 +147,7 @@ The completed branch contains 121 retained point archives, 41 yearly panels,
 -11.0431% (40/41 summers negative), and the five-scale profile runs from
 -5.9566% to -17.1735%. The 99,999-draw product shift uses seed 20260810 and
 returns the plus-one value `p=0.00001`. The retained numerical results and
-hash manifests are under `output_historical_extension/`. The dated pre-access
+hash manifests are under `results/`. The dated pre-access
 protocol explicitly includes that product shift. The historical energy
 decomposition estimates its monthly climatology only from the 41 summers in
 1950--1990 and is reported as an exploratory structural analysis because it
@@ -164,11 +160,11 @@ event labels or estimand.
 
 | Order | Script | Output |
 |---:|---|---|
-| 1 | `44_extension_empirical_methods.py` | Continuous log-energy slopes and same-month +/-3-day and +/-5-day matching in `output_extension_methods/` |
-| 2 | `45_ratio_stress_test.R` | Paired raw-ratio, log-ratio and bounded-contrast stress tests under the null and -7% alternative |
-| 3 | `48_elevation_basis_extension.py` | Official invariant-geopotential acquisition and latitude, latitude-longitude and latitude-longitude-elevation basis decompositions in `output_elevation_basis/` |
-| 4 | `46_prepare_supplement_simulation_tables.py` | Complete 108-cell repeated-summer and eight-cell joint-DGP LaTeX tables plus a source/output hash audit |
-| 5 | `54_cross_record_dependence_stress.py` | Targeted size stress test for shared phase-aligned temporal structure that preserves marginal record-level cyclic stationarity but violates joint product invariance |
+| 1 | `extension_empirical_methods.py` | Continuous log-energy slopes and same-month +/-3-day and +/-5-day matching in `results/` |
+| 2 | `ratio_stress_test.R` | Paired raw-ratio, log-ratio and bounded-contrast stress tests under the null and -7% alternative |
+| 3 | `elevation_basis_extension.py` | Official invariant-geopotential acquisition and latitude, latitude-longitude and latitude-longitude-elevation basis decompositions in `results/` |
+| 4 | `prepare_supplement_simulation_tables.py` | Complete 108-cell repeated-summer and eight-cell joint-DGP LaTeX tables plus a source/output hash audit |
+| 5 | `cross_record_dependence_stress.py` | Targeted size stress test for shared phase-aligned temporal structure that preserves marginal record-level cyclic stationarity but violates joint product invariance |
 
 The continuous profile slope is -0.065047 per degree C (31/33 summers
 negative). The +/-3-day and +/-5-day effects are -5.2108% and -5.7237%, with
@@ -196,9 +192,9 @@ zero. The calculation treats the three-column space jointly and does not
 assign an order-specific elevation effect.
 
 The complete simulation table is written both to
-`output_extension_methods/supp_complete_simulation_tables.tex` and the
-portable manuscript path
-`manuscript/generated/supp_complete_simulation_tables.tex`. Its audit requires
+`results/supp_complete_simulation_tables.tex` and the
+current manuscript path under `JASA/manuscript/generated/`. The frozen JRSSC
+copy is not rewritten. Its audit requires
 exactly 108 repeated-summer cells and eight joint-DGP cells.
 
 ## Non-development-year NOAA extension
@@ -210,13 +206,13 @@ outcome-derived sampling rule.
 
 | Order | Script | Output |
 |---:|---|---|
-| 1 | `47_download_noaa_extension.py` | Official history snapshot, outcome-blind 30-station maximin manifest, ten yearly exact-hour panels and station-year qualification audit under `data/noaa_isd_extension/` |
-| 2 | `49_download_noaa_extension_era5_points.py` | Matching ERA5-Land point archives, 28 finite trimmed series and provenance for the two unavailable land-mask cells |
-| 3 | `50_analyze_noaa_extension.py` | Measurement agreement and frozen-label graph effects in `output_noaa_extension/` |
+| 1 | `download_noaa_extension.py` | Official history snapshot, outcome-blind 30-station maximin manifest, ten yearly exact-hour panels and station-year qualification audit under `data/noaa_isd_extension/` |
+| 2 | `download_noaa_extension_era5_points.py` | Matching ERA5-Land point archives, 28 finite trimmed series and provenance for the two unavailable land-mask cells |
+| 3 | `analyze_noaa_extension.py` | Measurement agreement and frozen-label graph effects in `results/` |
 
 The official history snapshot did not reach the frozen `END >= 20250831`
 threshold: its in-scope maximum was 20250824, so the literal rule produced no
-candidates. Script 47 records both counts and uses the in-scope snapshot
+candidates. `download_noaa_extension.py` records both counts and uses the in-scope snapshot
 maximum only for this administrative end field. The evaluation years,
 rectangle, 150-km rule, station count and outcome-blind maximin selection are
 unchanged. The 150-km rule is the minimum equirectangular distance to a primary
@@ -234,18 +230,31 @@ matched hours. Its bias, MAE, RMSE and within-station-centred correlation are
 503/1,006/2,013-km effect is -17.3355% for NOAA (9/10 years negative) and
 -20.9859% for matched ERA5-Land (10/10 negative).
 
+## Additional spatial, climatology and station sensitivities
+
+`revision_sensitivity_analyses.py` uses the retained primary, dense and
+station field panels to add WGS84 geodesic distances, inward movements of all
+four rectangle boundaries, a Natural Earth China-land intersection,
+cosine-latitude targets, a leave-one-summer-out version of the exact
+climatology--anomaly decomposition, and station checks for availability,
+year-specific fixed common support, stricter day counts, station-defined event
+times and labels, and pressure conversion. It writes nine CSV files and a hash
+audit to `results/revision_sensitivity/`. These are additional sensitivities;
+they do not redefine the protocol target.
+
 ## Extension verification
 
-Run the extension verifier after scripts 42--50:
+Run the extension verifier after the acquisition and analysis steps above:
 
 ```sh
-python3 code/51_verify_extension_bundle.py
+python3 code/verify_extension_bundle.py
 ```
 
 It checks the historical archives and estimates, continuous and calendar
 methods, ratio-stress and cross-record replication counts, invariant elevation,
 all 108+8 simulation cells, NOAA administrative operationalisation, both land-mask
-exclusions, measurement summaries and frozen-label effects. The design
+exclusions, measurement summaries, frozen-label effects and the additional
+sensitivities in `revision_sensitivity_analyses.py`. The design
 definitions and analysis-plan hash are recorded in
 `../EXTENSION_ANALYSIS_PROTOCOL.md` and the
 retained audit JSON files.
@@ -255,13 +264,21 @@ retained audit JSON files.
 After the two PDFs and submission-facing documents are final, run:
 
 ```sh
-python3 code/52_build_submission_packages.py
+python3 code/build_submission_packages.py
 ```
 
-Script 52 writes the portable LaTeX source archive and the scientific
-reproducibility archive under `submission/`. The source archive contains only the two
+`build_submission_packages.py` writes the portable LaTeX source archive and the scientific
+reproducibility archive under `JRSSC/submission/`. The source archive contains only the two
 TeX sources, the generated 108+8 simulation table, nine vector figures and its
 README. The scientific archive adds code, protocols, retained outputs and small
 provider manifests while excluding the large raw ERA5-Land archives and
 reconstructed panels. Both archives are written atomically and checked with
 `ZipFile.testzip()` before replacement.
+
+## Event-partition sensitivity (2026-09-07)
+
+Run `python3 code/event_partition_sensitivity.py` from the project root.
+This post-decision analysis uses retained UTC daily fields, excludes 2015 and
+2022, and compares six partitions with the frozen graph and variance metrics.
+It checks the original primary estimate within 1e-10 and writes record/year/scale
+results and descriptive intervals to `results/event_partition/`.

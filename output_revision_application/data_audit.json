@@ -1,0 +1,301 @@
+{
+  "status": "passed",
+  "years": [
+    {
+      "year": 1991,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1992,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1993,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1994,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1995,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1996,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1997,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1998,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 1999,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2000,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2001,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2002,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2003,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2004,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2005,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2006,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2007,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2008,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2009,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2010,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2011,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2012,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2013,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2014,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2015,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2016,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2017,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2018,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2019,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2020,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2021,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2022,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2023,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2024,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    },
+    {
+      "year": 2025,
+      "days": 92,
+      "primary_sites": 121,
+      "dense_sites": 465,
+      "embedded_max_error": 0.0,
+      "label_mean_max_error": 0.0
+    }
+  ],
+  "evaluation_days": 3036,
+  "development_days": 184,
+  "embedded_sites": 121,
+  "new_sites": 344,
+  "stored_labels_and_times_match": true,
+  "land_area_km2": 3220939.0300219203,
+  "zero_land_cells": [],
+  "rectangle_land_km2": 3366047.2717102864,
+  "coverage_fraction_of_rectangle_land": 0.9568906108633951,
+  "threshold_range_c": [
+    9.5,
+    28.5
+  ],
+  "n_thresholds": 77,
+  "original_hash_files": 812,
+  "config_sha256": "e346cbc6ba12968200446f58218c0a0f6c6b574623e1495c8efe458f670c1577"
+}

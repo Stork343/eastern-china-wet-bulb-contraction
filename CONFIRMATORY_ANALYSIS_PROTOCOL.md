@@ -23,7 +23,7 @@ The domain is 105-125 degrees E and 20-42 degrees N on the 0.1-degree
 ERA5-Land grid. Starting at the north-west corner, the candidate lattice takes
 every 16th longitude cell and every 18th latitude cell. Candidate locations
 with missing ERA5-Land 2-m temperature in the cached 2015-06 reference field
-are treated as ocean and removed. Script `20_define_spatial_grid.R` reproduces
+are treated as ocean and removed. Script `define_spatial_grid.R` reproduces
 the resulting 121 locations exactly and freezes their coordinates in
 `data/grid/eastern_china_121_sites.csv`.
 

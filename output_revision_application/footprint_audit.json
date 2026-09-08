@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "days": 3220,
+  "evaluation_days": 3036,
+  "thresholds": 77,
+  "topology_test": true,
+  "min_A": 0.0,
+  "max_A": 1.0000000000000004,
+  "max_C_minus_A": 0.0,
+  "max_rook_minus_queen": 0.0,
+  "curves_monotone": true,
+  "original_files": {
+    "files": 812,
+    "changed": []
+  }
+}

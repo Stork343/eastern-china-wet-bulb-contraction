@@ -1,0 +1,10 @@
+{
+  "record": "r=(y,m)",
+  "day_set": "T_ym",
+  "groups": "E_ym / M_ym / L_ym",
+  "bandwidth": "physical h_k, integer k=1,...,5",
+  "calendar_months": "{6,7,8}",
+  "graph_high_group": "Q^E consistently",
+  "coverage": "A_t(u), C_t(u), strict y_it > u",
+  "issues": []
+}

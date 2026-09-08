@@ -1,0 +1,57 @@
+\subsection{Coverage and information retained by spatial summaries}
+
+High-regional-mean days have greater simultaneous exceedance area and larger
+connected exceedance regions throughout the evaluated temperature range
+(Figure~\ref{fig:application-coverage}). At 24$^\circ$C, the mean exceedance
+proportion rises from 37.39\% on middle days to 50.29\% on high days. The
+12.91-percentage-point difference corresponds to approximately
+416,000 km$^2$ (pointwise 95\% block-resampling interval:
+377,000--459,000 km$^2$). The largest connected region rises from 32.10\%
+to 44.67\% of represented land, a difference of 12.57 points or approximately
+405,000 km$^2$ (365,000--452,000 km$^2$). Both differences are positive in all
+33 summers at this threshold.
+
+The mean area difference reaches 13.03 points at 23.75$^\circ$C; the
+connected-area difference reaches 13.40 points at 23.5$^\circ$C. At
+28$^\circ$C the respective differences are 1.72 and 1.27 points, with one
+summer giving a negative contrast. Thus the broad spatial contraction
+coincides with larger simultaneous and connected humid-heat areas, with the
+largest absolute differences around 23--24$^\circ$C. These group comparisons
+combine changes in regional mean and spatial pattern. The information
+comparison below conditions on the available mean and simple spatial
+summaries.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{application_coverage.pdf}
+\caption{High-minus-middle differences in simultaneous humid-heat coverage
+at the original daily peak times. (a) Total exceedance area. (b) Largest
+four-neighbour connected exceedance area. Thick curves average months and
+33 evaluation summers equally; thin grey curves show every summer. Shading
+gives pointwise 95\% percentile intervals from 1,999 resamples of five-year
+calendar blocks. All 77 development-defined temperature thresholds are shown.
+Areas refer to the 3.221-million-km$^2$ represented land support.}
+\figalttext{Both area-difference curves rise from small positive values at low
+thresholds to approximately thirteen percentage points near 24 degrees
+Celsius, then decline toward the upper end of the threshold range. Grey
+annual curves show variation between summers, including some negative values
+at high thresholds.}
+\label{fig:application-coverage}
+\end{figure}
+
+The strong simple baseline retains most of the coverage information
+(Table~\ref{tab:application-comparison}). Its mean absolute error is
+0.827 percentage points for exceedance area and 1.389 points for the largest
+connected area, compared with 2.794 and 3.070 points for mean and season alone.
+Adding the graph profile reduces these errors by 0.0069 and 0.0100 points,
+respectively. The corresponding binned-variogram model gives errors of 0.815
+and 1.366 points, slightly below the graph model's 0.820 and 1.379 points.
+On high days, graph information reduces the strong baseline errors by
+0.0041 and 0.0036 points. Restricting the area reference to the 344 new sites
+gives the same overall ordering. Graph and variogram gains vary over the
+temperature range (Supplementary Figure~S3).
+The principal contribution of the graph analysis here is its scale profile
+and spatial decomposition; the simpler summaries already describe coverage
+accurately.
+
+\input{generated/application_comparison.tex}

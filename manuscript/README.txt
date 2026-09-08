@@ -5,8 +5,8 @@ Main source: main.tex
 Supplementary source: supplement_theory.tex
 Official OUP class: oup-authoring-template.cls (version 1.5, 2026-07-14)
 OUP bibliography styles: oup-abbrvnat.bst and oup-plain.bst
-Figures: figures/*.pdf (seven main-text and two supplementary vector PDFs)
-Generated table: generated/supp_complete_simulation_tables.tex
+Figures: figures/*.pdf (eight main-text and three supplementary vector PDFs)
+Generated content: generated/*.tex (simulation tables and application methods/results/tables)
 
 Compile the main manuscript from the package root with:
 
@@ -18,10 +18,13 @@ Compile the supplement with:
 
 Both documents use the official OUP modern, medium, single-column template
 with author-year citations. The bibliography is embedded in main.tex, and all
-paths resolve inside this archive. The generated file contains all 108 repeated-summer cells and
-the eight coupled label-field simulation cells. The supplementary source also
-reports the four-cell cross-record dependence size stress test; its code and
-machine-readable results are in the separate scientific reproducibility bundle.
+paths resolve inside this archive. The generated file contains all 108
+repeated-summer cells and the eight coupled label-field simulation cells. The
+supplementary source also reports the full day-level simulation specification,
+the four-cell cross-record dependence size stress test, and the additional
+spatial-support, leave-one-summer-out climatology and station-support analyses.
+Their code and machine-readable results are in the separate scientific
+reproducibility bundle.
 
 Figures 3 and 4 display smooth surfaces fitted to values from the primary
 121-node analysis. All 121 source nodes are shown. Raster cells are graphical

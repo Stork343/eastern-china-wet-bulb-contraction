@@ -1,0 +1,23 @@
+{
+  "archetype": "quantitative_grid",
+  "primary_panels": 2,
+  "supplement_panels": 4,
+  "all_thresholds": 77,
+  "annual_replicates": 33,
+  "centre": "equal-month and equal-summer mean",
+  "interval": "pointwise percentile bands from 1999 five-year calendar moving-block resamples",
+  "multiplicity": "no simultaneous significance claims",
+  "prediction_intervals": "conditional on fitted nested blocked predictions",
+  "data_sources": [
+    "coverage_summary.csv",
+    "annual_footprints.csv",
+    "threshold_paired_improvement.csv",
+    "comparison_summary.csv",
+    "paired_improvement_summary.csv"
+  ],
+  "font": "Arial",
+  "vector_pdf": true,
+  "png_dpi": 300,
+  "source_rows_discarded": "none; predeclared evaluation excludes development years",
+  "asset": "LineTrend/plot_trend.py inspected; cross-type parameter inheritance because cumulative counts differ from threshold contrasts"
+}

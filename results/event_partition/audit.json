@@ -1,0 +1,9 @@
+{
+  "status": "post-decision exploratory sensitivity",
+  "date": "2026-09-07",
+  "primary_reproduction_error": 6.106226635438361e-16,
+  "records_per_partition": 99,
+  "years": 33,
+  "quantile": "type 7 / linear",
+  "intervals": "descriptive t-reference; no serial-dependence coverage guarantee"
+}

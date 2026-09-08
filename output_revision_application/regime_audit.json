@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "evaluation_days": 3036,
+  "records": 99,
+  "years": 33,
+  "bootstrap_replicates": 1999,
+  "calendar_block_years": 5,
+  "original_files": {
+    "files": 812,
+    "changed": []
+  }
+}

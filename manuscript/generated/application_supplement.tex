@@ -1,0 +1,149 @@
+\section{Simultaneous coverage and spatial information comparison}
+\label{sec:application-validation}
+
+\subsection{Fields, land areas and connectivity}
+
+This extension was specified on 7 September 2026 before calculating its
+coverage contrasts or comparison errors. It uses 3,036 synchronous daily
+fields in the 33 evaluation summers and retains the primary-grid peak time
+and original event labels. The dense fields contain 465 sites, including all
+121 original sites and 344 additional locations. Embedded values agree with
+the primary fields to within $10^{-6}$ degrees Celsius. Every summer has
+92 complete daily fields. The original graph contrast is reproduced with
+absolute numerical error below $10^{-10}$.
+
+Each site represents a cell extending $0.4^\circ$ in longitude and
+$0.45^\circ$ in latitude from its centre. Cells are clipped to
+$[105,125]^\circ$E by $[20,42]^\circ$N and the union of land polygons in the
+Natural Earth low-resolution map distributed with R package \texttt{spData}.
+All countries within the original rectangle are included. Retained cells
+represent 3,220,939 km$^2$, or 95.69\% of the 3,366,047 km$^2$ of mapped land
+in the rectangle. The denominator uses the represented land. All 465 cells
+have positive land area. Area is computed on the WGS84 ellipsoid, including
+polygon holes. A coastal cell has one observed temperature and its clipped
+land area. Grid adjacency gives connectivity at this resolution; subcell
+coastline connectivity is unresolved.
+
+Four-neighbour components use adjacent grid rows or columns; eight-neighbour
+components additionally join diagonal neighbours. Missing lattice positions
+remain absent. For each day and threshold, both measured curves satisfy
+$0\le C_t(u)\le A_t(u)\le1$ and decrease monotonically with $u$. The
+additional-site exceedance proportion uses the 344 new cells and their own
+normalised land areas. Connected area uses the complete retained lattice.
+
+\subsection{Thresholds, contrasts and intervals}
+
+The pooled 465-site values from 2015 and 2022 determine the temperature grid.
+Their 1st and 99.5th sample percentiles are rounded outward to multiples of
+0.25$^\circ$C, producing 9.5--28.5$^\circ$C. All 77 thresholds use strict
+exceedance, $y_{it}>u$. These levels describe the temperature field.
+For $F=A$ or $C$, the contrast is
+\[
+ \Delta_F(u)=\frac{1}{33}\sum_{y\in\mathcal Y_H}
+ \frac{1}{3}\sum_{m\in\{6,7,8\}}
+ \left\{\frac{\sum_{t\in\mathcal E_{ym}}F_t(u)}{|\mathcal E_{ym}|}
+ -\frac{\sum_{t\in\mathcal M_{ym}}F_t(u)}{|\mathcal M_{ym}|}\right\}.
+\]
+All annual curves and both group means are retained. Square-kilometre
+contrasts multiply these differences by the represented land area.
+
+Descriptive uncertainty uses 1,999 circular moving-block resamples of the
+35 calendar positions from 1991 to 2025, with block length five and seed
+20260907. Seven uniformly drawn block starts produce 35 positions per
+resample. Development-year positions are then omitted and the remaining
+annual contrasts averaged. All thresholds and outcomes share the same draws.
+The 2.5th and 97.5th percentiles form pointwise intervals. Paired model-error
+intervals use the same resampling and condition on the fitted
+cross-validation predictions. They describe variation in the observed
+sequence; they are pointwise rather than simultaneous bands.
+
+Eight-neighbour adjacency changes the high-minus-middle connected-area
+contrast by at most 0.965 percentage points over the threshold grid.
+Replacing clipped land areas by normalised cosine-latitude weights changes
+the total-area and connected-area contrasts by at most 0.484 and 0.611
+points, respectively. The two alternating 0.5$^\circ$C subgrids retain the
+overall model ordering for all-day errors.
+
+\subsection{Inputs and regression specification}
+
+The baseline inputs are the original regional mean and day of summer. The
+strong simple model adds $V_t$, the signed ordinary least-squares slope of
+WBT against latitude, and the 121-site direct exceedance proportion. Each
+dense cell's area is assigned to its nearest original site in the original
+projected kilometre coordinates to obtain fixed primary representative
+weights. Thus the direct proportion covers the same represented support
+using 121 temperatures.
+
+The graph model adds $\log\{Q_{h_k}(\mathbf y_t)/V_t\}$ for all five
+original physical bandwidths. The variogram model adds the corresponding
+log ratios of five binned semivariances to $V_t$. Bins use the quintiles of
+the 7,260 original pair distances: internal boundaries are 600.71, 850.88,
+1,201.42 and 1,553.64 km. Ties stay in the same bin; bin sizes are 1,422,
+1,471, 1,454, 1,458 and 1,455. Every pair belongs to one bin. All observed
+variances and energies are positive. The specified constant-field convention
+sets the five log-shape inputs to zero when $V_t=0$.
+
+Each baseline scalar has a quadratic B-spline basis with four equally spaced
+knots over its training range, linear extrapolation and one redundant basis
+column removed. A constant training variable is omitted from the spline basis.
+Graph and variogram shapes enter linearly. All features are standardised
+using training observations. Weighted ridge least squares fits an
+unpenalised intercept and penalised slopes; training weights give equal
+weight to months within years. Predicted proportions are clipped to $[0,1]$.
+The same procedure is used for total area, connected area and the
+additional-site area. One penalty per method, endpoint and outer fold is
+selected from $\{0.1,1,10,100,1000\}$ by inner mean absolute error averaged
+equally across thresholds, months and years.
+
+The interpolation comparison uses a Delaunay piecewise-linear interpolant
+in the original projected coordinates. Eight dense locations lie outside
+the convex hull and use their nearest original site's temperature. Coverage
+is then calculated directly from the interpolated field. Interpolation
+preserves the original-site values to numerical precision.
+
+The regressions estimate each threshold and outcome separately. Across all
+held-out day--threshold pairs, fitted connected area exceeds fitted total
+area in 0.31\%, 1.44\%, 1.59\% and 1.78\% of predictions for the mean,
+simple, variogram and graph models. The maximum graph-model excess is
+3.30 percentage points. Adjacent-threshold increases occur in 2.23\% of
+graph area predictions and 7.49\% of graph connected-area predictions.
+These discrepancies describe approximation error in the regression summaries;
+measured and interpolated fields satisfy the coverage identities.
+
+\subsection{Blocked evaluation and paired errors}
+
+The outer blocks are 1991--1995, 1996--2000, 2001--2005, 2006--2010,
+2011--2015, 2016--2020 and 2021--2025. Each is held out in turn. Training
+excludes the held-out block, its adjacent calendar years and the two
+development summers. Inner validation uses the remaining calendar blocks
+within outer training, again excluding adjacent years. Spline knots,
+standardisation and penalties are fitted within these training sets. All
+methods share the same memberships. Training may use years before and after
+the held-out block; this evaluates transport across omitted years.
+
+For method $j$, summer $y$ and outcome $F$, define
+\[
+ L^F_{j,y}=\frac{1}{3}\sum_{m\in\{6,7,8\}}
+ \frac{1}{|\mathcal T_{ym}|}\sum_{t\in\mathcal T_{ym}}
+ \frac{1}{77}\sum_{u\in\mathcal U}
+ |F_t(u)-\widehat F^{(-b(y))}_{j,t}(u)|.
+\]
+High-day errors replace $\mathcal T_{ym}$ by $\mathcal E_{ym}$.
+Paired differences subtract graph error from the strong-simple or variogram
+error within each summer. Every method supplies 3,036 held-out daily curves.
+Positive differences indicate lower graph error.
+
+\input{generated/application_paired.tex}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth]{application_increment.pdf}
+\caption{Threshold-specific paired reduction in mean absolute error from
+adding graph information. Positive values favour the graph model. Blue solid
+curves compare the strong simple baseline with the graph model; orange dashed
+curves compare the variogram model with the graph model. Left panels use all
+days and right panels use high days. Shading gives pointwise 95\% five-year
+calendar-block resampling intervals, conditional on fitted predictions.
+All 77 thresholds are retained.}
+\label{fig:application-increment-supp}
+\end{figure}

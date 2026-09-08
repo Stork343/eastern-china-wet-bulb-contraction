@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "evaluation_days": 3036,
+  "thresholds": 77,
+  "outer_folds": 7,
+  "methods": 5,
+  "no_missing_predictions": true,
+  "elapsed_seconds": 32.36045575141907,
+  "config_sha256": "e346cbc6ba12968200446f58218c0a0f6c6b574623e1495c8efe458f670c1577",
+  "protocol_sha256": "3e74358ca5fe94f6eba94e68201e803bdb628b02e7be819ea932a47377ccabf4",
+  "original_files": {
+    "files": 812,
+    "changed": []
+  }
+}
