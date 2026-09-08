@@ -148,7 +148,7 @@ Test size under the specified dependence models \\
 \end{longtable}
 \normalsize
 
-\section{Finite-record product cyclic-shift validity}
+\section{Validity of randomisation by cyclic shifts}
 \label{sec:product-proof}
 
 Let $X$ collect the regional-mean records used to define the event
@@ -300,7 +300,7 @@ The conclusion uses the complete joint null because $M$ combines every
 scale. This completes the proof.
 \end{proof}
 
-\section{Process-level strong-mixing and HAC reference}
+\section{Inference across summers under strong mixing}
 \label{sec:process-proof}
 
 Let
@@ -477,7 +477,7 @@ The 495 observed middle-day denominators range from 2.25 to
 $25.99\;{}^\circ$C$^2$. The process-level ratio argument additionally assumes
 the negative moment stated in Theorem~S1.
 
-\section{Global product-shift result}
+\section{Randomisation results for the evaluation period}
 \label{sec:global-shift}
 
 The product-shift analysis used the statistic
@@ -527,7 +527,7 @@ Equation~\eqref{eq:s-cyclic-null}. Scale-specific rows use the same joint
 draws and are mutually dependent. Section~\ref{sec:cross-record-stress}
 examines test size under a shared process across month-year records.
 
-\section{Physical scale of the graph contrast}
+\section{Graph dispersion and pairwise temperature differences}
 \label{sec:physical-scale}
 
 For a field $\mathbf y$,
@@ -585,10 +585,10 @@ edge-weighted mean pair distances are respectively 200, 319, 549, 826 and
 6,005 and 7,109 out of 7,260. The five-scale summary is an equal-weight mean
 over this logarithmic bandwidth grid.
 
-\section{Structural decompositions}
+\section{Decomposition of spatial contrasts}
 \label{sec:structural-checks}
 
-\subsection{Climatology--anomaly decomposition}
+\subsection{Climatology and daily anomaly components}
 
 Let $\boldsymbol\mu_m$ be the site-specific 35-summer mean field for month
 $m$ and write $\mathbf y_t=\boldsymbol\mu_m+\mathbf a_t$. For a fixed graph,
@@ -731,10 +731,10 @@ The maximum day-level identity error for the augmented basis is
 $8.88\times10^{-14}$, and the maximum aggregated error is
 $2.78\times10^{-16}$.
 
-\section{Scale and support resolution}
+\section{Sensitivity to bandwidth and spatial sampling}
 \label{sec:resolution}
 
-\subsection{Thirty-one-point bandwidth curve}
+\subsection{Contraction across 31 bandwidths}
 
 The estimand is the equal-weight mean over five design bandwidths. A denser
 curve evaluates 31 logarithmically spaced values between 125.800 and 2,012.796 km on
@@ -789,7 +789,7 @@ design bandwidths lie on the same monotone profile.}
 \label{fig:dense-bandwidth}
 \end{figure}
 
-\subsection{Four spatial-support configurations}
+\subsection{Comparison of four sampling grids}
 
 The convergence comparison uses the five physical bandwidths, evaluation peak
 times and 121-site labels. The 239-site configuration refines longitude; the
@@ -846,7 +846,7 @@ effects is preserved.}
 \label{fig:spatial-convergence}
 \end{figure}
 
-\subsection{Distance, boundary and non-rectangular support checks}
+\subsection{Distance metrics and study boundaries}
 
 Table~\ref{tab:domain-scale-curves} reports the complete five-bandwidth
 profiles from the additional support calculations. The 121-site WGS84 rows
@@ -909,7 +909,7 @@ and its ERA5-Land-valid mask. These checks support the direction and scale
 ordering, but they also show that the magnitude belongs to the specified
 domain.
 
-\section{Historical extension, 1950--1990}
+\section{Historical analysis from 1950 to 1990}
 \label{sec:historical-extension}
 
 The ERA5-Land archive distributed through the Copernicus Climate Data Store
@@ -1017,7 +1017,7 @@ Bandwidth & Total & Latitude & Latitude & Planar & Planar & Anomaly & Climatolog
 \end{tabular}
 \end{table}
 
-\section{NOAA station extension in ten evaluation years}
+\section{NOAA station comparison}
 \label{sec:noaa-extension}
 
 The station comparison uses the ten summers enumerated before station
@@ -1166,7 +1166,7 @@ $-18.08\%$. Defining daily peaks and high/middle labels from station regional
 means, with at least five days per state, gave $-15.99\%$. The broad-scale contrast remains negative under these event and
 station-support definitions.
 
-\section{Continuous intensity and calendar matching}
+\section{Continuous associations and calendar matching}
 \label{sec:intensity-calendar}
 
 Two alternative event contrasts use the same sites, graphs and aggregation
@@ -1214,7 +1214,7 @@ but their broad-to-local ordering remains. Calendar matching also changes the
 target population of day pairs: only high days with eligible middle days enter
 the high-day average.
 
-\section{Heavy-tailed ratio stress test}
+\section{Ratio estimation with heavy tails}
 \label{sec:ratio-stress}
 
 We compare the raw effect $r-1$, the log effect $\log r$ and the bounded
@@ -1262,10 +1262,10 @@ the right tail of daily energy. The log and bounded summaries reduce that instab
 with the bounded measure giving the smallest RMSE in these cells. The smaller RMSE of the log and bounded contrasts supports their use
 when daily energies have heavy right tails.
 
-\section{Simulation specifications and results}
+\section{Simulation designs and complete results}
 \label{sec:complete-simulations}
 
-\subsection{Baseline day-level profile experiment}
+\subsection{Simulation of daily dispersion profiles}
 \label{sec:baseline-day-simulation}
 
 The baseline experiment uses the 121 observed coordinates and the five design
@@ -1367,7 +1367,7 @@ expansion and variance or the variogram profile is stronger for weak gradient
 suppression. Standardisation leaves Moran's $I$ and Geary's $C$ with near-null
 power for pure amplitude changes.
 
-\subsection{Coupled label--field stress designs}
+\subsection{Joint simulation of regional means and spatial fields}
 
 The coupled simulation uses the 121 observed site coordinates and six records
 of lengths 30, 31, 30, 30, 31 and 30 days. Isotropic anomaly fields have
@@ -1418,7 +1418,7 @@ the conditional expected quadratic forms. The graph and variogram statistics
 use the same simulated fields, labels and product shifts. Each of the eight
 cells contains 1,000 replications with 499 shifts per test.
 
-\subsection{Repeated-summer experiment}
+\subsection{Inference across simulated summers}
 
 The annual experiment crosses
 $R\in\{20,33,60,120\}$, $\rho\in\{0,0.3,0.6\}$, Gaussian, centred log-normal
@@ -1456,7 +1456,7 @@ repository.
 
 \input{generated/supp_complete_simulation_tables.tex}
 
-\subsection{Cross-record dependence stress test}
+\subsection{Dependence between monthly records}
 \label{sec:cross-record-stress}
 
 Proposition~\ref{prop:product-shift} uses joint invariance under independent
