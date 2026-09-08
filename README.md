@@ -7,7 +7,7 @@ https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrss
 is an earlier version. The current companion archive is
 `jrssc_reproducibility_bundle.zip`, available with the matching manuscripts
 and portable LaTeX source at
-https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v6-2026-09-08.
+https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v7-2026-09-08.
 
 ## Inspecting the reported results
 
@@ -81,3 +81,11 @@ manuscript page counts or added sections.
 
 The portable LaTeX archive `jrssc_source_package.zip` includes all figures and
 all generated TeX inputs. It can be compiled independently of the data tree.
+
+## Analytical presentation in v7
+
+The manuscript prose interprets the existing findings by spatial scale,
+climatological structure and geographic coverage. Numerical outputs are
+unchanged. Supplement S14 retains the thermodynamic conversion, field
+selection and spatial-weighting details moved from the main text. The
+calendar-specific simulation is retained in S11.3.

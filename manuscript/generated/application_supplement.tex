@@ -1,7 +1,7 @@
-\section{Coverage on the nested grid}
+\section{Coverage estimation on the nested grid}
 \label{sec:application-validation}
 
-\subsection{Representing the study region}
+\subsection{Spatial support of the coverage measures}
 
 This extension was specified on 7 September 2026 before calculating its
 coverage contrasts or comparison errors. It uses 3,036 synchronous daily
@@ -31,7 +31,7 @@ $0\le C_t(u)\le A_t(u)\le1$ and decrease monotonically with $u$. The
 additional-site exceedance proportion uses the 344 new cells and their own
 normalised land areas. Connected area uses the complete retained lattice.
 
-\subsection{Coverage across temperature thresholds}
+\subsection{Threshold dependence of coverage}
 
 The pooled 465-site values from 2015 and 2022 determine the temperature grid.
 Their 1st and 99.5th sample percentiles are rounded outward to multiples of
@@ -64,7 +64,21 @@ the total-area and connected-area contrasts by at most 0.484 and 0.611
 points, respectively. The two alternating 0.5$^\circ$C subgrids retain the
 overall model ordering for all-day errors.
 
-\subsection{Estimating coverage from 121 sites}
+\subsection{Coverage at the illustrative threshold}
+
+High-regional-mean days have greater simultaneous exceedance area and larger
+connected exceedance regions throughout the evaluated temperature range
+(main-text Figure~4). At 24$^\circ$C, the mean exceedance
+proportion rises from 37.39\% on middle days to 50.29\% on high days. The
+12.91-percentage-point difference corresponds to approximately
+416,000 km$^2$ (pointwise 95\% block-resampling interval:
+377,000--459,000 km$^2$). The largest connected region rises from 32.10\%
+to 44.67\% of represented land, a difference of 12.57 points or approximately
+405,000 km$^2$ (365,000--452,000 km$^2$). Both differences are positive in all
+33 summers at this threshold.
+
+
+\subsection{Regression specification}
 
 The baseline inputs are the original regional mean and day of summer. The
 strong simple model adds $V_t$, the signed ordinary least-squares slope of
@@ -110,7 +124,7 @@ graph area predictions and 7.49\% of graph connected-area predictions.
 These discrepancies describe approximation error in the regression summaries;
 measured and interpolated fields satisfy the coverage identities.
 
-\subsection{Validation across omitted years}
+\subsection{Temporal validation}
 
 The outer blocks are 1991--1995, 1996--2000, 2001--2005, 2006--2010,
 2011--2015, 2016--2020 and 2021--2025. Each is held out in turn. Training

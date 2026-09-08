@@ -25,7 +25,7 @@ existing Natural Earth land boundary. Input acquisition is unchanged.
 
 Existing source data, original code, protocols and results are protected by
 SHA-256 comparisons. The manuscript changes follow checkpoint3. The figure
-and table generator rebuilds numeric tables and figures; the three narrative
+and table generator rebuilds numeric tables and figures; the narrative
 LaTeX snippets in output_revision_application/generated are author-facing
 manuscript revisions rather than numerical output.
 

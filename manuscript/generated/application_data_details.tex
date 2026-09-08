@@ -1,0 +1,86 @@
+\section{Data preparation}
+\label{sec:data-preparation}
+
+\subsection{Thermodynamic conversion}
+
+WBT is calculated from temperature $T$ and dew point $T_d$ in kelvin and
+surface pressure $p$ in pascals. Vapour pressure is
+$e(T_d)=611.2\exp\{17.67(T_d-273.15)/(T_d-29.65)\}$ Pa, and the Bolton
+mixing-ratio, lifting-condensation-temperature and equivalent-potential-
+temperature relations are evaluated in these units \citep{bolton1980}.
+Saturated $T_w$ is obtained by solving
+\begin{equation}
+  \theta_e(T_w,T_w,p)=\theta_e(T,T_d,p)
+  \label{eq:wbt}
+\end{equation}
+at the original pressure with 40 bisection iterations on
+$[T_d,T]$; even a 100-K initial interval then falls below $10^{-9}$ K. Values
+with $T_d>T$ are clipped at equality before evaluation. The Stull approximation
+provides a comparison \citep{stull2011}; the main calculation follows the
+pseudoadiabatic definition discussed by \citet{davies2008}.
+
+
+\subsection{Quality control}
+
+Every 16th longitude and 18th latitude cell from a fixed north-west origin
+gives a $13\times13$ candidate lattice; removing ocean cells leaves 121 sites
+(main-text Figure~2). The 35 summers contain 9,350,880
+quality-controlled hour--site records and 92 complete UTC fields per summer.
+Because of NetCDF packing, 2,092 dew-point values exceeded air temperature
+slightly (0.022\% of records); these pairs were clipped at equality before WBT
+was calculated.
+
+\subsection{Alternative daily fields}
+
+For each UTC day, the 121 simultaneous values at the peak regional mean form
+the daily field. Within each month-year, the upper regional-mean quartile is
+high, the middle half is middle and the lower quartile is excluded. Labels
+depend on regional mean WBT, and the selected hour maximises that mean; graph
+dispersion enters after selection. UTC+8 days,
+alternative thresholds, sitewise maxima, all 24 fixed UTC hours and daily-mean
+fields provide comparisons. At each fixed hour, both the original
+peak-based labels and labels recomputed from that hour's regional mean are
+analysed; daily-mean labels are likewise recomputed from daily-mean WBT\@. A
+dated event manifest records the type-7 thresholds, membership and absence of
+ties.
+
+Three checks address within-month seasonal progression: comparison of the
+day-of-month distributions, removal of a separate
+linear day-of-month trend at every site within each year--month, and
+subtraction of each site's calendar-day climatology, estimated from all
+summers except the one being analysed. The last two calculations use the
+original event labels.
+A date-matched calculation compares each high day with
+all middle days in the same month-year lying within $\pm3$ or $\pm5$ calendar
+days. It first averages the available high-day-specific ratios and then uses
+the same equal-month, equal-scale and equal-summer hierarchy as the
+estimator; unmatched-day and empty-record counts are retained.
+
+A continuous diagnostic regresses $\log Q_h$ on centred regional
+mean WBT within each month-year and bandwidth. Slopes are then averaged equally
+over months, bandwidths and evaluation summers. This slope supplements the
+quartile target with a graded summary.
+
+
+\subsection{Spatial weighting}
+
+The main target is a site average. For area weighting,
+$a_i=\cos(\mathrm{latitude}_i)$,
+\[
+ \bar y_t^{(a)}=\frac{\sum_i a_i y_{it}}{\sum_i a_i},\qquad
+ Q_{h,a}(\mathbf y)=
+ \frac{\sum_{i<j}a_i a_j w_{ij,h}(y_i-y_j)^2}
+      {2\sum_{i<j}a_i a_j w_{ij,h}}.
+\]
+The first area-weighted calculation replaces $Q_h$ by $Q_{h,a}$ using the
+original labels; the second redefines the labels from $\bar y_t^{(a)}$ at the
+regional peak hours.
+The two calculations separate spatial weighting from event relabelling.
+
+
+Alternative graph kernels are $\exp(-d_{ij}/\rho)$ and
+$[1-d_{ij}/\rho]_+^2$. For each Gaussian scale, $\rho$ is found by bisection so
+that the alternative kernel has the same edge-weighted mean pair distance.
+Across the five scales, their effective edge counts range from 334 to 7,112
+and from 382 to 7,113, compared with 366 to 7,109 for the Gaussian graphs;
+the full matched-distance and effective-edge metadata accompany the analysis.

@@ -1,50 +1,34 @@
-\subsection{Measuring simultaneous coverage}
+\subsection{Spatial extent of humid heat}
 
-We measure the spatial extent of humid heat on the 465-site lattice at the
-original 121-site peak time. Each retained site represents a
-$0.8^\circ\times0.9^\circ$ cell clipped to the study rectangle and the
-Natural Earth land polygon. WGS84 cell areas sum to 3.221 million km$^2$,
-covering 95.7\% of the mapped land in that rectangle. Let $a_i$ be the
-represented land area and $a_+=\sum_i a_i$. At threshold $u$, define
+We quantify simultaneous coverage on the nested grid at the original daily
+peak times. Let $a_i$ denote the land area represented by site $i$ and
+$a_+=\sum_i a_i$. Total exceedance area and the largest connected exceedance
+region, expressed as fractions of represented land, are
 \begin{equation}
  A_t(u)=\frac{\sum_i a_i I(y_{it}>u)}{a_+},\qquad
  C_t(u)=\frac{\max_{B\in\mathcal B_t(u)}\sum_{i\in B}a_i}{a_+},
  \label{eq:coverage}
 \end{equation}
-where $\mathcal B_t(u)$ contains connected components of exceedance cells
-under four-neighbour grid adjacency, with $C_t(u)=0$ when the exceedance set
-is empty. Multiplication by $a_+$ gives the corresponding areas in km$^2$.
-These quantities describe simultaneous coverage at the sampling resolution.
-Spatial extent and contiguity are also central to temperature-event analyses
-by \citet{healy2025} and \citet{skinner2025}.
+where $\mathcal B_t(u)$ comprises four-neighbour connected components and
+$C_t(u)=0$ for an empty exceedance set. The represented area is 3.221 million
+km$^2$; multiplying either fraction by this area gives its geographic extent.
+These measures describe concurrent humid heat at the sampling resolution,
+following the emphasis on event extent in \citet{healy2025} and
+\citet{skinner2025}.
 
-The temperature range uses the 1st and 99.5th percentiles of the two
-development summers, rounded outward to 0.25$^\circ$C steps. We retain all
-77 thresholds from 9.5 to 28.5$^\circ$C. For each threshold we compare high
-and middle days within month-year, then average months and evaluation summers
-equally. The differences are expressed in area percentage points and km$^2$.
-Pointwise descriptive intervals resample five-year calendar blocks of the
-annual contrasts, retaining the positions of the two excluded development
-years. Eight-neighbour connectivity and cosine-latitude weights provide
-separate sensitivity comparisons.
+The analysis retains the complete temperature-threshold curve fixed from the
+development summers. High-minus-middle comparisons are averaged equally over
+months and evaluation summers, with descriptive uncertainty obtained from
+blocks of annual contrasts. Supplementary Section~S13 gives the land-area,
+threshold and connectivity definitions.
 
-We then compare how summaries of the 121-site field describe coverage on the
-465-site grid. A mean-and-season regression is followed by a strong simple
-baseline that also includes spatial variance, the signed latitude slope and
-the area-weighted 121-site exceedance proportion. Two further models add
-five binned semivariances or the five graph values, each divided by spatial
-variance and log-transformed to describe relative scale structure. All four
-use the same spline regression with ridge regularisation and fitted
-proportions clipped to $[0,1]$. Linear spatial interpolation, followed by
-coverage calculation, provides a full-field comparison.
-
-Seven held-out five-year calendar blocks and one-year training buffers
-separate evaluation from fitting. Nested blocked validation selects the
-ridge penalty using training years, following the dependence-aware approach
-to model assessment discussed by \citet{roberts2017}. Errors are averaged
-across thresholds, then equally across months and summers, for all days and
-for high days separately. An additional exceedance comparison uses only the
-344 new sites. The connected-area calculation uses all 465 sites. This
-comparison measures spatial information within ERA5-Land across omitted
-years. Supplementary Section~S13 gives the complete definitions and fitting
-procedure.
+To assess the information retained by spatial summaries, we compare a
+regional-mean and seasonal baseline with a stronger model containing spatial
+variance, the signed latitude gradient and the direct primary-site
+exceedance fraction. Graph and binned-variogram additions describe scale
+structure relative to total variance. The regression specification and
+blocked temporal validation are common to these comparisons
+\citep{roberts2017}; interpolation provides a reference using the full primary
+field. The additional-site area comparison assesses coverage beyond the
+original sample locations. These comparisons isolate the incremental value
+of distance-resolved summaries for the same coverage target.
