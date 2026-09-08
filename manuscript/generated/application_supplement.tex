@@ -1,7 +1,7 @@
-\section{Coverage measures and comparison of spatial summaries}
+\section{Coverage on the nested grid}
 \label{sec:application-validation}
 
-\subsection{Spatial fields, land area and connectivity}
+\subsection{Representing the study region}
 
 This extension was specified on 7 September 2026 before calculating its
 coverage contrasts or comparison errors. It uses 3,036 synchronous daily
@@ -31,7 +31,7 @@ $0\le C_t(u)\le A_t(u)\le1$ and decrease monotonically with $u$. The
 additional-site exceedance proportion uses the 344 new cells and their own
 normalised land areas. Connected area uses the complete retained lattice.
 
-\subsection{Temperature thresholds and coverage contrasts}
+\subsection{Coverage across temperature thresholds}
 
 The pooled 465-site values from 2015 and 2022 determine the temperature grid.
 Their 1st and 99.5th sample percentiles are rounded outward to multiples of
@@ -64,7 +64,7 @@ the total-area and connected-area contrasts by at most 0.484 and 0.611
 points, respectively. The two alternating 0.5$^\circ$C subgrids retain the
 overall model ordering for all-day errors.
 
-\subsection{Spatial summaries and regression models}
+\subsection{Estimating coverage from 121 sites}
 
 The baseline inputs are the original regional mean and day of summer. The
 strong simple model adds $V_t$, the signed ordinary least-squares slope of
@@ -110,7 +110,7 @@ graph area predictions and 7.49\% of graph connected-area predictions.
 These discrepancies describe approximation error in the regression summaries;
 measured and interpolated fields satisfy the coverage identities.
 
-\subsection{Temporal validation and paired errors}
+\subsection{Validation across omitted years}
 
 The outer blocks are 1991--1995, 1996--2000, 2001--2005, 2006--2010,
 2011--2015, 2016--2020 and 2021--2025. Each is held out in turn. Training

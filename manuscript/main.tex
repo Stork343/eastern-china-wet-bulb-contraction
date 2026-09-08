@@ -136,9 +136,9 @@ changes in daily anomaly energy. The nested-grid comparison quantifies the
 accompanying total and connected humid-heat areas and the information retained
 by simple and distance-resolved spatial summaries.
 
-\section{Spatial contrasts across scales}
+\section{Quantifying spatial contrasts}
 
-\subsection{Graph dispersion and regime comparisons}
+\subsection{Graph dispersion}
 
 Let $y_{it}$ denote WBT at location $i$ in the selected field for day $t$, and
 let $\bar y_t=n^{-1}\sum_i y_{it}$. The benchmark is the site mean
@@ -260,7 +260,7 @@ applied to identical fields and labels in the denominator stress test. We
 treat the log ratio as the principal robustness analysis and the bounded
 symmetric form as a secondary check.
 
-\subsection{Spatial allocation and structural decomposition}
+\subsection{Decomposing the spatial contrast}
 
 Graph dispersion accumulates over edges. We obtain an exact and symmetric site
 allocation by splitting every undirected edge equally between its endpoints. For location $i$, define
@@ -372,7 +372,7 @@ total dispersion yields two components that add exactly to $R_{ymh}$.
 The signed cross term measures alignment between the monthly climatology
 and daily anomalies; a negative value indicates opposing spatial patterns.
 
-\section{Statistical inference and study design}
+\section{Inference for the observed summers}
 
 \subsection{Randomisation by cyclic shifts}
 
@@ -449,7 +449,7 @@ Student, lag-2 Newey--West and sign-test components and their joint decision
 rule. Supplementary Table~S1 gives the dates, statistical assumptions and
 results of the primary and subsequent analyses.
 
-\subsection{Inference across summers}
+\subsection{Inference under temporal dependence}
 
 For comparison, a process-level reference treats the summer sequence as a
 stationary weakly dependent process. Under standard strong-mixing, moment and
@@ -493,7 +493,7 @@ variance, two local semivariances, Moran's $I$ and Geary's $C$. These comparison
 growing-lag calculations, the sign test and the protocol's three-component
 rule.
 
-\subsection{Calibration and power across spatial alternatives}
+\subsection{Calibration and power}
 
 Figure~\ref{fig:simulation} summarises the power ranges over nine spatial
 alternatives; complete values are in the Supplement.
@@ -566,7 +566,7 @@ stronger for the seasonal-gradient alternative. Smooth graph weighting and
 exact allocation therefore show no consistent power penalty across these
 scenarios.
 
-\subsection{Interval coverage under dependence between summers}
+\subsection{Interval coverage under serial dependence}
 
 At $R=33$, increasing Gaussian year correlation from 0 to 0.6 reduces Student
 coverage from 95.2\% to 66.1\%, fixed-lag coverage from 93.3\% to 78.7\%, and
@@ -590,7 +590,7 @@ for calendar lag 2.
 We apply graph dispersion to synchronous wet-bulb temperature fields in
 eastern China during 1991--2025 and extend the analysis to 1950--1990.
 
-\subsection{Data and daily temperature fields}
+\subsection{Constructing the daily fields}
 
 ERA5-Land supplies hourly land-surface fields on a $0.1^\circ$
 latitude--longitude grid \citep{munoz2021}. We use 2-m air temperature, 2-m
@@ -743,7 +743,7 @@ spatial contrast on this sparse network. The two sources are compared at common 
 
 \input{generated/application_methods.tex}
 
-\subsection{Spatial contraction across scales}
+\subsection{Stronger contraction at broader scales}
 
 Across the 33 evaluation summers, the five-scale contrast on the weighted
 squared-difference scale was $-7.28\%$. The three-component
@@ -812,7 +812,7 @@ contrast.
   \label{fig:multiscale-evidence}
 \end{figure}
 
-\subsubsection*{Historical analysis from 1950 to 1990}
+\subsubsection*{Evidence from 1950 to 1990}
 The 1950--1990 extension gave a five-scale contrast of
 $-11.04\%$ (descriptive $t$-reference interval based on between-summer variation,
 $[-12.84,-9.24]\%$). Forty of 41 summer contrasts were negative, and the
@@ -843,7 +843,7 @@ uncertainty of the preliminary forcing data.
 
 \input{generated/application_results.tex}
 
-\subsection{Geographic structure of the contraction}
+\subsection{Locating the contraction}
 
 \begin{figure}[!t]
 \centering
@@ -989,7 +989,7 @@ the negative direction and scale ordering are stable over these choices.
 For comparison, the same equal-month, equal-scale and equal-year formula gives
 $-15.14\%$ for the 2015 and 2022 design summers.
 
-\subsection{Sensitivity analyses and station comparisons}
+\subsection{Robustness of the findings}
 
 The 495 middle-day denominators range from 2.25 to
 $25.99\;{}^\circ\mathrm{C}^2$ across records and scales; within-scale
@@ -1200,7 +1200,7 @@ ERA5-Land is available from the Copernicus Climate Data Store
 NOAA ISD station archive \citep{smith2011} is available at
 \url{https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database}.
 Code and retained results for this version are archived at
-\url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v5-2026-09-08}.
+\url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v6-2026-09-08}.
 The accompanying \texttt{jrssc\_reproducibility\_bundle.zip} contains the
 current manuscript, analysis code, protocols, site and station manifests,
 and retained results, including the September coverage comparison.
