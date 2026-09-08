@@ -1,5 +1,6 @@
-\begin{table}[!t]
-\centering\small
+\begin{table}[H]
+\centering\normalsize
+\renewcommand{\arraystretch}{1.5}
 \caption{Held-out mean absolute error in area percentage points. Errors are
 averaged over all 77 thresholds (9.5--28.5$^\circ$C at 0.25$^\circ$C steps),
 then equally over months and 33 evaluation summers. All-day errors use 3,036
@@ -7,7 +8,7 @@ June--August daily fields in 1991--2025 excluding 2015 and 2022; high-day errors
 use the 792 original upper-quartile days. The last two columns use the 344
 additional sites. All inputs come from the original 121 sites.}
 \label{tab:application-comparison}
-\begin{tabular}{@{}lrrrrrr@{}}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrr@{}}
 \toprule
 & \multicolumn{2}{c}{Exceedance area} & \multicolumn{2}{c}{Largest component} & \multicolumn{2}{c}{Additional sites}\\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
@@ -19,5 +20,5 @@ Simple + variogram & 0.815 & 0.741 & 1.366 & 1.266 & 1.013 & 0.922 \\
 Simple + graph & 0.820 & 0.743 & 1.379 & 1.265 & 1.020 & 0.925 \\
 Spatial interpolation & 1.398 & 1.414 & 1.823 & 1.859 & 1.861 & 1.882 \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \end{table}

@@ -7,7 +7,7 @@ https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrss
 is an earlier version. The current companion archive is
 `jrssc_reproducibility_bundle.zip`, available with the matching manuscripts
 and portable LaTeX source at
-https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v8-2026-09-08.
+https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v9-2026-09-08.
 
 ## Inspecting the reported results
 

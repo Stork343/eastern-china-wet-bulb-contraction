@@ -29,6 +29,24 @@
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theequation}{S\arabic{equation}}
 
+
+% Whole floats may move to available space rather than forcing an early break.
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{10}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.90}
+\renewcommand{\textfraction}{0.04}
+\renewcommand{\floatpagefraction}{0.68}
+\setlength{\textfloatsep}{8pt plus 1pt minus 2pt}
+\setlength{\floatsep}{8pt plus 1pt minus 2pt}
+\setlength{\intextsep}{6pt plus 1pt minus 1pt}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{8pt plus 1fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
 \raggedbottom
 \begin{document}
 
@@ -81,7 +99,7 @@ original acquisition rationale undocumented. Evaluation uses the other
 
 \footnotesize
 \setlength{\tabcolsep}{3pt}
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \footnotesize
 \caption{Protocol status, timing, observed result and final interpretive role.}
@@ -771,9 +789,9 @@ $-13.27\%$. The curve shows no reversal at the 31 evaluated bandwidths.
 The intervals are descriptive pointwise summaries; no simultaneous confidence
 band is estimated.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.92\textwidth]{supp_dense_bandwidth_profile.pdf}
+\includegraphics[width=\textwidth,trim={1bp 1bp 1bp 0bp},clip]{supp_dense_bandwidth_profile.pdf}
 \caption{Bandwidth-resolution profile on the 121-site support. The blue line
 and shaded band show the 31-point profile and its pointwise 95\% descriptive
 $(t)$-reference intervals based on between-summer variation;
@@ -826,9 +844,9 @@ reselecting events with the same distance matrix gives $-7.25\%$. The WGS84
 relabelled calculation for the full 465-site domain, reported below, instead
 gives $-6.93\%$.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.92\textwidth]{supp_spatial_convergence.pdf}
+\includegraphics[width=\textwidth,trim={1bp 1bp 1bp 0bp},clip]{supp_spatial_convergence.pdf}
 \caption{Differences from the 465-site estimate at five bandwidths.
 Orange circles with a solid line denote the 121-site support; purple
 triangles with a dashed line, the latitude-refined 236-site support; teal
@@ -1121,7 +1139,7 @@ least ten stations. Their mean available-station counts over all scheduled
 fields were 13.28 and 13.12. Nevertheless, station support varied over time,
 and a retained record could have only one field in either state.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{High--middle graph-dispersion contrasts at ERA5-Land-defined peak times
 and labels in ten evaluation years. Contrasts and intervals are
@@ -1413,6 +1431,8 @@ the conditional expected quadratic forms. The graph and variogram statistics
 use the same simulated fields, labels and product shifts. Each of the eight
 cells contains 1,000 replications with 499 shifts per test.
 
+\input{generated/application_coupled_table.tex}
+
 \subsection{Repeated sampling of summers}
 
 The annual experiment crosses
@@ -1444,12 +1464,10 @@ decision requires the Student, lag-2 and sign $p$-values all to be at most
 0.025. Standardised diagnostics use the known
 long-run variance $0.12^2(1+\rho)/(1-\rho)$.
 
-The following tables report all eight coupled cells and all 108 annual cells.
+The following tables report all 108 annual cells.
 Machine-readable versions of all 108 annual cells are provided in
 \texttt{results/year\_inference\_simulation\_summary.csv} in the accompanying
 repository.
-
-\input{generated/supp_complete_simulation_tables.tex}
 
 An additional 10,000-replication experiment uses the exact 1991--2025 calendar
 and removes 2015 and 2022. The largest absolute mean bias over correlations
@@ -1459,6 +1477,7 @@ but short-record dependence remains: at correlation 0.6, null coverage is
 68.3\% for the Student interval that treats summers as independent and 80.2\%
 for calendar lag 2.
 
+\input{generated/supp_complete_simulation_tables.tex}
 
 \subsection{Dependence across monthly records}
 \label{sec:cross-record-stress}
@@ -1549,7 +1568,7 @@ peak fields, 121 sites, original distances, five bandwidths and equal-month,
 equal-scale and equal-summer aggregation. Linear sample quantiles are
 identical to type 7.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering\small
 \caption{Event-partition sensitivity over 33 evaluation summers. Entries are
 relative changes in percent; the interval is a descriptive 95\% $t$-reference

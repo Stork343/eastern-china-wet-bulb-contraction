@@ -9,8 +9,7 @@
 \patchcmd{\ps@opening}{\color{black!20}\rule{45pt}{55pt}}{}{}{}
 \patchcmd{\ps@opening}{\color{black!20}\rule{45pt}{55pt}}{}{}{}
 \makeatother
-\usepackage[tablesonly,nomarkers,nolists]{endfloat}
-\usepackage[section]{placeins}
+\usepackage{placeins}
 \usepackage{xurl}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
   pdftitle={Scale-dependent contraction of spatial wet-bulb temperature contrasts in eastern China},
@@ -21,7 +20,6 @@
 \setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
 \setlength{\floatsep}{8pt plus 2pt minus 2pt}
 \setlength{\intextsep}{10pt plus 2pt minus 2pt}
-\renewcommand{\efloatseparator}{\vspace{5pt}}
 
 % Show the supplied descriptions directly below the figure legends for submission.
 \renewcommand{\figalttext}[2][]{\par\smallskip
@@ -30,13 +28,31 @@
 \newcommand{\Var}{\mathrm{Var}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
+
+% Whole floats may move to available space rather than forcing an early break.
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{10}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.90}
+\renewcommand{\textfraction}{0.04}
+\renewcommand{\floatpagefraction}{0.90}
+\setlength{\textfloatsep}{8pt plus 1pt minus 2pt}
+\setlength{\floatsep}{8pt plus 1pt minus 2pt}
+\setlength{\intextsep}{6pt plus 1pt minus 1pt}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{8pt plus 1fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
 \raggedbottom
 \begin{document}
 
 \journaltitle{Journal of the Royal Statistical Society Series C: Applied Statistics}
 \copyrightyear{}
 \pubyear{}
-\lastpage{19}
+\lastpage{16}
 \title[Spatial wet-bulb contrast contraction]{Scale-dependent contraction of spatial wet-bulb temperature contrasts in eastern China}
 \author[1]{Jian Hou\ORCID{0000-0002-9248-6874}}
 \author[2]{Tan Meng\ORCID{0009-0001-1812-1834}}
@@ -484,9 +500,9 @@ signature and the spatial decomposition within a common dispersion measure.
 Binned variograms provide a closely related representation of distance
 structure and form the principal comparator in the empirical assessment.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=\textwidth, height=0.62\textheight, keepaspectratio]{figure01_simulation_diagnostics.pdf}
+  \includegraphics[width=\textwidth,trim={1bp 1bp 1bp 0bp},clip]{figure01_simulation_diagnostics.pdf}
   \caption{Power across nine simulated spatial alternatives. Blue, green and
   orange marks denote amplitude reduction, correlation-range expansion and
   gradient suppression; circles, squares and triangles denote weak, medium
@@ -556,9 +572,9 @@ station network, using matched event times and spatial support
 \citep{smith2011}. Their distinct temporal and spatial supports are retained
 in the interpretation of the results.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=0.90\textwidth, height=0.60\textheight, keepaspectratio]{figure02_study_area.pdf}
+  \includegraphics[width=0.92\textwidth,height=0.56\textheight,keepaspectratio,trim={122bp 10bp 52bp 5bp},clip]{figure02_study_area.pdf}
   \caption{Spatial sampling and graph support. (A) Analysis lattice with 121
   land sites from 169 candidates. (B) Nested lattice adding 344 land sites
   while retaining every analysis site. (C,D) Gaussian edge weights from one
@@ -598,9 +614,9 @@ extension shares the reanalysis system, including the preliminary forcing
 used for its earliest segment, so its value lies in the temporal persistence
 of the scale pattern.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=\textwidth, height=0.62\textheight, keepaspectratio]{figure03_multiscale_evidence.pdf}
+  \includegraphics[width=\textwidth,height=0.79\textheight,keepaspectratio,trim={4bp 5bp 0bp 17bp},clip]{figure03_multiscale_evidence.pdf}
   \caption{Scale-specific node allocations and summer contrasts for the 33
   evaluation summers. (A--C) Allocations for the 126-, 503- and 2,013-km
   graphs share a symmetric colour scale; their observed-node sums are
@@ -631,9 +647,9 @@ in the north and cooler in the south than middle-day fields
 identify attenuation of a familiar climatic contrast as the main geographic
 expression of the regional statistic.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=0.90\textwidth, height=0.60\textheight, keepaspectratio]{figure04_primary_spatial_decomposition.pdf}
+  \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio,trim={118bp 4bp 113bp 5bp},clip]{figure04_primary_spatial_decomposition.pdf}
   \caption{Spatial structure of the 121-site evaluation contrast.
   (A,B) Middle- and high-day spatially centred fields; (C) their difference;
   (D) exact observed-node allocations averaged over the five
@@ -667,9 +683,9 @@ the decomposition. Together, these checks associate the contraction with the
 observed climatic gradient rather than a particular fitted reference field
 (Supplementary Section~S5).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=0.92\textwidth, height=0.60\textheight, keepaspectratio]{figure05_energy_decomposition.pdf}
+  \includegraphics[width=\textwidth,trim={1bp 1bp 1bp 0bp},clip]{figure05_energy_decomposition.pdf}
   \caption{Exact decomposition of the raw-field graph contrast. Dark circles,
   teal triangles and orange squares denote total change, anomaly-energy change
   and the climatology--anomaly cross component; bars are 95\% descriptive
@@ -680,30 +696,7 @@ observed climatic gradient rather than a particular fitted reference field
   \label{fig:energy-decomposition}
 \end{figure}
 
-\begin{table}[H]
-\centering
-\caption{Physical scale of the evaluation-period graph contrasts. $h$ is the
-Gaussian bandwidth. $\bar d_w$ is the
-edge-weighted mean pair distance, and $N_{\mathrm{eff}}$ is the Kish effective
-edge count. Graph contrasts are relative changes in weighted squared
-differences. RMS contrasts average record-specific ratios of
-$(2Q)^{1/2}$; Negative is the number of negative summer graph contrasts.}
-\label{tab:confirm-scales}
-\small
-\setlength{\tabcolsep}{4.5pt}
-\begin{tabular}{rrrrrr}
-\toprule
-$h$ & $\bar d_w$ & $N_{\mathrm{eff}}$ & Graph contrast & RMS contrast & Negative \\
-(km) & (km) & (edges) & (\%) & (\%) & (/33) \\
-\midrule
-126   & 200 & 366   & $-2.86$  & $-1.54$ & 22 \\
-252   & 319 & 1,138 & $-3.94$  & $-2.14$ & 23 \\
-503   & 549 & 3,223 & $-5.91$  & $-3.25$ & 25 \\
-1,006 & 826 & 6,005 & $-10.44$ & $-5.70$ & 29 \\
-2,013 & 992 & 7,109 & $-13.27$ & $-7.22$ & 30 \\
-\bottomrule
-\end{tabular}
-\end{table}
+
 
 \subsection{Sensitivity of the structural interpretation}
 
@@ -725,9 +718,9 @@ These comparisons distinguish variation in the climatic field from
 sensitivity to how days are selected; the underlying definitions and results
 are given in Supplementary Sections~S9, S12 and S14.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=\textwidth, height=0.62\textheight, keepaspectratio]{figure06_application_robustness.pdf}
+  \includegraphics[width=0.82\textwidth,trim={1bp 1bp 1bp 0bp},clip]{figure06_application_robustness.pdf}
   \caption{Robustness of the mean profile contrast. Dark rows denote the main
   and transformation analyses; green, orange and purple rows denote graph
   construction, spatial resolution and field definition. Points and bars are
@@ -749,9 +742,9 @@ record. The comparison therefore provides complementary measurement evidence
 for the broad pattern at common events, with the greatest uncertainty at
 short distances (Supplementary Section~S8).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-  \includegraphics[width=\textwidth, height=0.62\textheight, keepaspectratio]{figure07_noaa_agreement.pdf}
+  \includegraphics[width=0.89\textwidth,trim={6bp 19bp 0bp 17bp},clip]{figure07_noaa_agreement.pdf}
   \caption{NOAA station and ERA5-Land agreement in ten station-comparison
   summers. (A) Exact-hour WBT at 28 stations, with summaries from
   all 175,172 matches. (B) High--middle graph contrasts at the five
@@ -812,7 +805,7 @@ ERA5-Land is available from the Copernicus Climate Data Store
 NOAA ISD station archive \citep{smith2011} is available at
 \url{https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database}.
 Code and retained results for this version are archived at
-\url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v8-2026-09-08}.
+\url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v9-2026-09-08}.
 The accompanying \texttt{jrssc\_reproducibility\_bundle.zip} contains the
 current manuscript, analysis code, protocols, site and station manifests,
 and retained results, including the September coverage comparison.
@@ -845,6 +838,7 @@ Applications'' (grant 25YJA910005).
 The authors declare no conflict of interest.
 
 \small
+\FloatBarrier
 \begin{thebibliography}{99}
 
 \bibitem[Andrews(1991)]{andrews1991}
@@ -1008,5 +1002,8 @@ e3002758.
 
 
 \end{thebibliography}
+
+\input{generated/application_comparison.tex}
+\input{generated/application_scale_table.tex}
 
 \end{document}

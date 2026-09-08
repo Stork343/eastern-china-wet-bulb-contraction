@@ -45,9 +45,11 @@ After regenerating the retained simulation tables, create independent tables
 for each sample size with:
 
 ```text
-python3 code/revision_202609/09_paginate_tables.py --input results/supp_complete_simulation_tables.tex --output manuscript/generated/supp_complete_simulation_tables.tex
+python3 code/revision_202609/09_paginate_tables.py --input results/supp_complete_simulation_tables.tex --output manuscript/generated/supp_complete_simulation_tables.tex --coupled-output manuscript/generated/application_coupled_table.tex
 ```
 
 These paths refer to the public archive. In the journal workspace, use
 `JRSSC/manuscript/generated/supp_complete_simulation_tables.tex` as the output.
-The formatter preserves every numerical row and does not run simulations.
+The coupled-design table is placed beside its study description. The annual
+tables use the page width with larger type and row spacing. The formatter
+preserves every numerical row and does not run simulations.

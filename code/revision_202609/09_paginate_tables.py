@@ -31,9 +31,9 @@ def split_tables(text):
             label_n=label if n==20 else label+f'-r{n}'
             parts.append(r'''\begin{table}[H]
 \centering
-\scriptsize
-\caption{'''+caption_n+'}\n'+r'\label{'+label_n+'}\n'+r'\begin{tabular}{'+spec+'}\n'+header+'\n'+'\n'.join(subset)+'\n'+r'''\bottomrule
-\end{tabular}
+\normalsize\renewcommand{\arraystretch}{1.55}\setlength{\tabcolsep}{4pt}
+\caption{'''+caption_n+'}\n'+r'\label{'+label_n+'}\n'+r'\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}'+spec+'}\n'+header+'\n'+'\n'.join(subset)+'\n'+r'''\bottomrule
+\end{tabular*}
 \end{table}
 ''')
         assert rows==recovered
@@ -47,7 +47,13 @@ def split_tables(text):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--input',required=True,type=Path);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--audit',type=Path)
+    parser.add_argument('--coupled-output',type=Path,help='Separate the coupled-design table for placement beside its study description.')
     args=parser.parse_args();source=args.input.read_text();text,audit=split_tables(source)
+    if args.coupled_output:
+        match=re.search(r'\\begin\{table\}.*?\\end\{table\}',text,flags=re.S)
+        assert match and r'\label{tab:joint-dgp-complete}' in match[0]
+        args.coupled_output.write_text(match[0].replace('[H]','[!htbp]',1)+'\n')
+        text=text[:match.start()]+text[match.end():]
     args.output.write_text(text)
     if args.audit:args.audit.write_text(json.dumps(audit,indent=2))
     print('Formatted',len(audit),'long tables; retained',sum(x['original_rows'] for x in audit),'rows.')
