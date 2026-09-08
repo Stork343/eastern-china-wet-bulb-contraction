@@ -23,6 +23,10 @@
 \setlength{\intextsep}{10pt plus 2pt minus 2pt}
 \renewcommand{\efloatseparator}{\vspace{5pt}}
 
+% Show the supplied descriptions directly below the figure legends for submission.
+\renewcommand{\figalttext}[2][]{\par\smallskip
+  {\footnotesize\raggedright\noindent\textbf{Alt text: }#2\par}}
+
 \newcommand{\Var}{\mathrm{Var}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
@@ -1196,7 +1200,7 @@ ERA5-Land is available from the Copernicus Climate Data Store
 NOAA ISD station archive \citep{smith2011} is available at
 \url{https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database}.
 Code and retained results for this version are archived at
-\url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v3-2026-09-08}.
+\url{https://github.com/Stork343/eastern-china-wet-bulb-contraction/releases/tag/jrssc-submission-v4-2026-09-08}.
 The accompanying \texttt{jrssc\_reproducibility\_bundle.zip} contains the
 current manuscript, analysis code, protocols, site and station manifests,
 and retained results, including the September coverage comparison.
